@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:tns="http://bbwtest.dip.jp/schema/2008/categoryMap/"
+        targetNamespace="http://bbwtest.dip.jp/schema/2008/categoryMap/"
+        elementFormDefault="qualified"
+>
+
+    <import namespace="http://www.w3.org/1999/xhtml"></import>
+    <element name="categoryMap">
+        <complexType>
+            <sequence maxOccurs="unbounded" minOccurs="1">
+                <element ref="tns:category"/>
+            </sequence>
+        </complexType>
+
+        <key name="categoryID">
+            <selector xpath="tns:category"/>
+            <field xpath="@id"/>
+        </key>
+    </element>
+
+    <element name="category">
+        <complexType>
+            <sequence>
+                <element ref="tns:description" minOccurs="0"/>
+                <element ref="tns:category" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+            <attributeGroup ref="tns:category.attr.group"/>
+        </complexType>
+    </element>
+
+    <element name="description">
+        <complexType>
+            <sequence maxOccurs="unbounded" minOccurs="1">
+                <any namespace="http://www.w3.org/1999/xhtml" processContents="lax"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <attributeGroup name="category.attr.group">
+        <attribute name="id" type="positiveInteger"/>
+        <attribute name="name" type="string" use="required"/>
+        <attribute name="summary" type="string" use="required"/>
+    </attributeGroup>
+</schema>

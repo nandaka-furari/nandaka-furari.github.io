@@ -1,0 +1,94 @@
+@CHARSET "UTF-8";
+
+h1,h2,h3,h4,h5,h6 {
+	line-height: 1.5em;
+	text-align: center;
+	background-color: white;
+	margin: 0;
+	margin-top: 10px;
+	padding: 0;
+	text-decoration: none;
+}
+h1 {
+	border: solid 1px #00f;
+	border-right: solid 1em #00f;
+	border-left: solid 1em #00f;
+}
+h2 {
+	border: solid 1px #22f;
+	border-right: solid 1em #22f;
+	border-left: solid 1em #22f;
+}
+h3 {
+	border: solid 1px #44f;
+	border-right: solid 1em #44f;
+	border-left: solid 1em #44f;
+}
+h3 a:LINK {
+	text-decoration: none;
+}
+h3 a:VISITED {
+	text-decoration: none;
+}
+h4 {
+	border: solid 1px #66f;
+	border-right: solid 1em #66f;
+	border-left: solid 1em #66f;
+}
+h5 {
+	border: solid 1px #88f;
+	border-right: solid 1em #88f;
+	border-left: solid 1em #88f;
+}
+h6 {
+	border: solid 1px #aaf;
+	border-right: solid 1em #aaf;
+	border-left: solid 1em #aaf;
+}
+table {
+	border: solid 1px #000;
+	border-collapse: collapse;
+}
+th {
+	padding: 1px 3px;
+	border: solid 1px #000;
+}
+td {
+	padding: 1px 3px;
+	border: solid 1px #000;
+}
+p {
+	line-height: 1.5em;
+	padding: 0.5em;
+	margin: 0;
+}
+blockquote {
+	border: dashed 1px fuchsia;
+	padding: 0.5em;
+	margin: 0.5em 0;
+}
+pre {
+	border: dashed 1px aqua;
+	padding: 0.5em;
+	margin: 0.5em 0;
+	overflow: auto;
+}
+ol,ul,dl {
+	border: dashed 1px lime;
+}
+table,p,pre,blockquote,ol,ul,dl {
+	background-color: white;
+}
+dl {
+	padding: 0.5em;
+}
+address {
+	margin: 10px;
+	background-color: white;
+}
+cite:BEFORE {
+	content: "『";
+}
+cite:AFTER {
+	content: "』";
+}

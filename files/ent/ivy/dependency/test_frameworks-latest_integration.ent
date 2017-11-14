@@ -1,0 +1,7 @@
+<!-- test framework -->
+<dependency org="junit" name="junit" rev="latest.integration"/>
+<dependency org="org.testng" name="testng" rev="latest.integration"/>
+<!-- mock framework -->
+<dependency org="org.mockito" name="mockito-all" rev="latest.integration"/>
+<dependency org="org.easymock" name="easymock" rev="latest.integration"/>
+<dependency org="org.jmock" name="jmock" rev="latest.integration"/>

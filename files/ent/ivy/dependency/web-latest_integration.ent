@@ -1,0 +1,16 @@
+<!--
+ivyのdependencyテンプレート
+-->
+<dependency org="org.jsoup" name="jsoup" rev="latest.integration"/>
+<dependency org="nu.validator.htmlparser" name="htmlparser" rev="latest.integration"/>
+<dependency org="org.openid4java" name="openid4java" rev="latest.integration"/>
+<dependency org="commons-dbutils" name="commons-dbutils" rev="latest.integration"/>
+<dependency org="org.twitter4j" name="twitter4j-core" rev="latest.integration"/>
+<dependency org="com.twitter" name="util-core_2.11" rev="latest.integration"/>
+<dependency org="com.twitter" name="twitter-text" rev="latest.integration"/>
+<dependency org="org.eclipse.persistence" name="eclipselink" rev="latest.integration"/>
+<dependency org="org.eclipse.persistence" name="org.eclipse.persistence.jpa.modelgen.processor" rev="latest.integration"/>
+
+<!--
+<dependency org="" name="" rev="latest.integration"/>
+-->

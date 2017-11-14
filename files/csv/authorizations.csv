@@ -1,0 +1,3 @@
+cybozu live,OAuth1.0,https://developer.cybozulive.com/doc/current/,https://developer.cybozulive.com/doc/current/pub/authorize.html,https://api.cybozulive.com/oauth/initiate,https://api.cybozulive.com/oauth/authorize,https://api.cybozulive.com/oauth/token
+twitter,OAuth1.0,,"https://api.twitter.com/oauth/authorize",,,
+

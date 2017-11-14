@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- org.apache.commons -->
+<dependency org="org.apache.commons" name="commons-weaver-privilizer-api" rev="latest.integration"/>
+<dependency org="org.apache.commons" name="commons-rdf-api" rev="latest.integration"/>
+<dependency org="org.apache.commons" name="commons-weaver-processor" rev="latest.integration"/>
+<dependency org="org.apache.commons" name="commons-jcs-jcache" rev="latest.integration"/>
+
+<!--
+<dependency org="org.apache.commons" name="" rev="latest.integration"/>
+-->

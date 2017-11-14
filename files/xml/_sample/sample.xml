@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="application/xml" href="../xslt/v1/sample.xsl"?>
+<sample xmlns="urn:sample" xmlns:framexs="urn:framexs">
+	<teste testa="testv">testt</teste>
+	<test class="test2" framexs:pull="id">
+		<name>name</name>
+		<value>value</value>
+	</test>
+	<test>
+		<test framexs:element="" framexs:attr-="">element</test>
+		<test framexs:attr-test="" framexs:element="">attr</test>
+	</test>
+</sample>

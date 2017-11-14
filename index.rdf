@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/"  xmlns:xhtml="http://www.w3.org/1999/xhtml" xml:lang="ja">
+	<channel rdf:about="http://www.bbwtest.info/index.rdf">
+		<title>ごった煮サイト</title>
+		<link>http://www.bbwtest.info/</link>
+		<description>このサイトは他のサイトには無い独自の機能を持った掲示板などのウェブサービスを作ることを目指す、個人的かつ実験的なサイトです。<xhtml:br />
+私個人の考え方に基づいてこういうのがあればいいなと思う機能を加えて行く予定です。</description>
+		<items>
+			<rdf:Seq>
+				<rdf:li rdf:resource="http://nandaka-furari.github.io/files/"></rdf:li>
+				<rdf:li rdf:resource="http://nandaka-furari.github.io/framexs/"></rdf:li>
+			</rdf:Seq>
+		</items>
+	</channel>
+	<item rdf:about="http://nandaka-furari.github.io/files/">
+		<title>雑多なファイルの置き場</title>
+		<link>http://nandaka-furari.github.io/files/</link>
+		<description>ユニコード表、日韓翻訳掲示板もどきなど、さまざまなテスト用のウェブアプリ</description>
+	</item>
+	<item rdf:about="http://nandaka-furari.github.io/framexs/">
+		<title>bbwtest</title>
+		<link>http://www.bbwtest.info/bbwtest/</link>
+		<description>現在停止中</description>
+	</item>
+</rdf:RDF>

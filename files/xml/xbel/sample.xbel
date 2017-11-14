@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="application/xml" href="../xslt/v1/xbel.xsl"?>
+<xbel xmlns="http://www.python.org/topics/xml/xbel/" version="1.3">
+	<root>
+		<folder name="お気に入り">
+			<ref>http://pyxml.sourceforge.net/topics/xbel/</ref>
+		</folder>
+	</root>
+	<dustbox>
+		<dust></dust>
+	</dustbox>
+	<bookmarks>
+		<bookmark uri="http://pyxml.sourceforge.net/topics/xbel/">
+			<title>The XML Bookmark Exchange Language (XBEL)</title>
+			<description>The XML Bookmark Exchange Language Resource Page</description>
+			<comment>test</comment>
+		</bookmark>
+		<bookmark uri="https://ant.apache.org/manual/">
+			<title>Apache Ant? User Manual</title>
+		</bookmark>
+		<bookmark uri="http://www.bbwtest.info/~nandaka_furari/files/xml/xhtml/v1/contents/index.xhtml">
+			<title>ファイルの雑多な置き場 - テンプレート</title>
+		</bookmark>
+		<bookmark uri="https://www.mozilla.org/ja/about/">
+			<title>Mozilla について</title>
+		</bookmark>
+		<bookmark uri="http://pick.naver.jp/nandaka_furari">
+			<title>nandaka_furariさんが投稿したもの - pick（ピック）</title>
+		</bookmark>
+		<bookmark uri="https://twpro.jp/nandaka_furari">
+			<title>ナンダカフラリ @nandaka_furari のツイプロ</title>
+		</bookmark>
+	</bookmarks>
+</xbel>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ivyのdependencyテンプレート
+Java EE用
+-->
+<dependency org="javax" name="javaee-web-api" rev="7.0"/>
+<dependency org="org.primefaces" name="primefaces" rev="latest.integration"/>
+<!--
+<dependency org="" name="" rev="latest.integration"/>
+-->

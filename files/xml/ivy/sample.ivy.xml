@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+-->
+<!DOCTYPE ivy-module [
+<!--
+<!ENTITY a SYSTEM "">
+<!ENTITY a SYSTEM "">
+<!ENTITY a SYSTEM "">
+<!ENTITY a SYSTEM "">
+-->
+]>
+<ivy-module version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+	<info organisation="org/apache" module="ant" revision="0.0.1"/>
+	<publications xmlns:e="urn:ant.apache.org:ivy-extras">
+		<artifact name="ant-testutil" type="source" ext="jar" e:classifier="sources" />
+		<artifact name="ant-testutil" type="source.asc" ext="jar.asc" e:classifier="sources" />
+	</publications>
+	<dependencies/>
+</ivy-module>
+

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ロガーやロギングAPIのライブラリ
+<dependency org="" name="" rev="latest.integration" conf="compile"/>
+-->
+
+<dependency org="org.apache.logging.log4j" name="log4j-core" rev="2.6.2" />

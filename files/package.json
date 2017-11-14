@@ -1,0 +1,27 @@
+{
+  "name": "files",
+  "version": "0.0.1",
+  "description": "雑多なファイルの置き場所",
+  "main": "js/build.js",
+  "scripts": {
+  	"clean":"node js/clean.js",
+  	"run":"npm run clean && node js/javascript.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc ts/Sample.ts ",
+    "electron": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://www.bbwtest.info/gitbucket/git/nandaka_furari/files.git"
+  },
+  "author": "ナンダカフラリ",
+  "license": "MIT",
+  "devDependencies": {
+  	  "electron-prebuilt": "^1.4.13"
+  },
+  "dependencies": {
+    "eslint": "^3.15.0",
+    "jquery": "^3.1.1",
+    "typescript": "^2.1.6"
+  }
+}

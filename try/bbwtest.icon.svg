@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+         "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="48" height="48" style="border: solid 1px black">
+     <defs>
+     	<circle id="black" r="6" fill="rgb(0,0,0)" />
+     	<circle id="red" r="6" fill="rgb(208,50,50)" />
+     	<circle id="blue" r="6" fill="rgb(124,150,236)" />
+     </defs>
+	<use x="10" y="20" xlink:href="#black" />
+	<use x="38" y="8" xlink:href="#black" />
+	<use x="10" y="20" xlink:href="#black" />
+	<use x="12" y="36" xlink:href="#black" />
+	<use x="10" y="20" xlink:href="#red" />
+	<use x="10" y="20" xlink:href="#blue" />
+</svg>

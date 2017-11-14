@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://bbwtest.dip.jp/schema/2010/containerList/" elementFormDefault="qualified"
+        xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://bbwtest.dip.jp/schema/2010/containerList/"
+        xmlns:c="http://www.bbwtest.info/schema/2011/container3/">
+    <import namespace="http://www.bbwtest.info/schema/2011/container3/"
+            schemaLocation="container3/container_3_0.xsd"></import>
+    <element name="containerList">
+        <complexType>
+            <sequence>
+                <element ref="c:container" minOccurs="0" maxOccurs="unbounded"></element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

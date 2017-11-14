@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:oasis:names:tc:entity:xmlns:xml:catalog ../xsd/xmlcatalog.xsd">
+	<uri name="http://xmlns.jcp.org/xml/ns/jaxb"
+		uri="http://xmlns.jcp.org/xml/ns/jaxb/bindingschema_2_0.xsd"/>
+</catalog>

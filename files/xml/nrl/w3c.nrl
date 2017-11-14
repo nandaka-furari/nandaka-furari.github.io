@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<!--
+https://www.w3.org/
+-->
+<rules xmlns="http://www.thaiopensource.com/validate/nrl">
+	<!-- XHTML -->
+	<namespace ns="http://www.w3.org/1999/xhtml">
+		<!-- v1.0 -->
+		<validate schema="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+		<validate schema="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>
+		<validate schema="http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd"/>
+		<!-- v1.1 -->
+		<validate schema="http://www.w3.org/MarkUp/SCHEMA/xhtml11.xsd"/>
+		<validate schema="http://www.w3.org/MarkUp/SCHEMA/xhtml-basic11x.xsd"/>
+	</namespace>
+	<!-- XML Schema -->
+	<namespace ns="http://www.w3.org/2001/XMLSchema">
+		<!-- v1.0 -->
+		<validate schema="http://www.w3.org/2001/XMLSchema.xsd"/>
+		<!-- v1.1 -->
+		<validate schema="http://www.w3.org/2009/XMLSchema.xsd"/>
+	</namespace>
+	<namespace ns="http://www.w3.org/2001/XMLSchema-hasFacetAndProperty">
+		<validate schema="soap-envelope.xsd"/>
+	</namespace>
+	<!-- SVG -->
+	<namespace ns="http://www.w3.org/2000/svg">
+		<validate schema="http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"/>
+	</namespace>
+	<namespace ns="http://www.w3.org/2005/xpath-functions">
+		<validate schema="soap-envelope.xsd"/>
+	</namespace>
+	<namespace ns="http://www.w3.org/1999/XSL/Transform">
+		<validate schema="soap-envelope.xsd"/>
+	</namespace>
+	
+	<namespace ns="http://www.w3.org/2001/xml-events"></namespace>
+	<namespace ns="http://www.w3.org/TR/css3-text/"></namespace>
+	<namespace ns="http://www.w3.org/TR/css3-text/"></namespace>
+
+</rules>

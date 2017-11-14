@@ -1,0 +1,17 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<smil xmlns="http://www.w3.org/ns/SMIL" version="3.0"
+	xml:lang="ja"
+	xml:id="root"
+	baseProfile="Tiny">
+	<head>
+		<paramGroup xml:id="clown">
+			<param name="mood" value="upBeat" valuetype="data"/>
+			<param name="accessories" value="flowers,dunceCap"/>
+		</paramGroup>
+		<title>sample</title>
+	</head>
+	<body>
+		<ref src="http://www.example.com/andy.face" paramGroup="clown"/>
+		<ref src="http://www.example.com/sally.face" paramGroup="clown"/>
+	</body>
+</smil>

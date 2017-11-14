@@ -1,0 +1,80 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<!-- tio dependas check_system_and_jdk_version -->
+
+    <target name="-check-platform-home-fxsdk-java" depends="-check-property-javafx.sdk" if="javafx.sdk.defined">
+        <condition property="do.set.platform.home.fxsdk.java">
+            <and>
+                <not><isset property="active.platform.home.java.executable"/></not>
+                <or>
+                    <available file="${javafx.sdk}${file.separator}bin${file.separator}java"/>
+                    <available file="${javafx.sdk}${file.separator}bin${file.separator}java.exe"/>
+                </or>
+            </and>
+        </condition>
+    </target>
+
+    <target name="-check-platform-home-fxrt-java" depends="-check-property-javafx.runtime" if="javafx.runtime.defined">
+        <condition property="do.set.platform.home.fxrt.java">
+            <and>
+                <not><isset property="active.platform.home.java.executable"/></not>
+                <or>
+                    <available file="${javafx.runtime}${file.separator}bin${file.separator}java"/>
+                    <available file="${javafx.runtime}${file.separator}bin${file.separator}java.exe"/>
+                </or>
+            </and>
+        </condition>
+    </target>
+
+    <target name="-set-platform-home-fxsdk-java" depends="-check-platform-home-fxsdk-java" if="do.set.platform.home.fxsdk.java">
+        <property name="active.platform.home.java.executable" value="${javafx.sdk}${file.separator}bin${file.separator}java"/>
+    </target>
+
+    <target name="-check-property-javafx.runtime">
+        <echo message="javafx.runtime = ${javafx.runtime}" level="verbose"/>
+        <condition property="javafx.runtime.defined">
+            <and>
+                <isset property="javafx.runtime"/>
+                <not><contains string="${javafx.runtime}" substring="$${platform" casesensitive="false"/></not>
+            </and>
+        </condition>
+        <condition property="javafx.runtime.missing+default">
+            <and>
+                <equals arg1="${platform.active}" arg2="Default_JavaFX_Platform" trim="true"/>
+                <not><isset property="javafx.runtime.defined"/></not>
+            </and>
+        </condition>
+        <condition property="javafx.runtime.missing-default">
+            <and>
+                <not><equals arg1="${platform.active}" arg2="Default_JavaFX_Platform" trim="true"/></not>
+                <not><isset property="javafx.runtime.defined"/></not>
+            </and>
+        </condition>
+        <echo message="javafx.runtime.defined = ${javafx.runtime.defined}" level="verbose"/>
+        <echo message="javafx.runtime.missing+default = ${javafx.runtime.missing+default}" level="verbose"/>
+        <echo message="javafx.runtime.missing-default = ${javafx.runtime.missing-default}" level="verbose"/>
+    </target>
+
+    <target name="-check-property-javafx.sdk">
+        <echo message="javafx.sdk = ${javafx.sdk}" level="verbose"/>
+        <condition property="javafx.sdk.defined">
+            <and>
+                <isset property="javafx.sdk"/>
+                <not><contains string="${javafx.sdk}" substring="$${platform" casesensitive="false"/></not>
+            </and>
+        </condition>
+        <condition property="javafx.sdk.missing+default">
+            <and>
+                <equals arg1="${platform.active}" arg2="Default_JavaFX_Platform" trim="true"/>
+                <not><isset property="javafx.sdk.defined"/></not>
+            </and>
+        </condition>
+        <condition property="javafx.sdk.missing-default">
+            <and>
+                <not><equals arg1="${platform.active}" arg2="Default_JavaFX_Platform" trim="true"/></not>
+                <not><isset property="javafx.sdk.defined"/></not>
+            </and>
+        </condition>
+        <echo message="javafx.sdk.defined = ${javafx.sdk.defined}" level="verbose"/>
+        <echo message="javafx.sdk.missing+default = ${javafx.sdk.missing+default}" level="verbose"/>
+        <echo message="javafx.sdk.missing-default = ${javafx.sdk.missing-default}" level="verbose"/>
+    </target>

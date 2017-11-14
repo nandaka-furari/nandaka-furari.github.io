@@ -1,0 +1,186 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<!-- Check system and JDK version -->
+
+    <target name="-check-operating-system">
+        <condition property="running.on.mac">
+            <os family="mac"/>
+        </condition>
+        <condition property="running.on.unix">
+            <os family="unix"/>
+        </condition>
+        <condition property="running.on.windows">
+            <os family="windows"/>
+        </condition>
+        <echo message="running.on.mac = ${running.on.mac}" level="verbose"/>
+        <echo message="running.on.unix = ${running.on.unix}" level="verbose"/>
+        <echo message="running.on.windows = ${running.on.windows}" level="verbose"/>
+    </target>
+        
+    <target name="-check-jdk-version" depends="-do-init,-check-platform-home">
+        <local name="version-output"/>
+        <exec executable="${active.platform.home.java.executable}" outputproperty="version-output">
+            <arg value="-version"/>
+        </exec>
+        <echo message="version-output:${line.separator}${version-output}" level="verbose"/>
+        <condition property="have-jdk-older-than-1.6">
+            <or>
+                <contains string="${version-output}" substring="java version &quot;1.0"/>
+                <contains string="${version-output}" substring="java version &quot;1.1"/>
+                <contains string="${version-output}" substring="java version &quot;1.2"/>
+                <contains string="${version-output}" substring="java version &quot;1.3"/>
+                <contains string="${version-output}" substring="java version &quot;1.4"/>
+                <contains string="${version-output}" substring="java version &quot;1.5"/>
+            </or>
+        </condition>
+        <fail message="Error:${line.separator}JavaFX 2.0+ projects require JDK version 1.6+ !" if="have-jdk-older-than-1.6"/>
+        <condition property="have-jdk-7u4or5-mac">
+            <and>
+                <or>
+                    <contains string="${version-output}" substring="java version &quot;1.7.0_04"/>
+                    <contains string="${version-output}" substring="java version &quot;1.7.0_05"/>
+                </or>
+                <os family="mac"/>
+            </and>
+        </condition>
+        <condition property="have-jdk-pre7u6">
+            <or>
+                <isset property="have-jdk-older-than-1.6"/>
+                <contains string="${version-output}" substring="java version &quot;1.6"/>
+                <contains string="${version-output}" substring="java version &quot;1.7.0&quot;"/>
+                <contains string="${version-output}" substring="java version &quot;1.7.0_01"/>
+                <contains string="${version-output}" substring="java version &quot;1.7.0_02"/>
+                <contains string="${version-output}" substring="java version &quot;1.7.0_03"/>
+                <contains string="${version-output}" substring="java version &quot;1.7.0_04"/>
+                <contains string="${version-output}" substring="java version &quot;1.7.0_05"/>
+            </or>
+        </condition>
+        <condition property="have-jdk-pre7u14">
+            <or>
+                <isset property="have-jdk-pre7u6"/>
+                <contains string="${version-output}" substring="java version &quot;1.7.0_06"/>
+                <contains string="${version-output}" substring="java version &quot;1.7.0_07"/>
+                <contains string="${version-output}" substring="java version &quot;1.7.0_08"/>
+                <contains string="${version-output}" substring="java version &quot;1.7.0_09"/>
+                <contains string="${version-output}" substring="java version &quot;1.7.0_10"/>
+                <contains string="${version-output}" substring="java version &quot;1.7.0_11"/>
+                <contains string="${version-output}" substring="java version &quot;1.7.0_12"/>
+                <contains string="${version-output}" substring="java version &quot;1.7.0_13"/>
+            </or>
+        </condition>
+        <property name="jdk-version-checked-in-jfximpl" value="true"/>
+        <echo message="have-jdk-7u4or5-mac = ${have-jdk-7u4or5-mac}" level="verbose"/>
+        <echo message="have-jdk-pre7u6 = ${have-jdk-pre7u6}" level="verbose"/>
+        <echo message="have-jdk-pre7u14 = ${have-jdk-pre7u14}" level="verbose"/>
+    </target>
+        
+    <target name="-check-ant-jre-version">
+        <local name="version-output"/>
+        <exec executable="${java.home}${file.separator}bin${file.separator}java" outputproperty="version-output">
+            <arg value="-version"/>
+        </exec>
+        <echo message="version-output:${line.separator}${version-output}" level="verbose"/>
+        <condition property="have-ant-jre-pre7u6">
+            <or>
+                <contains string="${version-output}" substring="java version &quot;1.0"/>
+                <contains string="${version-output}" substring="java version &quot;1.1"/>
+                <contains string="${version-output}" substring="java version &quot;1.2"/>
+                <contains string="${version-output}" substring="java version &quot;1.3"/>
+                <contains string="${version-output}" substring="java version &quot;1.4"/>
+                <contains string="${version-output}" substring="java version &quot;1.5"/>
+                <contains string="${version-output}" substring="java version &quot;1.6"/>
+                <contains string="${version-output}" substring="java version &quot;1.7.0&quot;"/>
+                <contains string="${version-output}" substring="java version &quot;1.7.0_01"/>
+                <contains string="${version-output}" substring="java version &quot;1.7.0_02"/>
+                <contains string="${version-output}" substring="java version &quot;1.7.0_03"/>
+                <contains string="${version-output}" substring="java version &quot;1.7.0_04"/>
+                <contains string="${version-output}" substring="java version &quot;1.7.0_05"/>
+            </or>
+        </condition>
+        <condition property="have-jdk7-css2bin-bug">
+            <!-- as of NB7.4 release date the external css-to-bss converter is unreliable in all JDK7 versions before 7u40 (with exception of 7u14)-->
+            <and>
+                <contains string="${version-output}" substring="java version &quot;1.7"/>
+                <not><matches string="${version-output}" pattern="\bjava version &quot;1\.7\.0_(14|[4-9].)"/></not>
+            </and>
+        </condition>
+        <property name="ant-jre-version-checked-in-jfximpl" value="true"/>
+        <echo message="have-ant-jre-pre7u6 = ${have-ant-jre-pre7u6}" level="verbose"/>
+        <echo message="have-jdk7-css2bin-bug = ${have-jdk7-css2bin-bug}" level="verbose"/>
+    </target>
+    
+    <target name="-check-platform-home-jre-java" unless="active.platform.home.java.executable">
+        <condition property="do.set.platform.home.jre.java">
+            <and>
+                <not><isset property="active.platform.home.java.executable"/></not>
+                <or>
+                    <available file="${java.home}${file.separator}bin${file.separator}java"/>
+                    <available file="${java.home}${file.separator}bin${file.separator}java.exe"/>
+                </or>
+            </and>
+        </condition>
+    </target>
+
+    <target name="-set-platform-home-jre-java" depends="-check-platform-home-jre-java" if="do.set.platform.home.jre.java">
+        <property name="active.platform.home.java.executable" value="${java.home}${file.separator}bin${file.separator}java"/>
+        <echo message="Warning: java executable not found in JDK, evaluating java executable in RT instead." level="info"/>
+    </target>
+    
+    <target name="-check-platform-home" depends="-set-platform-home-jre-java">
+        <echo message="active.platform.home.java.executable = ${active.platform.home.java.executable}" level="verbose"/>
+        <fail message="Error:${line.separator}java executable not found !" unless="active.platform.home.java.executable"/>
+    </target>
+
+    <target name="-check-platform-home-java" if="platform.home">
+        <condition property="do.set.platform.home.java">
+            <and>
+                <not><isset property="active.platform.home.java.executable"/></not>
+                <or>
+                    <available file="${platform.home}${file.separator}bin${file.separator}java"/>
+                    <available file="${platform.home}${file.separator}bin${file.separator}java.exe"/>
+                </or>
+            </and>
+        </condition>
+    </target>
+
+    <target name="-set-platform-home-java" depends="-check-platform-home-java" if="do.set.platform.home.java">
+        <property name="active.platform.home.java.executable" value="${platform.home}${file.separator}bin${file.separator}java"/>
+    </target>
+
+    <target name="-check-platform-home-envjdk-java" unless="active.platform.home.java.executable">
+        <property environment="env"/>
+        <condition property="do.set.platform.home.envjdk.java">
+            <and>
+                <not><isset property="active.platform.home.java.executable"/></not>
+                <or>
+                    <available file="${env.JAVA_HOME}${file.separator}bin${file.separator}java"/>
+                    <available file="${env.JAVA_HOME}${file.separator}bin${file.separator}java.exe"/>
+                </or>
+            </and>
+        </condition>
+    </target>
+
+    <target name="-check-platform-home-probjdk-java" unless="active.platform.home.java.executable">
+        <condition property="do.set.platform.home.probjdk.java">
+            <and>
+                <not><isset property="active.platform.home.java.executable"/></not>
+                <or>
+                    <available file="${java.home}${file.separator}..${file.separator}bin${file.separator}java"/>
+                    <available file="${java.home}${file.separator}..${file.separator}bin${file.separator}java.exe"/>
+                </or>
+            </and>
+        </condition>
+    </target>
+
+    <target name="-check-jdk-7u4or5-mac" depends="-check-jdk-version" if="have-jdk-7u4or5-mac">
+        <fail message="Error:${line.separator}JDK 7u4 Mac and 7u5 Mac do not support WebStart and JavaFX 2.0+ browser plugin technologies.${line.separator}Please upgrade to JDK 7u6 or later."/>
+    </target>
+
+
+    <target name="-set-platform-home-envjdk-java" depends="-set-platform-home-probjdk-java,-check-platform-home-envjdk-java" if="do.set.platform.home.envjdk.java">
+        <property environment="env"/>
+        <property name="active.platform.home.java.executable" value="${env.JAVA_HOME}${file.separator}bin${file.separator}java"/>
+    </target>
+
+    <target name="-set-platform-home-probjdk-java" depends="-set-platform-home-java,-check-platform-home-probjdk-java" if="do.set.platform.home.probjdk.java">
+        <property name="active.platform.home.java.executable" value="${java.home}${file.separator}..${file.separator}bin${file.separator}java"/>
+    </target>

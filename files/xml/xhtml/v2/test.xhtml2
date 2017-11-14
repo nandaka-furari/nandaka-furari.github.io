@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="../../../css/ns/xhtml2.css" type="text/css"?>
+<html xmlns="http://www.w3.org/2002/06/xhtml2/">
+<head>
+<title>index</title>
+<script src="Google ドライブ/gd.js"></script>
+</head>
+<body>
+<frame id="main-pane">
+<header><h importance="7">XHTML2.x</h><l>[previous]   [next]  [table of contents]  [elements]  [attributes]</l></header>
+<main>
+
+<article>
+
+<section>
+<h importance="6">1. Introduction</h>
+<p>
+<l>Contents</l>
+<l>1.1. What is XHTML 2?</l>
+<l>1.1.1. Design Aims</l>
+<l>1.1.2. Backwards compatibility</l>
+<l>1.1.3. XHTML 2 and Presentation</l>
+<l>1.1.4. XHTML 2 and Linking</l>
+<l>1.2. Major Differences with XHTML 1</l>
+<l>1.3. What are the XHTML 2 Modules?</l>
+<l>1.4. Issues</l>
+<l>This section is informative.</l>
+</p>
+
+
+<section>
+<h>1.1. What is XHTML 2?</h>
+<p><l>XHTML 2 is a general purpose markup language designed for representing documents for a wide range of purposes across the World Wide Web. To this end it does not attempt to be all things to all people, supplying every possible markup idiom, but to supply a generally useful set of elements, with the possibility of extension using the class and role attributes on the span and div elements in combination with style sheets, and attributes from the metadata attributes collection.</l></p>
+<section>
+<h>1.1.1. Design Aims</h>
+<p>
+<l>
+In designing XHTML 2, a number of design aims were kept in mind to help direct the design. These included:
+
+As generic XML as possible: if a facility exists in XML, try to use that rather than duplicating it.
+Less presentation, more structure: use style sheets for defining presentation.
+More usability: within the constraints of XML, try to make the language easy to write, and make the resulting documents easy to use.
+More accessibility: some call it 'designing for our future selves' – the design should be as inclusive as possible.
+Better internationalization: since it is a World Wide Web.
+More device independence: new devices coming online, such as telephones, PDAs, tablets, televisions and so on mean that it is imperative to have a design that allows you to author once and render in different ways on different devices, rather than authoring new versions of the document for each type of device.
+Less scripting: achieving functionality through scripting is difficult for the author and restricts the type of user agent you can use to view the document. We have tried to identify current typical usage, and include those usages in markup.
+Integration with the Semantic Web: make XHTML2 amenable for processing with semantic web tools.
+</l></p>
+<h>1.1.2. Backwards compatibility</h>
+<p>
+<l>Because earlier versions of HTML were special-purpose languages, it was necessary to ensure a level of backwards compatibility with new versions so that new documents would still be usable in older browsers. However, thanks to XML and style sheets, such strict element-wise backwards compatibility is no longer necessary, since an XML-based browser, of which at the time of writing means more than 95% of browsers in use, can process new markup languages without having to be updated. Much of XHTML 2 works already in existing browsers; much, but not all: just as when forms and tables were added to HTML, and people had to wait for new version of browsers before being able to use the new facilities, some parts of XHTML 2, principally XForms and XML Events, still require user agents that understand that functionality.</l>
+</p>
+<p>
+<l>1.1.3. XHTML 2 and Presentation
+
+The very first version of HTML was designed to represent the structure of a document, not its presentation. Even though presentation-oriented elements were later added to the language by browser manufacturers, HTML is at heart a document structuring language. XHTML 2 takes HTML back to these roots, by removing all presentation elements, and subordinating all presentation to style sheets. This gives greater flexibility, greater accessibility, more device independence, and more powerful presentation possibilities, since style sheets can do more than the presentational elements of HTML ever did.
+
+</l>
+</p>
+<h>1.1.4. XHTML 2 and Linking</h>
+<p>
+<l>
+The original versions of HTML relied upon built-in knowledge on the part of User Agents and other document processors. While much of this knowledge had to do with presentation (see above), the bulk of the remainder had to do with the relationships between documents — so called "linking".
+
+A variety of W3C and other efforts, most notably [XLINK], attempted to create a grammar for defining the characteristings of linking. Unfortunately, these grammars all fall short of the requirements of XHTML. The community is continuing in its efforts to create a comprehensive grammar that describes link characteristics.
+
+The HTML Working Group has determined that such a grammar, while generally useful, is not required for the definition of XHTML 2. Instead, this document is explicit in the characteristics of the elements and attributes that are used to connect to other resources. The Working Group has taken this course because 1) the problem with XHTML 2 is well bounded, 2) the general solution is slow in coming, and 3) it will be easier for implementors to support and users to rely upon.
+
+</l></p>
+</section>
+<p>
+<l>1.2. Major Differences with XHTML 1
+
+XHTML 2 is designed to be recognizable to the HTML and XHTML 1 author, while correcting errors and insufficiencies identified in earlier versions of the HTML family, and taking the opportunity to make improvements.
+
+The most visible changes are the following:
+
+
+
+</l></p>
+<p><l>More structuring possibilities:
+Sections and headings: in previous versions of HTML a document's structure had to be inferred from the various levels of headings in the document; this was particularly a problem when authors misused the heading elements for visual effects. XHTML 2 lets you explicitly markup the document structure with the section element, and its related header element h.
+Separators: in previous versions of HTML, the hr element was used to separate sections of a text from each other. In retrospect, the name hr (for horizontal rule) was misleading, because an hr was neither necessarily horizontal (in vertical text it was vertical), nor necessarily a rule (books often use other typographical methods such as a line of three asterisks to represent separators, and style sheets can be used to give you this freedom). In order to emphasize its structuring nature, to make it more widely usable, and to make it clearer that it has no essential directionality, hr has been renamed separator.
+Line breaks: in previous versions of HTML, the br element was used to add micro-structure to text, essentially breaking a piece of text into several 'lines'. This micro-structure is now made explicit in XHTML 2 with the l element, which encloses the text to be broken. Amongst other advantages, this gives more presentational opportunities, such as the ability to automatically number lines, or to color alternate lines differently.
+Paragraph structure: in earlier versions of HTML, a p element could only contain simple text. It has been improved to bring it closer to what people perceive as a paragraph, now being allowed to include such things as lists and tables.
+Navigation lists: Part of the design of XHTML 2 has been to observe existing use of HTML and identify what is perceived as missing, for instance by use of scripting to achieve ends not supported directly in HTML. One obvious component of very many HTML pages is the 'navigation list', consisting of a collection of links to other parts of the site, presented vertically, horizontally, or as a drop-down menu. To support this type of usage, XHTML 2 introduces the navigation list element nl, which codifies such parts of documents, and allows different presentational idioms to be applied. An additional advantage is for assistive technologies, that can allow the user to skip such elements.
+Images: the HTML img element has many shortcomings: it only allows you to specify a single resource for an image, rather than offering the fallback opportunities of the object element; the only fallback option it gives is the alt text, which can only be plain text, and not marked up in any way; the longdesc attribute which allows you to provide a long description of the image is difficult to author and seldom supported.
+XHTML 2 takes a completely different approach, by taking the premise that all images have a long description and treating the image and the text as equivalents. In XHTML 2 any element may have a src attribute, which specifies a resource (such as an image) to load instead of the element. If the resource is unavailable (because of network failure, because it is of a type that the browser can't handle, or because images have been turned off) then the element is used instead. Essentially the longdesc has been moved into the document, though this behavior also mimicks the fallback behavior of the object element. (To achieve the tooltip effect that some browsers gave with the alt attribute, as in HTML 4 you use the title attribute).
+
+Type: in HTML 4, the srctype attribute when referring to an external resource was purely a hint to the user agent. In XHTML 2 it is no longer a hint, but specifies the type(s) of resource the user agent must accept.
+Tables: the content model of tables has been cleaned up and simplified, while still allowing the same functionality.
+Bi-directional text: rather than use an explicit element to describe bi-directional override, new values have been added to the dir attribute that allow bi-directional override on any element.
+Edit: rather than use explicit ins and del elements to mark changes in a document, an attribute edit may be used on any element for the same purpose.
+Linking: In HTML 3, only a elements could be the source and target of hyperlinks. In HTML 4 and XHTML 1, any element could be the target of a hyperlink, but still only a elements could be the source. In XHTML 2 any element can now also be the source of a hyperlink, since href and its associated attributes may now appear on any element. So for instance, instead of <![CDATA[<li><a href="home.html">Home</a></li>, you can now write <li href="home.html">Home</li>]]>. Even though this means that the a element is now strictly-speaking unnecessary, it has been retained.
+Metadata: the meta and link elements have been generalized, and their relationship to RDF [RDF] described. Furthermore, the attributes on these two elements can be more generally applied across the language.
+Role: in order to aid adding semantics to documents, the role attribute has been added, along with an initial set of useful values, in order to classify the use of a particular element. For instance a paragraph may play the role of a note, and so may be marked up <![CDATA[<p role="note">]]>.
+Events: event handling in HTML was restricted in several ways: since the event names were hard-wired in the language (such as onclick), the only way to add new events was to change the language; many of the events (such as click) were device-specific, rather than referring to the intent of the event (such as activating a link); you could only handle an event in one scripting language — it was not possible to supply event handlers in the same document for several different scripting languages.
+</l></p>
+<p><l>
+XHTML 2 uses XML Events [XMLEVENTS] to specify event handling, giving greater freedom in the ability to handle events. Along with this, the script element has been renamed handler to indicate its different semantics.
+
+Forms: HTML Forms were introduced in 1993, before the advent of the e-commerce revolution. Now with more than a decade of experience with their use, they have been thoroughly overhauled and updated to meet the needs of modern forms, in the shape of XForms [XFORMS], which are an integral part of XHTML 2.
+Ownership where due: since HTML 4 was a standalone application, it defined many things which no longer need to be defined now that it is an XML application. For instance the definitions of whitespace are given by XML for input, and CSS for output; similarly, the definition of values of the media attribute are relegated to the relevant style sheet language.
+Frames and Framesets: In HTML 4 multi-panel "pages" could be described using the frameset and frame elements. The Frames model is no longer defined in XHTML. Instead, if is defined through the separate [XFRAMES] specification.
+</l></p>
+<h>1.3. What are the XHTML 2 Modules?</h>
+<p><l>
+XHTML 2 is a member of the XHTML Family of markup languages. It is an XHTML Host Language as defined in XHTML Modularization. As such, it is made up of a set of XHTML Modules that together describe the elements and attributes of the language, and their content model. XHTML 2 updates many of the modules defined in XHTML Modularization 1.0 [XHTMLMOD], and includes the updated versions of all those modules and their semantics. XHTML 2 also uses modules from Ruby [RUBY], XML Events [XMLEVENTS], and XForms [XFORMS].
+
+The modules defined in this specification are largely extensions of the modules defined in XHTML Modularization 1.0. This specification also defines the semantics of the modules it includes. So, that means that unlike earlier versions of XHTML that relied upon the semantics defined in HTML 4 [HTML4], all of the semantics for XHTML 2 are defined either in this specification or in the specifications that it normatively references.
+
+Even though the XHTML 2 modules are defined in this specification, they are available for use in other XHTML family markup languages. Over time, it is possible that the modules defined in this specification will migrate into the XHTML Modularization specification.
+</l></p>
+<h>1.4. Issues</h>
+<p><l>
+[XHTML2] Spirit of "1.1.3. XHTML 2 and Presentation" PR #7759
+State: Suspended
+Resolution: None
+User: None
+</l></p>
+
+
+</section>
+<p><l>Notes:
+Suspended until last call</l></p>
+</section>
+</article>
+
+<ul>
+<li href="https://www.w3.org/TR/2006/WD-xhtml2-20060726/">XHTML2.0W3C Working Draft 26 July 2006</li>
+</ul>
+</main>
+<footer><l>[previous]   [next]   [table of contents]  [elements]  [attributes]</l></footer>
+</frame>
+<aside id="side-pane"><l>aside</l></aside>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project [
+<!--
+<!ENTITY hoge SYSTEM "">
+-->
+]>
+<project name="sample"
+        basedir=".."
+        xmlns:fx="javafx:com.sun.javafx.tools.ant"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/nandaka-furari/files/master/xml/xsd/v1/ant.xsd"
+        >
+
+        <property name="fhs" value=""/>
+        <!--  -->
+        <property name="fhs.bin" value="${fhs}/bin"/>
+        <property name="fhs.etc" value="${fhs}/etc"/>
+        <property name="fhs.lib" value="${fhs}/lib"/>
+        <property name="fhs.sbin" value="${fhs}/sbin"/>
+        <property name="fhs.opt" value="${fhs}/opt"/>
+        <property name="fhs.dev" value="${fhs}/dev"/>
+        <property name="fhs.media" value="${fhs}/media"/>
+        <property name="fhs.mnt" value="${fhs}/mnt"/>
+        <property name="fhs.srv" value="${fhs}/srv"/>
+        <property name="fhs.tmp" value="${fhs}/tmp"/>
+        <!-- Secondary hierarchy -->
+        <property name="fhs.usr" value="${fhs}/usr"/>
+        <property name="fhs.usr.bin" value="${fhs}/usr/bin"/>
+        <property name="fhs.usr.src" value="${fhs}/usr/src"/>
+        <property name="fhs.usr.lib" value="${fhs}/usr/lib"/>
+        <property name="fhs.usr.share" value="${fhs}/usr/share"/>
+        <property name="fhs.usr.local" value="${fhs}/usr/local"/>
+        <property name="fhs.usr" value="${fhs}/usr"/>
+        <property name="fhs.usr" value="${fhs}/usr"/>
+        <!-- 	Variable data -->
+        <property name="fhs.var" value="${fhs}/var"/>
+        <property name="fhs.var.cache" value="${fhs}/var/cache"/>
+        <property name="fhs.var.lib" value="${fhs}/var/lib"/>
+        <property name="fhs.var.local" value="${fhs}/var/local"/>
+        <property name="fhs.var.log" value="${fhs}/var/log"/>
+        <property name="fhs.var.opt" value="${fhs}/var/opt"/>
+        <property name="fhs.var.tmp" value="${fhs}/var/tmp"/>
+        
+        <target name="build-nandaka_furari-fhs-dir">
+        	<condition></condition>
+        	<mkdir></mkdir>
+        </target>
+</project>

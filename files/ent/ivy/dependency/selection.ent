@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependency org="org.projectlombok" name="lombok" rev="latest.integration" conf="provided"/>
+
+<dependency org="org.slf4j" name="slf4j-api" rev="latest.integration" conf="compile"/>
+<dependency org="ch.qos.logback" name="logback-classic" rev="latest.integration" conf="compile"/>
+<!-- org.apache.commons -->
+<dependency org="org.apache.commons" name="commons-lang3" rev="latest.integration" conf="compile"/>
+<dependency org="org.apache.commons" name="commons-io" rev="latest.integration" conf="compile"/>
+<dependency org="org.apache.commons" name="commons-math3" rev="latest.integration" conf="compile"/>
+<dependency org="org.apache.commons" name="commons-pool2" rev="latest.integration" conf="compile"/>
+
+<dependency org="com.google.guava" name="guava" rev="latest.integration" conf="compile"/>
+
+<dependency org="org.codehaus.groovy" name="groovy-all" rev="latest.integration" conf="compile"/>
+<dependency org="org.scala-lang" name="scala-library" rev="latest.integration" conf="compile"/>
+
+<!-- test -->
+<dependency org="junit" name="junit" rev="latest.integration"/>
+<dependency org="org.hamcrest" name="hamcrest-core" rev="latest.integration"/>
+<dependency org="org.testng" name="testng" rev="latest.integration"/>
+<dependency org="org.easymock" name="easymock" rev="latest.integration"/>
+<dependency org="org.mockito" name="mockito-all" rev="latest.integration"/>
+<dependency org="org.jmock" name="jmock" rev="latest.integration"/>
+<!-- /test -->
+<!--
+<dependency org="" name="" rev="latest.integration"/>
+-->

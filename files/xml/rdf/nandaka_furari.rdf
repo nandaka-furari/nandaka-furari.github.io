@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:lang="ja">
+	<channel rdf:about="http://www.bbwtest.info/~nandaka_furari/index.rdf">
+		<title>ナンダカフラリのウェブサイト</title>
+		<link>http://www.bbwtest.info/~nandaka_furari/</link>
+		<description>このサイトは他のサイトには無い独自の機能を持った掲示板などのウェブサービスを作ることを目指す、個人的かつ実験的なサイトです。私個人の考え方に基づいてこういうのがあればいいなと思う機能を加えて行く予定です。</description>
+		<items>
+			<rdf:Seq>
+				<rdf:li rdf:resource="http://www.bbwtest.info/~nandaka_furari/index.html"></rdf:li>
+				<rdf:li rdf:resource="http://www.bbwtest.info/~nandaka_furari/index.xhtml"></rdf:li>
+				<rdf:li rdf:resource="http://www.bbwtest.info/~nandaka_furari/labo/index.xhtml"></rdf:li>
+				<rdf:li rdf:resource="http://www.bbwtest.info/~nandaka_furari/labo/html5/index.html"></rdf:li>
+				<rdf:li rdf:resource="http://www.bbwtest.info/~nandaka_furari/labo/"></rdf:li>
+			</rdf:Seq>
+		</items>
+	</channel>
+	<item rdf:about="http://www.bbwtest.info/~nandaka_furari/index.html">
+		<title>トップページ</title>
+		<link>http://www.bbwtest.info/~nandaka_furari/labo/index.xhtml</link>
+		<description>ツイッタラーナンダカフラリのサイト。</description>
+	</item>
+	<item rdf:about="http://www.bbwtest.info/~nandaka_furari/labo/index.xhtml">
+		<title>実験室トップ</title>
+		<link>http://www.bbwtest.info/~nandaka_furari/labo/index.xhtml</link>
+		<description>実験室</description>
+	</item>
+	<item rdf:about="http://www.bbwtest.info/~nandaka_furari/labo/html5">
+		<title>HTML5の実験</title>
+		<link>http://www.bbwtest.info/~nandaka_furari/labo/html5</link>
+		<description></description>
+	</item>
+	<item rdf:about="http://www.bbwtest.info/~nandaka_furari/labo/">
+		<title>bbwtest</title>
+		<link>http://www.bbwtest.info/bbwtest/</link>
+		<description>現在停止中</description>
+	</item>
+</rdf:RDF>

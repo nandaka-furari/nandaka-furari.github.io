@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Focus Area News | XML.org -->
+<rules xmlns="http://www.thaiopensource.com/validate/nrl">
+	<!-- XHTML -->
+	<namespace ns="http://relaxng.org/ns/structure/1.0">
+		<!-- v1.0 -->
+		<validate schema="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+	</namespace>
+	<namespace ns="http://relaxng.org/ns/structure/1.0">
+		<validate schema="http://thaiopensource.com/relaxng/relaxng.rng"/>
+	</namespace>
+</rules>

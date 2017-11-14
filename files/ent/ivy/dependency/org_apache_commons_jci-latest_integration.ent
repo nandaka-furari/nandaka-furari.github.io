@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- org.apache.commons jci -->
+<dependency org="org.apache.commons" name="commons-jci" rev="latest.integration"/>
+<dependency org="org.apache.commons" name="commons-jci-core" rev="latest.integreation"/>
+<dependency org="org.apache.commons" name="commons-jci-javac" rev="latest.integration"/>
+<dependency org="org.apache.commons" name="commons-jci-rhino" rev="latest.integration"/>

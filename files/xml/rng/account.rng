@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar ns="http://www.bbwtet.info/ns/accunt" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <define name="account">
+        <element name="account">
+            <attribute name="email">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <empty/>
+        </element>
+    </define>
+    <define name="attlist.account" combine="interleave">
+        <optional>
+        </optional>
+    </define>
+    <define name="attlist.account" combine="interleave">
+        <optional>
+            <attribute name="name"/>
+        </optional>
+    </define>
+    <define name="attlist.account" combine="interleave">
+        <optional>
+            <attribute name="passref">
+                <data type="NMTOKEN"/>
+            </attribute>
+        </optional>
+    </define>
+    <define name="attlist.account" combine="interleave">
+        <optional>
+            <attribute name="ref-email">
+                <data type="NMTOKEN"/>
+            </attribute>
+        </optional>
+    </define>
+    <define name="attlist.account" combine="interleave">
+        <optional>
+            <attribute name="ref-pw">
+                <data type="NMTOKEN"/>
+            </attribute>
+        </optional>
+    </define>
+    <define name="accounts">
+        <element name="accounts">
+            <ref name="attlist.accounts"/>
+            <zeroOrMore>
+                <choice>
+                    <ref name="account"/>
+                    <ref name="accounts"/>
+                    <ref name="accountset"/>
+                    <ref name="emails"/>
+                    <ref name="passwords"/>
+                    <ref name="sites"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="attlist.accounts" combine="interleave">
+        <empty/>
+    </define>
+    <define name="accountset">
+        <element name="accountset">
+            <ref name="attlist.accountset"/>
+            <oneOrMore>
+                <ref name="set"/>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="attlist.accountset" combine="interleave">
+        <empty/>
+    </define>
+    <define name="email">
+        <element name="email">
+            <ref name="attlist.email"/>
+            <text/>
+        </element>
+    </define>
+    <define name="attlist.email" combine="interleave">
+        <attribute name="name">
+            <data type="NMTOKEN"/>
+        </attribute>
+    </define>
+    <define name="attlist.email" combine="interleave">
+        <attribute name="password"/>                     
+    </define>
+    <define name="emails">
+        <element name="emails">
+            <ref name="attlist.emails"/>
+            <oneOrMore>
+                <ref name="email"/>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="attlist.emails" combine="interleave">
+        <empty/>
+    </define>
+    <define name="password">
+        <element name="password">
+            <ref name="attlist.password"/>
+            <text/>
+        </element>
+    </define>
+    <define name="attlist.password" combine="interleave">
+        <optional>
+            <attribute name="name">
+                <data type="NMTOKEN"/>
+            </attribute>
+        </optional>
+    </define>
+    <define name="passwords">
+        <element name="passwords">
+            <ref name="attlist.passwords"/>
+            <oneOrMore>
+                <ref name="password"/>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="attlist.passwords" combine="interleave">
+        <empty/>
+    </define>
+    <define name="refset">
+        <element name="refset">
+            <ref name="attlist.refset"/>
+            <empty/>
+        </element>
+    </define>
+    <define name="attlist.refset" combine="interleave">
+        <attribute name="name"/>
+    </define>
+    <define name="attlist.refset" combine="interleave">
+        <optional>
+            <attribute name="ref-set"/>
+        </optional>
+    </define>
+    <define name="set">
+        <element name="set">
+            <ref name="attlist.set"/>
+            <empty/>
+        </element>
+    </define>
+    <define name="attlist.set" combine="interleave">
+        <attribute name="email"/>
+    </define>
+    <define name="attlist.set" combine="interleave">
+        <attribute name="name">
+            <data type="NMTOKEN"/>
+        </attribute>
+    </define>
+    <define name="attlist.set" combine="interleave">
+        <attribute name="password">
+            <data type="NMTOKEN"/>
+        </attribute>
+    </define>
+    <define name="site">
+        <element name="site">
+            <ref name="attlist.site"/>
+            <zeroOrMore>
+                <ref name="refset"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="attlist.site" combine="interleave">
+        <optional>
+            <attribute name="account">
+                <data type="NMTOKEN"/>
+            </attribute>
+        </optional>
+    </define>
+    <define name="attlist.site" combine="interleave">
+        <attribute name="name"/>
+    </define>
+    <define name="attlist.site" combine="interleave">
+        <optional>
+            <attribute name="password">
+                <data type="NMTOKEN"/>
+            </attribute>
+        </optional>
+    </define>
+    <define name="attlist.site" combine="interleave">
+        <optional>
+            <attribute name="ref-email">
+                <data type="NMTOKEN"/>
+            </attribute>
+        </optional>
+    </define>
+    <define name="attlist.site" combine="interleave">
+        <optional>
+            <attribute name="ref-pw">
+                <data type="NMTOKEN"/>
+            </attribute>
+        </optional>
+    </define>
+    <define name="attlist.site" combine="interleave">
+        <optional>
+            <attribute name="ref-set"/>
+        </optional>
+    </define>
+    <define name="attlist.site" combine="interleave">
+        <optional>
+            <attribute name="refemail">
+                <data type="NMTOKEN"/>
+            </attribute>
+        </optional>
+    </define>
+    <define name="attlist.site" combine="interleave">
+        <optional>
+            <attribute name="refset"/>
+        </optional>
+    </define>
+    <define name="attlist.site" combine="interleave">
+        <optional>
+            <attribute name="site"/>
+        </optional>
+    </define>
+    <define name="sites">
+        <element name="sites">
+            <ref name="attlist.sites"/>
+            <oneOrMore>
+                <ref name="site"/>
+            </oneOrMore>
+            <ref name="account"/>
+        </element>
+    </define>
+    <define name="attlist.sites" combine="interleave">
+        <empty/>
+    </define>
+    <
+    <start>
+        <choice>
+            <ref name="emails"/>
+            <ref name="password"/>
+            <ref name="site"/>
+            <ref name="set"/>
+            <ref name="passwords"/>
+            <ref name="refset"/>
+            <ref name="sites"/>
+            <ref name="accounts"/>
+            <ref name="accountset"/>
+            <ref name="account"/>
+            <ref name="email"/>
+        </choice>
+    </start>
+</grammar>

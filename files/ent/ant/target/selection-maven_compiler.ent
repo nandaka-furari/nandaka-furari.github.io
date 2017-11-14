@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+-->
+<target name="clean">
+    	<delete>
+    		<fileset dir="${classes}"/>
+    	</delete>
+    </target>
+	<target name="compile" depends="resolve">
+		<javac srcdir="${java.src}" >
+		</javac>
+	</target>
+	<target name="test" depends="compile">
+	</target>
+	<target name="package" depends="test">
+	</target>
+	<target name="install">
+	</target>

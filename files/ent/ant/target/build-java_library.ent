@@ -1,0 +1,6 @@
+<!--
+
+-->
+<target name="buildDir">
+    <mkdir></mkdir>
+</target>

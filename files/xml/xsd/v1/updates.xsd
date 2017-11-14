@@ -1,0 +1,44 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<schema
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+        xsi:schemaLocation="http://www.w3.org/2001/XMLSchema http://www.w3.org/2009/XMLSchema/XMLSchema.xsd"
+        xmlns:tns="urn:applocation"
+        targetNamespace="urn:applocation"
+        attributeFormDefault="qualified"
+        elementFormDefault="qualified"
+        xpathDefaultNamespace="tns"
+        version="1.1"
+>
+
+
+    <attributeGroup name="defaultAttrs">
+        <attribute name="id" type="ID"></attribute>
+        <attribute name="includes" type="string"></attribute>
+        <attribute name="includefile" type="string"></attribute>
+        <attribute name="excludes" type="string"></attribute>
+        <attribute name="excludesfile" type="string"></attribute>
+    </attributeGroup>
+
+    <element name="name" type="name">
+        <complexType xs:defaultAttributesApply="false">
+            <sequence>
+                <element name="desc"></element>
+                <choice>
+
+                    <element name="installer"></element>
+                    <element name="update"></element>
+                </choice>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="archive-resources">
+        <complexType defaultAttributesApply="true">
+            <choice>
+                <element ref="name"/>
+            </choice>
+            <attribute name="name" use="required" type="NMTOKEN"/>
+        </complexType>
+    </element>
+</schema>

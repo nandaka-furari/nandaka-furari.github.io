@@ -1,0 +1,58 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:oasis:names:tc:entity:xmlns:xml:catalog ../xsd/xmlcatalog.xsd">
+	<group prefer="system" xml:base="http://xmlns.jcp.org/xml/ns/j2ee/">
+		<uri name="application_1_4.xsd" uri="application_1_4.xsd"/>
+		<uri name="application-client_1_4.xsd" uri="application-client_1_4.xsd"/>
+		<uri name="connector_1_5.xsd" uri="connector_1_5.xsd"/>
+		<uri name="ejb-jar_2_1.xsd" uri="ejb-jar_2_1.xsd"/>
+		<uri name="j2ee_1_4.xsd" uri="j2ee_1_4.xsd"/>
+		<uri name="j2ee_jaxrpc_mapping_1_1.xsd" uri="j2ee_jaxrpc_mapping_1_1.xsd"/>
+		<uri name="j2ee_web_services_1_1.xsd" uri="j2ee_web_services_1_1.xsd"/>
+		<uri name="j2ee_web_services_client_1_1.xsd" uri="j2ee_web_services_client_1_1.xsd"/>
+		<uri name="jsp_2_0.xsd" uri="jsp_2_0.xsd"/>
+		<uri name="web-app_2_4.xsd" uri="web-app_2_4.xsd"/>
+		<uri name="web-jsptaglibrary_2_0.xsd" uri="web-jsptaglibrary_2_0.xsd"/>
+	</group>
+
+	<group prefer="system" xml:base="http://xmlns.jcp.org/xml/ns/javaee/">
+		<uri name="application_5.xsd" uri="application_5.xsd"/>
+		<uri name="application_6.xsd" uri="application_6.xsd"/>
+		<uri name="application-client_5.xsd" uri="application-client_5.xsd"/>
+		<uri name="application-client_6.xsd" uri="application-client_6.xsd"/>
+		<uri name="beans_1_0.xsd" uri="beans_1_0.xsd"/>
+		<uri name="connector_1_6.xsd" uri="connector_1_6.xsd"/>
+		<uri name="ejb-jar_3_0.xsd" uri="ejb-jar_3_0.xsd"/>
+		<uri name="ejb-jar_3_1.xsd" uri="ejb-jar_3_1.xsd"/>
+		<uri name="ejb-jar_3_2.xsd" uri="ejb-jar_3_2.xsd"/>
+		<uri name="javaee_5.xsd" uri="javaee_5.xsd"/>
+		<uri name="javaee_6.xsd" uri="javaee_6.xsd"/>
+		<uri name="javaee_web_services_1_2.xsd" uri="javaee_web_services_1_2.xsd"/>
+		<uri name="javaee_web_services_1_3.xsd" uri="javaee_web_services_1_3.xsd"/>
+		<uri name="javaee_web_services_client_1_2.xsd" uri="javaee_web_services_client_1_2.xsd"/>
+		<uri name="javaee_web_services_1_3.xsd" uri="javaee_web_services_1_3.xsd"/>
+		<uri name="jsp_2_1.xsd" uri="jsp_2_1.xsd"/>
+		<uri name="jsp_2_2.xsd" uri="jsp_2_2.xsd"/>
+		<uri name="orm_1_0.xsd" uri="orm_1_0.xsd"/>
+		<uri name="orm_2_0.xsd" uri="orm_2_0.xsd"/>
+		<uri name="persistence_1_0.xsd" uri="persistence_1_0.xsd"/>
+		<uri name="persistence_2_0.xsd" uri="persistence_2_0.xsd"/>
+		<uri name="web-app_2_5.xsd" uri="web-app_2_5.xsd"/>
+		<uri name="web-app_3_0.xsd" uri="web-app_3_0.xsd"/>
+		<uri name="web-common_3_0.xsd" uri="web-common_3_0.xsd"/>
+		<uri name="web-facelettaglibrary_2_0.xsd" uri="web-facelettaglibrary_2_0.xsd"/>
+		<uri name="web-facesconfig_1_2.xsd" uri="web-facesconfig_1_2.xsd"/>
+		<uri name="web-facesconfig_2_0.xsd" uri="web-facesconfig_2_0.xsd"/>
+		<uri name="web-facesuicomponent_2_0.xsd" uri="web-facesuicomponent_2_0.xsd"/>
+		<uri name="web-fragment_3_0.xsd" uri="web-fragment_3_0.xsd"/>
+		<uri name="web-facesuicomponent_2_0.xsd" uri="web-facesuicomponent_2_0.xsd"/>
+		<uri name="web-jsptaglibrary_2_0.xsd" uri="web-jsptaglibrary_2_0.xsd"/>
+		<uri name="web-partialresponse_2_0.xsd" uri="web-partialresponse_2_0.xsd"/>
+		<uri name="" uri=""/>
+		<uri name="" uri=""/>
+		<uri name="" uri=""/>
+		<uri name="" uri=""/>
+		<uri name="" uri=""/>
+	</group>
+</catalog>

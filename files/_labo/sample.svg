@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+         "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="600" height="315" color="red">
+    <defs>
+     	<circle id="black_circle" r="60" fill="rgb(0,0,0)" />
+     	<g id="green_path">
+     		<path d="m 0,0 80,20 15,150 z" fill="rgb(50,208,50)" stroke="black" stroke-width="1px"/>
+     	</g>
+     	<rect id="red_rect" height="150" width="200" fill="rgb(208,50,50)" />
+     	<polyline id="pol" points="400,100 200,100 100,50" fill="rgb(50,208,50)"></polyline>
+    </defs>
+	<use x="100" y="200" xlink:href="#black_circle" />
+	<use x="380" y="80" xlink:href="#red_rect" />
+	<use x="10" y="20" xlink:href="#pol" />
+	<use x="90" y="80" xlink:href="#green_path"/>
+</svg>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://www.thaiopensource.com/validate/nrl">
+	
+	<namespace ns="urn:oasis:names:tc:opendocument:xmlns:chart:1.0"></namespace>
+	<namespace ns="urn:oasis:names:tc:opendocument:xmlns:config:1.0"></namespace>
+	<namespace ns="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0"></namespace>
+	<namespace ns="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0"></namespace>
+	<namespace ns="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0"></namespace>
+	<namespace ns="urn:oasis:names:tc:opendocument:xmlns:form:1.0"></namespace>
+	<namespace ns="urn:oasis:names:tc:opendocument:xmlns:meta:1.0"></namespace>
+	<namespace ns="urn:oasis:names:tc:opendocument:xmlns:of:1.2"></namespace>
+	<namespace ns="urn:oasis:names:tc:opendocument:xmlns:office:1.0"></namespace>
+	<namespace ns="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0"></namespace>
+	<namespace ns="urn:oasis:names:tc:opendocument:xmlns:script:1.0"></namespace>
+	<namespace ns="urn:oasis:names:tc:opendocument:xmlns:style:1.0"></namespace>
+	<namespace ns="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0"></namespace>
+	<namespace ns="urn:oasis:names:tc:opendocument:xmlns:text:1.0"></namespace>
+	<namespace ns="urn:oasis:names:tc:opendocument:xmlns:table:1.0"></namespace>
+	<namespace ns="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0"></namespace>
+	
+	<namespace ns="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0"></namespace>
+	
+	<namespace ns="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0"></namespace>
+	<namespace ns="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0"></namespace>
+	
+	<namespace ns="http://openoffice.org/2004/office"></namespace>
+	<namespace ns="http://openoffice.org/2004/writer"></namespace>
+	<namespace ns="http://openoffice.org/2004/calc"></namespace>
+	<namespace ns="http://openoffice.org/2005/report"></namespace>
+	
+	<namespace ns=""></namespace>
+	<namespace ns=""></namespace>
+</rules>

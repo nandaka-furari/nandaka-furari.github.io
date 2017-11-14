@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/2002/06/xhtml2/" xmlns:framexs="urn:framexs">
+	<head>
+		<title>テンプレート</title>
+		<source type="application/ecmascript" uri="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"/>	
+		<source type="text/css" uri="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"/>
+		<source type="application/ecmascript" uri="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"/>
+	</head>
+	<body>
+		<frame class="container">
+			<header id="header" class="row">
+				<div framexs:pull="header"></div>
+			</header>
+			<main class="col-md-8">
+				<div framexs:element="main"></div>
+				<div framexs:if="#hoge">
+					<div framexs:if="#test">
+						<p></p>
+						<div framexs:pull="#test" framexs:if=""></div>
+					</div>
+				</div>
+				<div framexs:for="#list">
+					<div framexs:target=""></div>
+					<div><span framexs:target=".cls .di"></span></div>
+				</div>
+			</main>
+			<frame class="row">
+				
+			</frame>
+		</frame>
+		<aside>
+			<p>傍コンテンツ</p>
+			<h3>テンプレ</h3>
+			<div></div>
+			<h3></h3>
+			<div>
+
+			</div>
+		</aside>
+	</body>
+</html>

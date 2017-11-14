@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ivyのdependencyテンプレート
+Java EE用
+-->
+<dependency org="javax" name="javaee-web-api" rev="7.0"/>
+<dependency org="org.primefaces" name="primefaces" rev="latest.integration"/>
+<dependency org="com.fasterxml.jackson.jaxrs" name="jackson-jaxrs-json-provider" rev="latest.integration"/>
+<dependency org="org.eclipse.persistence" name="org.eclipse.persistence.jpa.modelgen.processor" rev="latest.integration"/>
+<dependency org="org.jboss.arquillian.junit" name="arquillian-junit-container" rev="latest.integration"/>
+<dependency org="org.glassfish.jersey.test-framework.providers" name="jersey-test-framework-provider-grizzly2" rev="latest.integration"/>
+<dependency org="com.sun.faces" name="jsf-impl" rev="latest.integration"/>
+org.seleniumhq.selenium selenium-java
+<!--
+<dependency org="" name="" rev="latest.integration"/>
+-->

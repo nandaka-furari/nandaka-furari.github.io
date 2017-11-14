@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:oasis:names:tc:entity:xmlns:xml:catalog ../xsd/xmlcatalog.xsd">
+	<!-- http://jboss.org/xml/ns/javax/validation/configuration -->
+	<group prefer="system" xml:base="http://www.jboss.org/xml/ns/javax/validation/configuration/">
+		<uri name="validation-configuration-1.0.xsd" uri="validation-configuration-1.0.xsd"/>
+		<uri name="validation-configuration-1.1.xsd" uri="validation-configuration-1.1.xsd"/>
+	</group>
+	<!-- http://jboss.org/xml/ns/javax/validation/mapping -->
+	<group prefer="system" xml:base="http://www.jboss.org/xml/ns/javax/validation/mapping/">
+		<uri name="validation-mapping-1.0.xsd" uri="validation-mapping-1.0.xsd"/>
+		<uri name="validation-mapping-1.1.xsd" uri="validation-mapping-1.1.xsd"/>
+	</group>
+</catalog>

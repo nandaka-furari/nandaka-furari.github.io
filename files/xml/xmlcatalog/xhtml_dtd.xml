@@ -1,0 +1,55 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:oasis:names:tc:entity:xmlns:xml:catalog ../xsd/xmlcatalog.xsd">
+	<!-- <public publicId="-//Company//Entity ID//EN" uri="file:/path/entity.dtd"/> 
+		<uri name="http://org.company/xml/schemas" uri="file:/path/schema.xsd"/> 
+		<system systemId="http://org.company/xml/schemas/schema.xsd" uri="file:/path/schema.xsd"/> -->
+	<public publicId="-//W3C//DTD XHTML 1.0 Strict//EN" uri="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+	<public publicId="-//W3C//DTD XHTML 1.0 Transitional//EN" uri="dtd/xhtml1/xhtml1-transitional.dtd"/>
+	<public publicId="-//W3C//DTD XHTML 1.1//EN" uri="dtd/xhtml11/xhtml11-flat.dtd"/>
+	<!-- W3C XML 1.0 Recommendation -->
+	<public publicId="ISO 8879:1986//NOTATION Formal Public Identifier//EN" uri=""/>
+	<!-- SGML Formal Public Identifiers -->
+	<public publicId="ISO 8879//NOTATION Extensible Markup Language (XML) 1.0//EN" uri=""/>
+
+	<!-- 
+	http://www.w3.org/TR/2010/REC-xhtml-modularization-20100729/schema_module_defs.html#a_character_entities
+	-->
+	<!-- XML 1.0 CDATA -->
+	<public publicId="-//W3C//NOTATION XML 1.0: CDATA//EN" uri=""/>
+	<!-- a single character, as per section 2.2 of [XML] -->
+	<public publicId="-//W3C//NOTATION XHTML Datatype: Character//EN" uri=""/>
+	<!-- a character encoding, as per [RFC2045] -->
+	<public publicId="-//W3C//NOTATION XHTML Datatype: Charset//EN" uri=""/>
+	<!-- a space separated list of character encodings, as per [RFC2045] -->
+	<public publicId="-//W3C//NOTATION XHTML Datatype: Charsets//EN" uri=""/>
+	<!-- a space separated list of character encodings, as per [RFC2045] -->
+	<public publicId="-//W3C//NOTATION XHTML Datatype: ContentType//EN" uri=""/>
+	<!-- media type, as per [RFC2045] -->
+	<public publicId="-//W3C//NOTATION XHTML Datatype: ContentType//EN" uri=""/>
+	<!-- comma-separated list of media types, as per [RFC2045] -->
+	<public publicId="-//W3C//NOTATION XHTML Datatype: ContentTypes//EN" uri=""/>
+	<!-- date and time information. ISO date format -->
+	<public publicId="-//W3C//NOTATION XHTML Datatype: Datetime//EN" uri=""/>
+	<!-- a language code, as per [RFC3066] -->
+	<public publicId="-//W3C//NOTATION XHTML Datatype: LanguageCode//EN" uri=""/>
+	<!-- single or comma-separated list of media descriptors -->
+	<public publicId="-//W3C//NOTATION XHTML Datatype: MediaDesc//EN" uri=""/>
+	<!-- nn for pixels or nn% for percentage length -->
+	<public publicId="-//W3C//NOTATION XHTML Datatype: Length//EN" uri=""/>
+	<!-- pixel, percentage, or relative -->
+	<public publicId="-//W3C//NOTATION XHTML Datatype: MultiLength//EN" uri=""/>
+	<!-- space-separated list of link types -->
+	<public publicId="-//W3C//NOTATION XHTML Datatype: LinkTypes//EN" uri=""/>
+	<!-- script expression -->
+	<public publicId="-//W3C//NOTATION XHTML Datatype: Script//EN" uri=""/>
+	<!-- textual content -->
+	<public publicId="-//W3C//NOTATION XHTML Datatype: Text//EN" uri=""/>
+	<!-- one or more digits (NUMBER) -->
+	<public publicId="-//W3C//NOTATION XHTML Datatype: Number//EN" uri=""/>
+	<!-- a Uniform Resource Identifier, see [URI] -->
+	<public publicId="-//W3C//NOTATION XHTML Datatype: URI//EN" uri=""/>
+	<!-- a space-separated list of Uniform Resource Identifiers, see [URI] -->
+	<public publicId="-//W3C//NOTATION XHTML Datatype: URIs//EN" uri=""/>
+</catalog>

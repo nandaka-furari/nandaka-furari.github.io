@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar ns="http://www.bbwtest.info/ns/env" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<define name="system-variables">
+		<element name="system-variables">
+			<ref name="env"/>
+			<attribute name="os"></attribute>
+		</element>
+	</define>
+	<define name="env">
+		<element name="env">
+			<ref name="attlist.env"/>
+			<ref name="user"/>
+			<ref name="system"/>
+		</element>
+	</define>
+	<define name="system">
+		<element name="system">
+			<ref name="attlist.system"/>
+			<oneOrMore>
+				<ref name="variable"/>
+			</oneOrMore>
+		</element>
+	</define>
+	<define name="attlist.system" combine="interleave">
+		<empty/>
+	</define>
+	<define name="attlist.system-variables" combine="interleave">
+		<empty/>
+	</define>
+	<define name="user">
+		<element name="user">
+			<ref name="attlist.user"/>
+			<oneOrMore>
+				<ref name="variable"/>
+			</oneOrMore>
+		</element>
+	</define>
+	<define name="attlist.user" combine="interleave">
+		<attribute name="name">
+			<data type="NMTOKEN"/>
+		</attribute>
+	</define>
+	<define name="li">
+				<element name="li" ns="rdf">
+					<choice>
+						<element></element>
+						<text></text>
+					</choice>
+				</element>
+	</define>
+	<define name="Seq">
+		<element name="Seq" ns="rdf">
+			<zeroOrMore>
+			</zeroOrMore>
+		</element>
+	</define>
+	<define name="variable">
+		<element name="variable">
+			<ref name="attlist.variable"/>
+			<choice>
+            	
+				<text></text>
+			</choice>
+		</element>
+	</define>
+	<define name="attlist.variable" combine="interleave">
+		<attribute name="name"/>
+		<attribute name="type">
+			<data type="NMTOKEN"/>
+		</attribute>
+	</define>
+	<start>
+		<choice>
+			<ref name="system-variables"/>
+		</choice>
+	</start>
+</grammar>

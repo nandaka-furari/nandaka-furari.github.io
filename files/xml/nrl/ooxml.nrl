@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+http://www.ecma-international.org/publications/standards/Ecma-376.htm
+-->
+<rules xmlns="http://www.thaiopensource.com/validate/nrl">
+	<namespace ns="http://schemas.openxmlformats.org/package/2006/relationships"></namespace>
+	<namespace ns="http://schemas.openxmlformats.org/package/2006/metadata/core-properties"></namespace>
+	<namespace ns="http://schemas.openxmlformats.org/package/2006/content-types"></namespace>
+	
+	<namespace ns="http://schemas.openxmlformats.org/officeDocument/2006/customXml"></namespace>
+	<namespace ns="http://schemas.openxmlformats.org/officeDocument/2006/bibliography"></namespace>
+	<namespace ns="http://schemas.openxmlformats.org/officeDocument/2006/relationships"></namespace>
+	
+	<namespace ns="http://schemas.openxmlformats.org/markup-compatibility/2006"></namespace>
+	
+	<namespace ns="http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing"></namespace>
+	<namespace ns="http://schemas.openxmlformats.org/drawingml/2006/main"></namespace>
+	
+	<namespace ns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"></namespace>
+	<namespace ns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"></namespace>
+</rules>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!--
+
+        -->
+
+<mkdir dir="${src.desktop}"/>
+<mkdir dir="${src.embedded}"/>
+<mkdir dir="${src.ios}"/>
+<mkdir dir="${src.android}"/>
+<mkdir dir="${webapp}"/>
+

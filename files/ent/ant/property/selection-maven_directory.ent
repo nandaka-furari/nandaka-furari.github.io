@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+<property name="" value=""/>
+Mavenのディレクトリ
+-->    
+
+<property name="java.src" value="src/main/java"/>
+<property name="resources" value="src/main/resources"/>
+<property name="webapp" value="src/main/webapp"/>
+<property name="filters" value="src/main/filters"/>
+
+<property name="java.test" value="src/test/java"/>
+<property name="resources.test" value="src/test/resources"/>
+<property name="filters.test" value="src/test/filters"/>
+
+<property name="assembly" value="src/assembly"/>
+<property name="site" value="src/site"/>
+<property name="it" value="src/it"/>
+
+<property name="target" value="target"/>
+<property name="classes" value="target/classes"/>
+<property name="test-classes" value="target/test-classes"/>
+

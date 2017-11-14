@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>org.netbeans.modules.ant.freeform</type>
+    <configuration>
+        <general-data xmlns="http://www.netbeans.org/ns/freeform-project/1">
+            <name>files</name>
+        </general-data>
+        <general-data xmlns="http://www.netbeans.org/ns/freeform-project/2">
+            <!-- このファイルを手動で編集する場合、プロジェクト・プロパティ・カスタマイザを使用しないでください。
+カスタマイザが表示されないようにするには、nbproject/project.propertiesファイルを作成し、
+auxiliary.show.customizer=falseプロパティ
+をそこに入力します。
+auxiliary.show.customizer.message=<message>
+を追加すると、他のユーザーがカスタマイザを開こうとしたときに、カスタマイズされたメッセージが表示されます。 -->
+            <name>files</name>
+            <properties/>
+            <folders>
+                <source-folder>
+                    <label>files</label>
+                    <location>.</location>
+                    <encoding>UTF-8</encoding>
+                </source-folder>
+            </folders>
+            <ide-actions/>
+            <view>
+                <items>
+                    <source-file>
+                        <location>build.xml</location>
+                    </source-file>
+                </items>
+                <context-menu/>
+            </view>
+        </general-data>
+        <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/1"/>
+    </configuration>
+</project>

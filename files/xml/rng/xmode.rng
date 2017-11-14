@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Syntax tokens -->
+<grammar ns="http://jedit.org/ns/xmode" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+         xmlns="http://relaxng.org/ns/structure/1.0">
+    <define name="tokens">
+        <choice>
+            <value>NULL</value>
+            <value>COMMENT1</value>
+            <value>COMMENT2</value>
+            <value>LITERAL1</value>
+            <value>LITERAL2</value>
+            <value>LABEL</value>
+            <value>KEYWORD1</value>
+            <value>KEYWORD2</value>
+            <value>KEYWORD3</value>
+            <value>FUNCTION</value>
+            <value>MARKUP</value>
+            <value>OPERATOR</value>
+            <value>DIGIT</value>
+            <value>INVALID</value>
+        </choice>
+    </define>
+    <!-- Entities for attributes shared by multiple rules -->
+
+    <define name="att-type">
+        <optional>
+            <attribute name="TYPE" a:defaultValue="NULL">
+                <ref name="tokens"/>
+            </attribute>
+        </optional>
+    </define>
+    <define name="att-at-line-start">
+        <optional>
+            <attribute name="AT_LINE_START" >
+                <ref name="att-bool"/>
+            </attribute>
+        </optional>
+    </define>
+    <define name="att-exclude-match">
+        <optional>
+            <attribute name="EXCLUDE_MATCH" a:defaultValue="FALSE">
+                <ref name="att-bool"/>
+            </attribute>
+        </optional>
+    </define>
+    <!-- MODE element -->
+    <define name="MODE">
+        <element name="MODE">
+            <ref name="attlist-MODE"/>
+            <optional>
+                <ref name="PROPS"/>
+            </optional>
+            <zeroOrMore>
+                <ref name="RULES"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="attlist-MODE" combine="interleave">
+        <empty/>
+    </define>
+    <!-- MODE children -->
+    <!-- PROPS element -->
+    <define name="PROPS">
+        <element name="PROPS">
+            <ref name="attlist-PROPS"/>
+            <oneOrMore>
+                <ref name="PROPERTY"/>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="attlist-PROPS" combine="interleave">
+        <empty/>
+    </define>
+    <!-- PROPS children -->
+    <define name="PROPERTY">
+        <element name="PROPERTY">
+            <ref name="attlist-PROPERTY"/>
+            <empty/>
+        </element>
+    </define>
+    <define name="attlist-PROPERTY" combine="interleave">
+        <attribute name="NAME"/>
+        <attribute name="VALUE"/>
+    </define>
+    <!-- RULES element -->
+    <define name="RULES">
+        <element name="RULES">
+            <ref name="attlist-RULES"/>
+            <optional>
+                <ref name="PROPS"/>
+            </optional>
+            <zeroOrMore>
+                <choice>
+                    <ref name="TERMINATE"/>
+                    <ref name="WHITESPACE"/>
+                    <ref name="SPAN"/>
+                    <ref name="EOL_SPAN"/>
+                    <ref name="MARK_PREVIOUS"/>
+                    <ref name="MARK_FOLLOWING"/>
+                    <ref name="SEQ"/>
+                </choice>
+            </zeroOrMore>
+            <optional>
+                <ref name="KEYWORDS"/>
+            </optional>
+        </element>
+    </define>
+    <!-- RULES attributes -->
+    <define name="attlist-RULES" combine="interleave">
+        <optional>
+            <attribute name="IGNORE_CASE" a:defaultValue="FALSE">
+                <ref name="att-bool"/>
+            </attribute>
+        </optional>
+        <optional>
+            <attribute name="HIGHLIGHT_DIGITS" a:defaultValue="FALSE">
+                <ref name="att-bool"/>
+            </attribute>
+        </optional>
+        <optional>
+            <attribute name="SET" a:defaultValue="MAIN"/>
+        </optional>
+        <optional>
+            <attribute name="ESCAPE"/>
+        </optional>
+        <optional>
+            <attribute name="DEFAULT" a:defaultValue="NULL">
+                <ref name="tokens"/>
+            </attribute>
+        </optional>
+    </define>
+    <!-- RULES children -->
+    <!-- TERMINATE element -->
+    <define name="TERMINATE">
+        <element name="TERMINATE">
+            <ref name="attlist-TERMINATE"/>
+            <empty/>
+        </element>
+    </define>
+    <!-- TERMINATE attributes -->
+    <define name="attlist-TERMINATE" combine="interleave">
+        <attribute name="AT_CHAR"/>
+    </define>
+    <!-- WHITESPACE element -->
+    <define name="WHITESPACE">
+        <element name="WHITESPACE">
+            <ref name="attlist-WHITESPACE"/>
+            <text/>
+        </element>
+    </define>
+    <define name="attlist-WHITESPACE" combine="interleave">
+        <empty/>
+    </define>
+    <!-- SPAN element -->
+    <define name="SPAN">
+        <element name="SPAN">
+            <ref name="attlist-SPAN"/>
+            <ref name="BEGIN"/>
+            <ref name="END"/>
+        </element>
+    </define>
+    <!-- SPAN attributes -->
+    <define name="attlist-SPAN" combine="interleave">
+        <ref name="att-type"/>
+        <ref name="att-at-line-start"/>
+        <ref name="att-exclude-match"/>
+        <optional>
+            <attribute name="NO_LINE_BREAK" a:defaultValue="FALSE">
+                <ref name="att-bool"/>
+            </attribute>
+        </optional>
+        <optional>
+            <attribute name="NO_WORD_BREAK" a:defaultValue="FALSE">
+                <ref name="att-bool"/>
+            </attribute>
+        </optional>
+        <optional>
+            <attribute name="DELEGATE"/>
+        </optional>
+    </define>
+    <!-- SPAN children -->
+    <define name="BEGIN">
+        <element name="BEGIN">
+            <ref name="attlist-BEGIN"/>
+            <text/>
+        </element>
+    </define>
+    <define name="attlist-BEGIN" combine="interleave">
+        <empty/>
+    </define>
+    <define name="END">
+        <element name="END">
+            <ref name="attlist-END"/>
+            <text/>
+        </element>
+    </define>
+    <define name="attlist-END" combine="interleave">
+        <empty/>
+    </define>
+    <!-- EOL_SPAN element -->
+    <define name="EOL_SPAN">
+        <element name="EOL_SPAN">
+            <ref name="attlist-EOL_SPAN"/>
+            <text/>
+        </element>
+    </define>
+    <!-- EOL_SPAN attributes -->
+    <define name="attlist-EOL_SPAN" combine="interleave">
+        <ref name="att-type"/>
+        <ref name="att-at-line-start"/>
+        <ref name="att-exclude-match"/>
+    </define>
+    <!-- MARK_PREVIOUS element -->
+    <define name="MARK_PREVIOUS">
+        <element name="MARK_PREVIOUS">
+            <ref name="attlist-MARK_PREVIOUS"/>
+            <text/>
+        </element>
+    </define>
+    <!-- MARK_PREVIOUS attributes -->
+    <define name="attlist-MARK_PREVIOUS" combine="interleave">
+        <ref name="att-type"/>
+        <ref name="att-at-line-start"/>
+        <ref name="att-exclude-match"/>
+    </define>
+    <!-- MARK_FOLLOWING element -->
+    <define name="MARK_FOLLOWING">
+        <element name="MARK_FOLLOWING">
+            <ref name="attlist-MARK_FOLLOWING"/>
+            <text/>
+        </element>
+    </define>
+    <!-- MARK_FOLLOWING attributes -->
+    <define name="attlist-MARK_FOLLOWING" combine="interleave">
+        <ref name="att-type"/>
+        <ref name="att-at-line-start"/>
+        <ref name="att-exclude-match"/>
+    </define>
+    <!-- SEQ element -->
+    <define name="SEQ">
+        <element name="SEQ">
+            <ref name="attlist-SEQ"/>
+            <text/>
+        </element>
+    </define>
+    <!-- SEQ attributes -->
+    <define name="attlist-SEQ" combine="interleave">
+        <ref name="att-type"/>
+        <ref name="att-at-line-start"/>
+    </define>
+    <!-- KEYWORDS element -->
+    <define name="KEYWORDS">
+        <element name="KEYWORDS">
+            <ref name="attlist-KEYWORDS"/>
+            <oneOrMore>
+                <choice>
+                    <ref name="NULL"/>
+                    <ref name="comment"/>
+                    <ref name="literal"/>
+                    <ref name="LABEL"/>
+                    <ref name="keyword"/>
+                    <ref name="FUNCTION"/>
+                    <ref name="MARKUP"/>
+                    <ref name="OPERATOR"/>
+                    <ref name="DIGIT"/>
+                    <ref name="INVALID"/>
+                </choice>
+            </oneOrMore>
+        </element>
+    </define>
+    <!-- KEYWORDS attributes -->
+    <define name="attlist-keyword" combine="interleave">
+        <optional>
+            <attribute name="IGNORE_CASE" a:defaultValue="FALSE">
+                <ref name="att-bool"/>
+            </attribute>
+        </optional>
+        <attribute name="number"></attribute>
+    </define>
+    <define name="attlist-comment" combine="interleave">
+        <optional>
+            <attribute name="IGNORE_CASE" a:defaultValue="FALSE">
+                <ref name="att-bool"/>
+            </attribute>
+        </optional>
+    </define>
+    <define name="attlist-literal" combine="interleave">
+        <optional>
+            <attribute name="IGNORE_CASE" a:defaultValue="FALSE">
+                <ref name="att-bool"/>
+            </attribute>
+        </optional>
+    </define>
+    <!-- KEYWORDS children -->
+    <define name="NULL">
+        <element name="NULL">
+            <ref name="attlist-NULL"/>
+            <text/>
+        </element>
+    </define>
+    <define name="attlist-NULL" combine="interleave">
+        <empty/>
+    </define>
+    <define name="comment">
+        <element name="comment">
+            <ref name="attlist-comment"/>
+            <text/>
+        </element>
+    </define>
+    <define name="literal">
+        <element name="literal">
+            <ref name="attlist-LITERAL1"/>
+            <text/>
+        </element>
+    </define>
+    <define name="LABEL">
+        <element name="LABEL">
+            <ref name="attlist-LABEL"/>
+            <text/>
+        </element>
+    </define>
+    <define name="attlist-LABEL" combine="interleave">
+        <empty/>
+    </define>
+    <define name="FUNCTION">
+        <element name="FUNCTION">
+            <ref name="attlist-FUNCTION"/>
+            <text/>
+        </element>
+    </define>
+    <define name="attlist-FUNCTION" combine="interleave">
+        <empty/>
+    </define>
+    <define name="MARKUP">
+        <element name="MARKUP">
+            <ref name="attlist-MARKUP"/>
+            <text/>
+        </element>
+    </define>
+    <define name="attlist-MARKUP" combine="interleave">
+        <empty/>
+    </define>
+    <define name="OPERATOR">
+        <element name="OPERATOR">
+            <ref name="attlist-OPERATOR"/>
+            <text/>
+        </element>
+    </define>
+    <define name="attlist-OPERATOR" combine="interleave">
+        <empty/>
+    </define>
+    <define name="DIGIT">
+        <element name="DIGIT">
+            <ref name="attlist-DIGIT"/>
+            <text/>
+        </element>
+    </define>
+    <define name="attlist-DIGIT" combine="interleave">
+        <empty/>
+    </define>
+    <define name="INVALID">
+        <element name="INVALID">
+            <ref name="attlist-INVALID"/>
+            <text/>
+        </element>
+    </define>
+    <define name="attlist-INVALID" combine="interleave">
+        <empty/>
+    </define>
+    <start>
+        <choice>
+            <ref name="MODE"/>
+        </choice>
+    </start>
+</grammar>

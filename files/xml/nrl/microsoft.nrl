@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+http://www.ecma-international.org/publications/standards/Ecma-376.htm
+-->
+<rules xmlns="http://www.thaiopensource.com/validate/nrl">
+	<namespace ns="http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac"></namespace>
+	<namespace ns="http://schemas.microsoft.com/office/mac/excel/2008/main"></namespace>
+	<namespace ns="http://schemas.microsoft.com/office/word/2010/wordml"></namespace>
+	<namespace ns="http://schemas.microsoft.com/office/word/2012/wordml"></namespace>
+
+</rules>

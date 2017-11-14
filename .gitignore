@@ -1,0 +1,15 @@
+lib/
+framexs/node_modules/
+files/node_modules/
+.dest/
+.ignore/
+files.iml
+/.nb-gradle/
+.properties
+*~
+*.log
+electron/node_modules/
+.dest/
+.project
+
+*~

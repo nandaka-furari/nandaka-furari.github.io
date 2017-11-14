@@ -1,0 +1,2 @@
+<!ENTITY nandakafurari-ivy-dependency-selection SYSTEM "https://raw.githubusercontent.com/nandaka-furari/files/master/ent/ivy/ivy-dependency-selection.ent">
+<!ENTITY nandakafurari-ivy-dependency-selection-web SYSTEM "https://raw.githubusercontent.com/nandaka-furari/files/master/ent/ivy/ivy-dependency-web-selection.ent">

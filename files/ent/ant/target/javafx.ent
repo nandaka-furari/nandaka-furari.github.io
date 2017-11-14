@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- tio dependas   -->
+<target name="default">
+        <taskdef resource="com/sun/javafx/tools/ant/antlib.xml"      
+                uri="javafx:com.sun.javafx.tools.ant"
+                classpath=".:path/to/sdk/lib/ant-javafx.jar"/>    
+</target>
+<taskdef resource="com/sun/javafx/tools/ant/antlib.xml"      
+        uri="javafx:com.sun.javafx.tools.ant"
+        classpath="${javafx.lib.ant-javafx.jar}"/>
+ 
+<fx:application id="sampleApp"
+        name="Some sample app"
+        mainClass="test.MyApplication"
+        preloaderClass="testpreloader.Preloader"
+        fallbackClass="test.UseMeIfNoFX"/>
+        <!-- This application has a preloader class -->
+<fx:resources id="appRes">
+    <fx:fileset dir="dist" requiredFor="preloader"
+            includes="mypreloader.jar"/>      
+    <fx:fileset dir="dist" includes="myapp.jar"/>
+</fx:resources> 
+        
+<fx:jar destfile="dist/myapp.jar">
+    <!-- Define what to launch -->
+    <fx:application refid="sampleApp"/>
+ 
+    <!-- Define what classpath to use -->
+    <fx:resources refid="appRes"/>
+            
+    <manifest>
+        <attribute name="Implementation-Vendor"
+                value="${application.vendor}"/>
+        <attribute name="Implementation-Title"
+                value="${application.title}"/>
+        <attribute name="Implementation-Version" value="1.0"/>
+    </manifest>
+ 
+    <!-- Define what files to include -->
+    <fileset dir="${build.classes.dir}"/>
+</fx:jar>
+ 
+<fx:signjar keyStore="${basedir}/sample.jks" destdir="dist"
+        alias="javafx" storePass="****" keyPass="****">
+    <fileset dir='dist/*.jar'/>
+</fx:signjar>
+ 
+<fx:deploy width="${applet.width}" height="${applet.height}"
+        outdir="${basedir}/${dist.dir}" embedJNLP="true"
+        outfile="${application.title}">
+
+    <fx:application refId="sampleApp"/>
+ 
+    <fx:resources refid="appRes"/>            
+ 
+    <fx:info title="Sample app: ${application.title}"
+            vendor="${application.vendor}"/>
+ 
+    <!-- Request elevated permissions -->
+    <fx:permissions elevated="true"/>            
+</fx:deploy>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+        2012-02-04
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.bbwtest.info/schema/2011/container3/" xmlns:h="http://www.w3.org/2002/06/xhtml2/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:jaxws="http://java.sun.com/xml/ns/jaxws" targetNamespace="http://www.bbwtest.info/schema/2011/container3/" elementFormDefault="qualified" xml:lang="ja" jaxb:version="2.1" version="1.0">
+	<annotation>
+		<documentation>このサイトで使う記事、コメントの設計。</documentation>
+	</annotation>
+	<import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2009/01/xml.xsd"/>
+	<import namespace="http://www.w3.org/1999/xhtml/datatypes/" schemaLocation="http://www.w3.org/MarkUp/SCHEMA/xhtml-datatypes-1.xsd"></import>
+
+
+    <!-- /structural.module -->
+
+    <!-- text.module -->
+	<element name="p" type="tns:line.type">
+		<annotation>
+			<documentation>段落を表す要素。"XHTML 1.0 Strict" や "XHTML 1.1"でのp要素と同じ。</documentation>
+		</annotation>
+	</element>
+
+	<complexType name="paragraph.type">
+		<annotation>
+			<documentation>段落を表す型。表やリストや通常の文など様々なテキストデータを格納する。</documentation>
+		</annotation>
+		<group ref="tns:block.group" minOccurs="0" maxOccurs="unbounded"/>
+		<attributeGroup ref="tns:common.attr.group"/>
+	</complexType>
+
+	<complexType name="inline.type" id="inline.type">
+		<simpleContent>
+			<extension base="string">
+				<attributeGroup ref="tns:common.attr.group"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+
+	<complexType name="line.type" mixed="true">
+		<annotation>
+			<documentation>「行」としての型を表す。ただし、「行」が何を意味するかは要素によって違い、また、通常は「行」とはしないデータを表す要素がこの型を持つこともあるかもしれない。inline.group
+                に属する要素またはテキストを子とする。
+            </documentation>
+		</annotation>
+		<group ref="tns:inline.group" maxOccurs="unbounded" minOccurs="0"/>
+	</complexType>
+
+	<element name="blockquote">
+		<annotation>
+			<documentation>
+                XHTML 1.0 Strict 及び XHTML 1.1 及びXHTML 2.0の blockquote
+                要素とこのスキーマの blockquote 要素との違いについて。
+                XHTML 1.0 Strict 及び XHTML 1.1 では
+                blockquote の内容はブロックレベル要素に限定されており、XHTML 2.0
+                の場合はブロックレベル要素だけではなく、インライン要素やPCDATAを含むようになっている。
+                一方このスキーマではblock.groupのみを内容として含むようになっている。
+            </documentation>
+		</annotation>
+		<complexType>
+			<group ref="tns:block.group"></group>
+			<attribute name="cite" type="string"></attribute>
+			<attribute name="title" type="string"></attribute>
+		</complexType>
+	</element>
+
+	<element name="pre" type="tns:line.type"></element>
+
+	<group id="block.group" name="block.group">
+		<choice>
+			<element ref="tns:p"></element>
+			<element ref="tns:pre"></element>
+			<element ref="tns:blockquote"></element>
+			<element ref="tns:table"/>
+			<group ref="tns:list.group"/>
+		</choice>
+	</group>
+	<complexType name="hypertext.type" mixed="true">
+		<attribute name="href" type="anyURI"/>
+		<attribute name="hreflang" type="language"/>
+		<attribute name="hreftype" type="string"/>
+		<attribute name="hrefmedia" type="string"/>
+	</complexType>
+	<complexType name="quote.type" mixed="true">
+		<attribute name="cite" type="string"></attribute>
+	</complexType>
+	<complexType name="abbr.type" mixed="true">
+		<attribute name="title" type="string"></attribute>
+	</complexType>
+	<group id="inline.group" name="inline.group">
+		<annotation>
+			<documentation>
+                コメントまたは記事の構造を表さず、テキストの単純な修飾をする要素の集合。主にinline.typeをタイプとする要素を持つ。
+            </documentation>
+		</annotation>
+		<choice>
+			<element name="a" type="tns:hypertext.type"/>
+			<element name="abbr" type="tns:abbr.type"/>
+			<element name="q" type="tns:quote.type"/>
+			<element name="cite" type="tns:inline.type"/>
+			<element name="code" type="tns:inline.type"/>
+			<element name="em" type="tns:inline.type"/>
+			<element name="strong" type="tns:inline.type"/>
+			<element name="dfn" type="tns:inline.type"/>
+			<element name="br">
+				<complexType></complexType>
+			</element>
+		</choice>
+	</group>
+    <!-- /text.module -->
+
+
+    <!-- common.attributes.module -->
+	<attributeGroup name="common.attr.group">
+		<attributeGroup ref="tns:core.attr.group"/>
+	</attributeGroup>
+
+	<attributeGroup name="core.attr.group">
+		<attribute name="title" type="string"/>
+	</attributeGroup>
+    <!-- /common.attributes.module -->
+
+    <!-- caption.module -->
+    <!-- /caption.module -->
+
+    <!-- list.module -->
+	<complexType name="list.type">
+		<sequence>
+			<element name="li" type="tns:line.type" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="dl.type">
+		<sequence maxOccurs="unbounded">
+			<element name="dt" type="tns:line.type" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="dd" type="tns:line.type" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+
+	<element name="ol" type="tns:list.type"/>
+
+	<element name="ul" type="tns:list.type"/>
+
+	<element name="dl" type="tns:dl.type"/>
+
+	<group name="list.group">
+		<choice>
+			<element ref="tns:ol"></element>
+			<element ref="tns:ul"></element>
+			<element ref="tns:dl"></element>
+		</choice>
+	</group>
+    <!-- /list.module -->
+
+    <!-- table.module -->
+	<complexType name="tr.type">
+		<choice>
+			<element name="th" type="tns:line.type" maxOccurs="unbounded"/>
+			<element name="td" type="tns:line.type" maxOccurs="unbounded"/>
+		</choice>
+	</complexType>
+
+	<element name="tr" type="tns:tr.type"></element>
+
+	<group name="table.content.group">
+		<sequence>
+			<element ref="tns:tr" maxOccurs="unbounded"></element>
+		</sequence>
+	</group>
+
+	<complexType name="tbody.type">
+		<group ref="tns:table.content.group"></group>
+	</complexType>
+
+	<group name="table.full.content.group">
+		<sequence>
+			<element name="thead" type="tns:tbody.type"></element>
+			<element name="tfoot" type="tns:tbody.type"></element>
+			<element name="tbody" type="tns:tbody.type" maxOccurs="unbounded"></element>
+		</sequence>
+	</group>
+
+	<complexType name="table.type">
+		<sequence>
+			<element name="caption" type="tns:line.type"/>
+			<choice>
+				<group ref="tns:table.content.group"></group>
+				<group ref="tns:table.full.content.group"></group>
+			</choice>
+		</sequence>
+		<attribute name="summary" type="string"></attribute>
+	</complexType>
+
+	<element name="table" type="tns:table.type">
+		<annotation>
+			<documentation>
+                XHTML™ Modularization 1.1とXHTML 2.0(WD)のテーブルモジュールを参考にした。tr要素はth要素のみのを子とするかtd要素をのみを子とするような出現の仕方しかできない。
+                <h:pre>&lt;tr&gt;
+                    &lt;td&gt;data&lt;/td&gt;&lt;td&gt;data&lt;/td&gt;
+                    &lt;td&gt;data&lt;/td&gt;&lt;td&gt;data&lt;/td&gt;
+                    &lt;/tr&gt; </h:pre>
+			</documentation>
+		</annotation>
+	</element>
+    <!-- /table.module -->
+</schema>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================= 
+          target: name
+          nandakafurari directory
+          denpends https://github.com/nandaka-furari/files/raw/master/ent/ant/property/selection-nandaka-furari_directory.ent
+         ================================= -->
+<target name="build-nandaka-furari-dir" description="nandakafurari directory">
+	<mkdir dir="${src.main.java}"/>
+	<mkdir dir="${src.main.groovy}"/>
+	<mkdir dir="${src.main.scala}"/>
+	<mkdir dir="${resources}"/>
+	<mkdir dir="${webapp}"/>
+    	
+	<mkdir dir="${java.test}"/>
+	<mkdir dir="${groovy.test}"/>
+	<mkdir dir="${scala.test}"/>
+	<mkdir dir="${resources.test}"/>
+    	
+    	<mkdir dir="${java.sample}"/>
+	<mkdir dir="${groovy.sample}"/>
+	<mkdir dir="${scala.sample}"/>
+    	<mkdir dir="${resources.sample}"/>
+        
+	<mkdir dir="${java.try}"/>
+	<mkdir dir="${groovy.try}"/>
+	<mkdir dir="${scala.try}"/>
+    	<mkdir dir="${resources.try}"/>
+    	
+    	<mkdir dir="${site}"/>
+    	<mkdir dir="${config}"/>
+</target>

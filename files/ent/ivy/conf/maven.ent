@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conf name="compile" description="Compile dependencies" visibility="private" transitive="false"/>
+<conf name="runtime" description="Runtime dependencies" extends="compile"/>
+<conf name="test" description="Testing dependencies" visibility="private" extends="runtime"/>
+<conf name="provided" description="Provided dependencies" visibility="private"/>

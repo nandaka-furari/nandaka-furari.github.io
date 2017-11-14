@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<environment xmlns="urn:info.bbwtest:system-environment">
+    <system>
+        <val name="JAVA_HOME"><ref name="" kind="system"></ref></val>
+    </system>
+    <user>
+        <val name=""></val>
+        <var>
+            <name>JAVA_HOME</name>
+            <value><ref name="" kind="system"></ref></value>
+        </var>
+    </user>
+</environment>

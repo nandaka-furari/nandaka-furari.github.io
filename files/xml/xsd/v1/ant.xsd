@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.w3.org/2001/XMLSchema http://www.w3.org/2001/XMLSchema.xsd"
+	version="1.0" elementFormDefault="qualified">
+
+
+	<xs:attributeGroup name="file">
+		<xs:attribute name="id" type="xs:ID" />
+		<xs:attribute name="includes" type="xs:string" />
+		<xs:attribute name="includefile" type="xs:string" />
+		<xs:attribute name="excludes" type="xs:string" />
+		<xs:attribute name="excludesfile" type="xs:string" />
+	</xs:attributeGroup>
+	<xs:complexType name="abst.task"></xs:complexType>
+
+	<xs:group name="resources">
+		<xs:choice>
+			<xs:element name="resource" type="any" />
+			<xs:element name="file" />
+			<xs:element name="gzipresource" />
+			<xs:element name="javaresource" />
+			<xs:element name="javaconstant" />
+			<xs:element name="url" />
+			<xs:element name="tarentry" />
+			<xs:element name="zipentry" />
+			<xs:element name="bzip2resource" />
+		</xs:choice>
+	</xs:group>
+
+	<xs:group name="types">
+		<xs:annotation />
+		<xs:choice>
+			<xs:element name="fileset"></xs:element>
+			<xs:element name="dirset" />
+			<xs:element name="include" />
+			<xs:element name="exclude" />
+			<xs:element name="patternset" />
+		</xs:choice>
+	</xs:group>
+
+	<xs:group name="selectors">
+		<xs:choice>
+			<xs:element name="contains" />
+			<xs:element name="date" />
+			<xs:element name="depend" />
+			<xs:element name="depth" />
+			<xs:element name="different" />
+			<xs:element name="filename" />
+			<xs:element name="present" />
+			<xs:element name="containsregexp" />
+			<xs:element name="size" />
+			<xs:element name="type" />
+			<xs:element name="modified" />
+			<xs:element name="signedselector" />
+			<xs:element name="scriptselector" />
+			<xs:element name="readable" />
+			<xs:element name="writable" />
+		</xs:choice>
+	</xs:group>
+
+	<xs:group name="file.tasks">
+		<xs:choice>
+			<xs:element name="mkdir" />
+			<xs:element name="exec">
+				<xs:complexType />
+			</xs:element>
+
+			<xs:element name="delete" />
+			<xs:element name="copy" />
+			<xs:element name="move" />
+			<xs:element name="replace" />
+			<xs:element name="touch" />
+			<xs:element name="tempfile" />
+			<xs:element name="checksum" />
+			<xs:element name="replaceRegExpr" />
+			<xs:element name="sync" />
+			<xs:element name="chgrp" />
+			<xs:element name="chmod" />
+			<xs:element name="chown" />
+		</xs:choice>
+	</xs:group>
+	<xs:group name="archive.tasks">
+		<xs:choice>
+			<xs:element name="bzip2" />
+			<xs:element name="bunzip2" />
+			<xs:element name="cab" />
+			<xs:element name="ear" />
+			<xs:element name="gunzip" />
+			<xs:element name="gzip" />
+			<xs:element name="jar" />
+			<xs:element name="unjar" />
+			<xs:element name="untar" />
+			<xs:element name="unwar" />
+			<xs:element name="zip" />
+		</xs:choice>
+	</xs:group>
+	<xs:group name="compile.tasks">
+		<xs:choice>
+			<xs:element name="javac" />
+		</xs:choice>
+	</xs:group>
+	<xs:group name="execution.tasks">
+		<xs:choice>
+			<xs:element name="taskdef" form="unqualified">
+				<xs:complexType>
+					<xs:attribute name="classpath" use="required" />
+					<xs:attribute name="resource" use="required" />
+					<xs:attribute name="uri" use="required" type="xs:NMTOKEN" />
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ant" />
+			<xs:element name="antcall" />
+			<xs:element name="exec" />
+			<xs:element name="java" />
+		</xs:choice>
+	</xs:group>
+	<xs:group name="property.tasks">
+		<xs:choice>
+			<xs:element name="property" />
+			<xs:element name="propertyfile" />
+			<xs:element name="xmlproperty" />
+			<xs:element name="echoproperties" />
+			<xs:element name="loadfile" />
+			<xs:element name="loadproperties" />
+			<xs:element name="available" />
+			<xs:element name="condition" />
+			<xs:element name="makeurl" />
+			<xs:element name="uptodate" />
+			<xs:element name="pathconvert" />
+			<xs:element name="whichresource" />
+			<xs:element name="basename" />
+		</xs:choice>
+	</xs:group>
+	<xs:group name="remote.tasks">
+		<xs:choice />
+	</xs:group>
+	<xs:group name="preprocess.tasks">
+		<xs:choice>
+			<xs:element name="xslt" />
+		</xs:choice>
+	</xs:group>
+
+	<xs:group name="miscellaneous.tasks">
+		<xs:choice />
+	</xs:group>
+
+	<xs:element name="target">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:group ref="file.tasks" />
+				<xs:group ref="compile.tasks" />
+				<xs:group ref="property.tasks" />
+				<xs:group ref="execution.tasks" />
+				<xs:group ref="archive.tasks" />
+				<xs:group ref="preprocess.tasks" />
+				<xs:group ref="remote.tasks" />
+				<xs:group ref="miscellaneous.tasks" />
+				<xs:any namespace="##any" />
+			</xs:choice>
+			<xs:attribute name="name" use="required" type="xs:string" />
+		</xs:complexType>
+	</xs:element>
+	<xs:group name="dd">
+		<xs:choice>
+			<xs:group ref="property.tasks" />
+			<xs:group ref="execution.tasks" />
+			<xs:group ref="archive.tasks" />
+			<xs:group ref="compile.tasks" />
+			<xs:group ref="miscellaneous.tasks" />
+			<xs:any namespace="##any" />
+		</xs:choice>
+
+	</xs:group>
+	<xs:complexType name="project">
+		<xs:annotation></xs:annotation>
+		<xs:group ref="dd"></xs:group>
+		<xs:attribute name="name" use="required" type="xs:string" />
+	</xs:complexType>
+	<xs:element name="project" type="project"></xs:element>
+	<xs:complexType name="any" mixed="true">
+		<xs:choice maxOccurs="unbounded">
+			<xs:any namespace="##any" />
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

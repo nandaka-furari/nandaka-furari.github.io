@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- mavencentral primefaces jbossnexus jboss neo4j-releases-->
+
+<ibiblio name="ibiblio" />
+<filesystem name="internal">
+	<ivy pattern="${repository.dir}/[module]/ivy-[revision].xml" />
+	<artifact pattern="${repository.dir}/[module]/[artifact]-[revision].[ext]" />
+</filesystem>
+<!--Maven2用のリポジトリの登録-->
+<ibiblio name="mavencentral" m2compatible="true" root="http://repo1.maven.org/maven2"/>
+<ibiblio name="primefaces" m2compatible="true" root="http://repository.primefaces.org"/>
+<!--<ibiblio name="" m2compatible="true" root="" />-->
+<ibiblio name="jbossnexus" m2compatible="true" root="https://repository.jboss.org/nexus/content/repositories/public/"/>
+<ibiblio name="jboss" m2compatible="true" usepoms="false" root="http://repository.jboss.org/maven2"/>
+<ibiblio name="twitter4j.org" m2compatible="true" root="http://twitter4j.org/maven2"/>
+<ibiblio name="neo4j-releases" m2compatible="true" usepoms="false" root="http://m2.neo4j.org/releases/" />
+

@@ -1,0 +1,63 @@
+<!ELEMENT attribute EMPTY >
+<!ATTLIST attribute name NMTOKEN #REQUIRED >
+<!ATTLIST attribute value CDATA #REQUIRED >
+
+<!ELEMENT exec EMPTY >
+
+<!ELEMENT fileset EMPTY >
+<!ATTLIST fileset dir CDATA #REQUIRED >
+
+<!ELEMENT fx:application EMPTY >
+<!ATTLIST fx:application refId NMTOKEN #IMPLIED >
+<!ATTLIST fx:application refid NMTOKEN #IMPLIED >
+
+<!ELEMENT fx:deploy ( fx:application, fx:resources, fx:info, fx:permissions ) >
+<!ATTLIST fx:deploy embedJNLP NMTOKEN #REQUIRED >
+<!ATTLIST fx:deploy height CDATA #REQUIRED >
+<!ATTLIST fx:deploy outdir CDATA #REQUIRED >
+<!ATTLIST fx:deploy outfile CDATA #REQUIRED >
+<!ATTLIST fx:deploy width CDATA #REQUIRED >
+
+<!ELEMENT fx:fileset EMPTY >
+<!ATTLIST fx:fileset dir NMTOKEN #REQUIRED >
+<!ATTLIST fx:fileset includes NMTOKEN #REQUIRED >
+<!ATTLIST fx:fileset requiredFor NMTOKEN #IMPLIED >
+
+<!ELEMENT fx:info EMPTY >
+<!ATTLIST fx:info title CDATA #REQUIRED >
+<!ATTLIST fx:info vendor CDATA #REQUIRED >
+
+<!ELEMENT fx:jar ( fx:application, fx:resources, manifest, fileset ) >
+<!ATTLIST fx:jar destfile CDATA #REQUIRED >
+
+<!ELEMENT fx:permissions EMPTY >
+<!ATTLIST fx:permissions elevated NMTOKEN #REQUIRED >
+
+<!ELEMENT fx:resources ( fx:fileset* ) >
+<!ATTLIST fx:resources id NMTOKEN #IMPLIED >
+<!ATTLIST fx:resources refid NMTOKEN #IMPLIED >
+
+<!ELEMENT fx:signjar ( fileset ) >
+<!ATTLIST fx:signjar alias NMTOKEN #REQUIRED >
+<!ATTLIST fx:signjar destdir NMTOKEN #REQUIRED >
+<!ATTLIST fx:signjar keyPass CDATA #REQUIRED >
+<!ATTLIST fx:signjar keyStore CDATA #REQUIRED >
+<!ATTLIST fx:signjar storePass CDATA #REQUIRED >
+
+<!ELEMENT manifest ( attribute+ ) >
+
+<!ELEMENT project ( taskdef, target+ ) >
+<!ATTLIST project name NMTOKEN #REQUIRED >
+<!ATTLIST project xmlns:fx NMTOKEN #REQUIRED >
+<!ATTLIST project xmlns:j2seproject1 CDATA #REQUIRED >
+<!ATTLIST project xmlns:j2seproject3 CDATA #REQUIRED >
+<!ATTLIST project xmlns:jaxrpc CDATA #REQUIRED >
+
+<!ELEMENT target ( exec, taskdef?, fx:resources?, fx:jar?, fx:signjar?, fx:deploy? ) >
+<!ATTLIST target name NMTOKEN #REQUIRED >
+
+<!ELEMENT taskdef EMPTY >
+<!ATTLIST taskdef classpath CDATA #REQUIRED >
+<!ATTLIST taskdef resource CDATA #REQUIRED >
+<!ATTLIST taskdef uri NMTOKEN #REQUIRED >
+

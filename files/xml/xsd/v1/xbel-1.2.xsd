@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:h="http://www.w3.org/1999/xhtml"
+        xmlns:tns="http://www.python.org/topics/xml/xbel/" elementFormDefault="qualified"
+        targetNamespace="http://www.python.org/topics/xml/xbel/">
+    <annotation>
+        <documentation>
+            これはhttp://pyxml.sourceforge.net/topics/dtds/xbel-1.0.dtdのDTDを元に、また、http://www.bris.ac.uk/ips-projects/portal/pilot/team/mark/bookmarks/portlet/xbel.xsdを参考に
+            XML Schema として再定義したXML Bookmarks
+            Exchange
+            Languageです。これはただ単に再定義しただけでなくデータ型に関して厳密に検証することができます。また細かな点で修正を行っています。そのため修正点があることを表すためにバージョンを1.1にしています。
+            XBELの詳しいことはhttp://pyxml.sourceforge.net/topics/xbel/を読んでください。
+        </documentation>
+        <documentation>
+            追記：バージョ1.2 タグ管理の概念を取り込んだバージョン、参照管理。 2011-08-26
+        </documentation>
+    </annotation>
+    <attributeGroup name="node.attr.group">
+        <attribute name="id" type="ID"/>
+        <attribute name="added" type="dateTime"/>
+        <attribute name="modified" type="dateTime"/>
+    </attributeGroup>
+
+    <attributeGroup name="url.attr.group">
+        <attribute name="href" use="required"/>
+    </attributeGroup>
+
+    <complexType name="metadata.type">
+        <attribute name="owner" use="required" type="anySimpleType"/>
+        <anyAttribute namespace="##other">
+            <annotation>
+                <documentation/>
+            </annotation>
+        </anyAttribute>
+    </complexType>
+
+    <group name="metadata.group">
+        <choice>
+            <element name="metadata" type="tns:metadata.type"/>
+        </choice>
+    </group>
+
+    <group name="builtin.data.tag.group">
+        <choice>
+            <element name="datetime" type="dateTime"/>
+            <element name="language" type="language"/>
+            <element name="country" type="token"/>
+        </choice>
+    </group>
+
+    <group name="http.group">
+        <annotation>
+            <documentation>HTTPでのレスポンスヘッダ。リソースのスキーマがhttpの場合。</documentation>
+        </annotation>
+        <sequence>
+            <element name="type" type="token" maxOccurs="1" minOccurs="0"/>
+            <element name="length" type="int" maxOccurs="1" minOccurs="0"/>
+            <element name="language" type="language" maxOccurs="1" minOccurs="0"/>
+        </sequence>
+    </group>
+
+    <complexType name="info.type">
+        <group ref="tns:metadata.group" maxOccurs="unbounded" minOccurs="1"/>
+    </complexType>
+
+    <group name="meta.group">
+        <sequence>
+            <element name="title" type="string" maxOccurs="1" minOccurs="0"/>
+            <element name="info" type="tns:info.type" maxOccurs="1" minOccurs="0"/>
+            <element name="desc" type="string" maxOccurs="1" minOccurs="0"/>
+            <group ref="tns:http.group"/>
+        </sequence>
+    </group>
+
+    <complexType name="composite.type" abstract="true">
+        <group ref="tns:meta.group"/>
+        <attributeGroup ref="tns:node.attr.group"/>
+    </complexType>
+
+    <complexType name="dir.type" abstract="true">
+        <complexContent>
+            <extension base="tns:composite.type">
+                <group ref="tns:nodes.mix.group" minOccurs="0" maxOccurs="unbounded"/>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="folder.type">
+        <complexContent>
+            <extension base="tns:dir.type">
+                <attribute name="folded" type="boolean" default="true"/>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="taglist.type">
+        <choice maxOccurs="unbounded" minOccurs="0">
+            <group ref="tns:builtin.data.tag.group"/>
+            <element name="tag" type="IDREF"/>
+        </choice>
+    </complexType>
+
+    <complexType name="bookmark.type">
+        <complexContent>
+            <extension base="tns:composite.type">
+                <sequence>
+                    <element name="taglist" type="tns:taglist.type"/>
+                </sequence>
+                <attributeGroup ref="tns:url.attr.group"/>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="alias.type">
+        <attribute name="ref" use="required" type="IDREF"/>
+    </complexType>
+
+    <complexType name="ref.bookmark.type">
+        <attribute name="ref" use="required" type="IDREF"/>
+    </complexType>
+
+    <complexType name="separator.type"/>
+
+    <group name="nodes.mix.group">
+        <choice>
+            <element name="folder" type="tns:folder.type"/>
+            <element name="alias" type="tns:alias.type">
+                <annotation>
+                    <documentation>
+                        alias elements correspond to Netscape bookmark aliases. The required "ref" attribute must refer
+                        to a
+                        bookmark or
+                        folder element.
+                        Note that MSIE aliases can refer to folders, so that is supported in XBEL. Applications
+                        must be careful about
+                        traversing aliases to folders to avoid improper recursion through circular data structures.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="bookmark" type="tns:ref.bookmark.type"/>
+            <element name="separator" type="tns:separator.type"/>
+        </choice>
+    </group>
+
+    <complexType name="bookmarks.type">
+        <sequence>
+            <element name="bookmark" type="tns:bookmark.type" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="tag.type">
+        <group ref="tns:tag.group"/>
+        <attribute name="id" type="ID" use="required"/>
+        <attribute name="name" type="string" use="required"/>
+    </complexType>
+
+    <group name="tag.group">
+        <sequence>
+            <element name="tag" type="tns:tag.type" maxOccurs="unbounded" minOccurs="0"/>
+        </sequence>
+    </group>
+
+    <complexType name="tags.type">
+        <group ref="tns:tag.group"/>
+    </complexType>
+
+    <complexType name="xbel.type">
+        <all>
+            <element name="taglib" type="tns:tags.type"/>
+            <element name="bookmarks" type="tns:bookmarks.type"/>
+            <element name="folder" type="tns:folder.type"/>
+        </all>
+        <attribute name="version" type="string" fixed="1.2" use="required"/>
+    </complexType>
+
+    <element name="xbel" type="tns:xbel.type"/>
+    <attributeGroup name="uri.attrs">
+        <attribute name="visited" type="dateTime"/>
+        <attribute name="uri" type="anyURI"/>
+        <attribute name="ipaddress"/>
+    </attributeGroup>
+    <simpleType name="ipv4address">
+        <restriction base="string">
+            <pattern value="\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}"></pattern>
+        </restriction>
+    </simpleType>
+    <simpleType name="ipv6address">
+        <union memberTypes="tns:ipv4address "/>
+    </simpleType>
+    <simpleType name="ipv6address-nomal">
+        <restriction base="string">
+            <pattern value="[0-9A-F]{1,4}:"></pattern>
+        </restriction>
+    </simpleType>
+</schema>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/2002/06/xhtml2/" xmlns:framexs="urn:framexs">
+	<head>
+		<title>テンプレート</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/2.0.0-beta.17/angular2.js"></script>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/qunit/2.0.1/qunit.css"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/qunit/2.0.1/qunit.js"></script>
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.6/d3.min.js"></script>
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.5.2/jasmine.css"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.5.2/jasmine.js"></script>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/graphicsjs/1.1.0/graphics.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/webtorrent/0.97.2/webtorrent.min.js"></script>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bitcoinjs-lib/0.2.0-1/bitcoinjs-min.js"></script>
+	</head>
+	<body class="container">
+		<header id="header" class="row">
+			<div class="col-md-2">
+				<h1>framexs</h1>
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" stroke="black" fill="rgb(124,150,236)" viewBox="0 0 640 380" style="border: solid 1px black">
+						<defs>
+							<circle id="black-circle" r="120" fill="rgb(0,0,0)" />
+							<rect id="blue-rect" width="300" height="200" fill="blue" />
+							<path id="test-path"/>
+						</defs>
+						<use xlink:href="#black-circle" x="20" y="10"/>
+						<use xlink:href="#blue-rect" x="130" y="130"/>
+					</svg>
+				</p>
+			</div>
+			<section class="col-md-10">
+				<div>
+								
+				</div>
+				<div>
+					<p class="col-sm-10">XSLTで変換した</p>
+				</div>
+			</section>
+			<section class="col"></section>
+		</header>
+		<div class="row">
+			<main class="col-md-8">
+				<framexs:main/>
+			</main>
+			<aside class="col-md-4">
+				<p>傍コンテンツ</p>
+				<h3>テンプレ</h3>
+				<div></div>
+				<h3></h3>
+				<div>
+
+				</div>
+			</aside>
+		</div>
+		<footer class="row">
+			<div class="col-md-4">
+				<address class="panel panel-default">
+					<p class="panel-heading">XSLT作者の情報</p>
+					<ul class="panel-body list-group">
+						<li class="list-group-item">ナンダカフラリ</li>
+						<li class="list-group-item" href="https://twitter.com/nandaka_furari">twitter</li>
+						<li class="list-group-item" href="https://github.com/nandaka-furari">ぎっとはぶ</li>
+						<li class="list-group-item" href="http://www.bbwtest.info/~nandaka_furari/">website</li>
+					</ul>
+				</address>
+			</div>
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<p class="panel-heading">XSLT</p>
+					<ul class="panel-body list-group">
+						<li class="list-group-item" href="https://www.w3.org/TR/xslt"></li>
+						<li class="list-group-item" href="https://www.w3.org/TR/xslt20/"></li>
+						<li class="list-group-item" href="https://www.w3.org/TR/xslt-30/">XSL Transformations (XSLT) Version 3.0</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<p class="panel-heading">リンク</p>
+					<ul class="panel-body list-group">
+						<li class="list-group-item" href="https://jquery.com/">jQuery</li>
+						<li class="list-group-item" href="https://qunitjs.com/">QUnit</li>
+						<li class="list-group-item" href="https://cdnjs.com/">cdnjs</li>
+						<li class="list-group-item" href="https://developers.google.com/speed/libraries/">Google Hosted Libraries</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

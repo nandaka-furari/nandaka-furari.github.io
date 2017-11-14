@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" ns="http://www.python.org/topics/xml/xbel/" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+	<start>
+		<element name="xbel">
+			<attribute name="version">
+				<value>1.3</value>
+			</attribute>
+			<element name="root">
+				<ref name="folder.group"/>
+			</element>
+			<element name="bookmarks">
+				<zeroOrMore>
+					<element name="bookmark">
+						<attribute name="uri"><data type="anyURI"></data></attribute>
+						<element name="title"><text/></element>
+						<optional><element name="description"><text/></element></optional>
+						<optional><element name="keywords"><text/></element></optional>
+						<optional><element name="comment"><text/></element></optional>
+					</element>
+				</zeroOrMore>
+			</element>
+		</element>
+	</start>
+	<div>
+		<define name="xbel.folder">
+			<element name="folder">
+				<attribute name="name"></attribute>
+				<ref name="folder.group"></ref>
+			</element>
+		</define>
+		<define name="folder.group">
+			<zeroOrMore>
+				<choice>
+					<ref name="xbel.folder"></ref>
+					<element name="ref">
+						<data type="anyURI"></data>
+					</element>
+				</choice>
+			</zeroOrMore>
+		</define>
+	</div>
+</grammar>

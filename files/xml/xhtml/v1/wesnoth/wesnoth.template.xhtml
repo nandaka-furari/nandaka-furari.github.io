@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" prefix="og: http://ogp.me/ns#" xmlns:framexs="urn:framexs">
+	<head>
+		<title> - テンプレート</title>
+		<meta name="keywords" content=""/>
+		<meta name="description" content=""/>
+		<meta property="og:type" content=""/>
+		<meta property="og:title" content=" - Wesnoth"/>
+		<meta property="og:url" content=""/>
+		<meta property="og:image" content="" />
+		<meta property="og:site_name" content="ナンダカフラリのサイト" />
+		<meta property="og:description" content=" Wesnothの自作ユニットデータ。" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js"></script>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.6/d3.min.js"></script>
+		<style type="text/css">
+		#attacks td {padding:0.25em;}div#portrait svg{height:200px;width:200px}}
+		</style>                         
+		<meta framexs:load="link"/>
+		<meta framexs:load="script"/>              
+
+	</head>
+	<body class="container">
+		<header id="header" class="row">
+			<div class="col-sm-12 col-xs-12"><h2>Battle for Wesnoth</h2></div>
+		</header>
+		<div class="row">
+			<aside class="col-sm-2 col-xs-12">
+				<ul>
+					<li><a href="dementor.xhtml" framexs:addpath="on">Dementor</a></li>
+					<li><a href="death pilot.xhtml" framexs:addpath="on">Death Pilot</a></li>
+				</ul>
+			</aside>
+			<main class="col-sm-10 col-xs-12">
+				<div class="row">
+					<div class="col-sm-8 col-xs-12">
+						<h1><div framexs:title=""></div></h1>
+						<section>
+							<div framexs:pull-sd="description"></div>
+						</section>
+						<section>
+							<h2>Special Notes</h2>
+							<div framexs:pull-sd="specialnotes"></div></section>
+						<section>
+							<h2>Information</h2>
+							<div framexs:pull-sd="infomation"></div>
+						</section>
+						<h2>Attacks</h2>
+						<table id="attacks">
+							<thead><tr><th>name</th><th>feature</th><th>additional</th></tr></thead>
+							<tbody>
+								<tr framexs:pull-d="attacks"><td></td><td></td><td></td></tr>
+							</tbody>
+						</table>
+						<h2>Registence</h2>
+						<table>
+							<tbody><tr framexs:pull-d="registence"><td></td><td></td><td></td></tr></tbody>
+						</table>
+					</div>
+					<div class="col-sm-4 col-xs-12">
+						<div id="portrait"><span framexs:pull-d="portrait"></span></div>
+						<h2>Terrain</h2>
+						<table>                      
+							<colgroup><col/><col style="width:5em"/><col/></colgroup>
+							<thead><th>Terrain</th><th>movement cost</th><th>defence</th></thead>
+							<tbody><tr framexs:pull-d="terrain"><td></td><td></td><td></td></tr></tbody>
+						</table>
+					</div>
+				</div>
+			</main>
+		</div>
+		<footer class="row">
+			<section>
+			<h2>参考</h2>
+			<ul>
+			<li><a href="http://units.wesnoth.org/1.12/mainline/en_US/mainline.html">Battle for Wesnoth | Unites</a></li>
+			<li><a href="https://github.com/wesnoth/wesnoth">GitHub - wesnoth/wesnoth</a></li>   
+			<li><a href="http://wikiwiki.jp/wesnoth/?%A5%E6%A5%CB%A5%C3%A5%C8%A5%C7%A1%BC%A5%BF">ユニットデータ - The Battle for Wesnoth Wiki*</a></li>
+			</ul>
+			</section>
+		</footer>
+	</body>
+</html>
