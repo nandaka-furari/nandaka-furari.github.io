@@ -2,6 +2,6 @@
 <!DOCTYPE cross-domain-policy>
 <cross-domain-policy>
     <site-control permitted-cross-domain-policies="all"/>
-    <allow-access-from domain="bbwtest.info"/>
+    <allow-access-from domain="nandaka-furari.github.io"/>
     <allow-access-from domain="localhost"/>
 </cross-domain-policy>
