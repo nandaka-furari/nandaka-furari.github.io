@@ -18,7 +18,7 @@
 	
 	<xsl:template match="s:test">
 		<div>
-			<
+
 		</div>
 	</xsl:template>
 	<xsl:template match="s:*[framexs:*]">
