@@ -623,7 +623,7 @@ td,th {border: solid 1px gray;}
 								</dd>
 							</dl>
 							<datalist id="xslt">
-								<option value="http://www.bbwtest.info/files/xml/xslt/v2/xhtml2-to.xslt"></option>
+								<option value="https://nandaka-furari.github.io/files/xml/xslt/v2/xhtml2-to.xslt"></option>
 							</datalist>
 							
 							<p>
@@ -639,7 +639,7 @@ td,th {border: solid 1px gray;}
 						<framexs:element name="aside"/>
 						
 						<p>
-							<object data="http://www.bbwtest.info/~nandaka_furari/files/html/framexs-analytics.html" type="text/html" width="160" height="90"></object>
+							<object data="https://nandaka-furari.github.io/files/html/framexs-analytics.html" type="text/html" width="160" height="90"></object>
 						</p>
 					</aside>
 				</frame>
@@ -650,7 +650,7 @@ td,th {border: solid 1px gray;}
 							<ul class="panel-body list-group">
 								<li class="list-group-item" href="https://twitter.com/nandaka_furari">twitter</li>
 								<li class="list-group-item" href="https://github.com/nandaka-furari"></li>
-								<li class="list-group-item" href="http://www.bbwtest.info/~nandaka_furari/">website</li>
+								<li class="list-group-item" href="https://nandaka-furari.github.io/">website</li>
 							</ul>
 						</address>
 					</div>

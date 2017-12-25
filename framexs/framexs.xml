@@ -533,7 +533,7 @@ XSLTで実現するフレームワーク framexs
 						</script>
 					</xsl:when>
 					<xsl:otherwise>
-						<script async="async" src="http://www.bbwtest.info/~nandaka_furari/framexs/framexs.js"></script>
+						<script async="async" src="https://nandaka-furari.github.io/framexs/framexs.js"></script>
 					</xsl:otherwise>
 				</xsl:choose>
 				
@@ -665,7 +665,7 @@ td,th {border: solid 1px gray;}
 						<dt>xsl:vendor</dt><dd><xsl:value-of select="system-property('xsl:vendor')"/></dd>
 						<dt>xsl:vendor-url</dt><dd><xsl:value-of select="system-property('xsl:vendor-url')"/></dd>
 						</dl></div>
-						<p><object data="http://www.bbwtest.info/~nandaka_furari/files/html/framexs-analytics.html" type="text/html" width="160" height="90"></object></p>
+						<p><object data="https://nandaka-furari.github.io/framexs/framexs-analytics.html" type="text/html" width="160" height="90"></object></p>
 					</aside>
 				</div>
 				<footer  id="footer-panel" class="row">
@@ -673,8 +673,8 @@ td,th {border: solid 1px gray;}
 						<div class="panel panel-default">
 							<div class="panel-heading">framexs</div>
 							<ul class="panel-body list-group">
-								<li class="list-group-item"><a href="http://www.bbwtest.info/~nandaka_furari/framexs/index.xhtml">web site</a></li>
-								<li class="list-group-item"><a href="http://www.bbwtest.info/~nandaka_furari/framexs/framexs.xml">仕様</a></li>
+								<li class="list-group-item"><a href="https://nandaka-furari.github.io/framexs/index.xhtml">web site</a></li>
+								<li class="list-group-item"><a href="https://nandaka-furari.github.io/framexs/framexs.xml">仕様</a></li>
 								<li class="list-group-item"><a href="https://github.com/nandaka-furari/framexs">GitHub</a></li>
 							</ul>
 						</div>
@@ -690,7 +690,7 @@ td,th {border: solid 1px gray;}
 									<a href="https://github.com/nandaka-furari">ぎっとはぶ</a>
 								</li>
 								<li class="list-group-item">
-									<a href="http://www.bbwtest.info/~nandaka_furari/">website</a>
+									<a href="https://nandaka-furari.github.io/">website</a>
 								</li>
 							</ul>
 						</address>
