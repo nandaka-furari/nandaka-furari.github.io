@@ -5,11 +5,11 @@ files/node_modules/
 .ignore/
 files.iml
 /.nb-gradle/
+.idea/
 .properties
 *~
 *.log
 electron/node_modules/
-.dest/
 .project
 
 *~

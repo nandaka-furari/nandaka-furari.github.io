@@ -117,7 +117,7 @@
 									<a href="https://github.com/nandaka-furari/files">ぎっとはぶ</a>
 								</li>
 								<li class="list-group-item">
-									<a href="http://www.bbwtest.info/~nandaka_furari/">website</a>
+									<a href="https://nandaka-furari.github.io/">website</a>
 								</li>
 							</ul>
 						</div>
