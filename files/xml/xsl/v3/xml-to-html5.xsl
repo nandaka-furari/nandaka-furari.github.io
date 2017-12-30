@@ -26,8 +26,15 @@
 				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"/>
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
 				
-				<script src="//www.google-analytics.com/analytics.js"></script>
-				<script>ga('create', 'UA-54947811-4', 'auto');ga('send', 'pageview');</script>
+				<!-- Global site tag (gtag.js) - Google Analytics -->
+				<script async src="https://www.googletagmanager.com/gtag/js?id=UA-54947811-5"></script>
+				<script>
+				  window.dataLayer = window.dataLayer || [];
+				  function gtag(){dataLayer.push(arguments);}
+				  gtag('js', new Date());
+				
+				  gtag('config', 'UA-54947811-5');
+				</script>
 				<style>
 			.element &gt; .element:hover, article &gt; .element:hover {box-shadow: 3px 3px gray}
         	article {}
