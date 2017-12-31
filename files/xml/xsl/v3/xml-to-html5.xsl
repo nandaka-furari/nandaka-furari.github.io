@@ -27,7 +27,7 @@
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
 				
 				<!-- Global site tag (gtag.js) - Google Analytics -->
-				<script async src="https://www.googletagmanager.com/gtag/js?id=UA-54947811-5"></script>
+				<script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-54947811-5"></script>
 				<script>
 				  window.dataLayer = window.dataLayer || [];
 				  function gtag(){dataLayer.push(arguments);}
