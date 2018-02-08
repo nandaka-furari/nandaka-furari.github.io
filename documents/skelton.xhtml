@@ -4,6 +4,7 @@
 		<title> - テンプレート</title>
 		<meta name="keywords" content=""/>
 		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width,initial-scale=1"/>
 		<meta property="og:type" content="article"/>
 		<meta property="og:title" content=" - ファイルの雑多な置き場"/>
 		<meta property="og:url" content=""/>
@@ -13,21 +14,13 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js"></script>
 		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
-		
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/qunit/2.0.1/qunit.css"/>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/qunit/2.0.1/qunit.js"></script>
-		
+				
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"/>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
 		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.6/d3.min.js"></script>
-		
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script>
-		
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/webtorrent/0.97.2/webtorrent.min.js"></script>
-		
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/bitcoinjs-lib/0.2.0-1/bitcoinjs-min.js"></script>
+
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-54947811-5"></script>
 		<script>
@@ -38,14 +31,10 @@
 		  gtag('config', 'UA-54947811-5');
 		</script>
 		<style>body {padding:1% 5%}</style>
-		<meta framexs:load="link"/>
-		<meta framexs:load="script"/>
 	</head>
 	<body class="container">
 		<header id="header" class="row">
-			<div class="col-md-8">ファイル置き場</div>
-			<div framexs:element="header"></div>
-			<div framexs:copy="header"></div>
+			<div class="col-md-8"><a href="index.xhtml" framexs:addpath="on">index</a></div>
 		</header>
 		<div class="row">
 			<aside class="col-md-3">
@@ -53,21 +42,17 @@
 				<ul>
 					<li><a href="contents/index.xhtml" framexs:addpath="on">index</a></li>
 					<li><a href="contents/aboutme.xhtml" framexs:addpath="on">管理人</a></li>
-					<li><a href="contents/thissite.xhtml" framexs:addpath="on">プライバシーポリシー規約</a></li>
-					<li><a href="contents/sample.xhtml" framexs:addpath="on">サンプル</a></li>
-					<li><a href="contents/tweet-activity.xhtml" framexs:addpath="on">ツイートアクティビティ</a></li>
-					<li><a href="contents/twitter-history.xhtml" framexs:addpath="on">ツイート歴史</a></li>
 					<li><a href="contents/twitter.xhtml" framexs:addpath="on">twitter</a></li>
 				</ul>
 				
 			</aside>
 			<main class="col-md-6">
-				<div framexs:element="main">
+				<div framexs:element-d="main">
 					<svg:svg width="1" height="1200" style="background-color:aqua"></svg:svg>
 				</div>
 			</main>
 			<aside class="col-md-3">
-				<div framexs:element="aside"></div>
+				<div framexs:element-d="aside"></div>
 				<div framexs:copy="aside"></div>
 			</aside>
 		</div>
