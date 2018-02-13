@@ -9,9 +9,7 @@
 	<xsl:variable name="fuga" select="document('../../xframes/layout.xframes.xml')"/>
 
 	<xsl:template match="/">
-		hoge:<xsl:value-of select="$hoge"></xsl:value-of>
-		fuga:<xsl:value-of select="$fuga"></xsl:value-of>
-		<xsl:apply-templates></xsl:apply-templates>
+		<xsl:message>test</xsl:message>
 	</xsl:template>
 
 	<xsl:template match="*">
