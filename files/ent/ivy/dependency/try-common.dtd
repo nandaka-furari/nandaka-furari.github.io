@@ -1,7 +1,0 @@
-<!ENTITY nandakafurari-selection SYSTEM "https://raw.githubusercontent.com/nandaka-furari/files/try/ent/ivy/dependency/logging-logback-stable.ent">
-<!ENTITY nandakafurari-selection SYSTEM "https://raw.githubusercontent.com/nandaka-furari/files/try/ent/ivy/dependency/org_apache_commons-stable.ent">
-<!ENTITY nandakafurari-selection SYSTEM "https://raw.githubusercontent.com/nandaka-furari/files/try/ent/ivy/dependency/logging-logback-stable.ent">
-<!--
-<!ENTITY nandakafurari-web-selection SYSTEM "https://raw.githubusercontent.com/nandaka-furari/files/master/ent/ivy-dependency-web-selection.ent">
-<!ENTITY nandakafurari-web-jee-selection SYSTEM "https://raw.githubusercontent.com/nandaka-furari/files/master/ent/ivy-dependency-web-jee-selection.ent">
--->                                                                                     

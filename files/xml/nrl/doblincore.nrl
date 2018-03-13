@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rules xmlns="http://www.thaiopensource.com/validate/nrl">
-	<namespace ns="http://purl.org/dc/elements/1.1/"></namespace>
-	<namespace ns="http://purl.org/dc/terms/"></namespace>
-	<namespace ns="http://purl.org/dc/dcmitype/"></namespace>
-</rules>

@@ -1,9 +1,0 @@
-@CHARSET "UTF-8";
-
-#header,.aside,#footer {
-	display: none;
-}
-h1,#main {
-	margin: auto;
-	width: 80%;
-}

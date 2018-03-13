@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dependency org="org.jboss.shrinkwrap" name="shrinkwrap-api" rev="latest.integration"/>
-<dependency org="org.jboss.shrinkwrap" name="shrinkwrap-spi" rev="latest.integration"/>
-<dependency org="org.jboss.shrinkwrap" name="shrinkwrap-impl-base" rev="latest.integration"/>
-<dependency org="org.jboss.shrinkwrap" name="shrinkwrap-api-nio2" rev="latest.integration"/>
-<dependency org="org.jboss.shrinkwrap" name="shrinkwrap-impl-nio2" rev="latest.integration"/>
-<dependency org="org.jboss.shrinkwrap" name="shrinkwrap-depchain" rev="latest.integration"/>
-<dependency org="org.jboss.shrinkwrap" name="shrinkwrap-depchain-java7" rev="latest.integration"/>

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<property name="java.version" value="1.8"/>
-<property name="javac.source" value="${java.version}"/>
-<property name="javac.target" value="${java.version}"/>

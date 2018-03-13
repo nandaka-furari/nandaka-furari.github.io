@@ -1,8 +1,0 @@
-{
-	"test":1,
-	"test2":true,
-	"test3": {
-		"name":"kain"
-	},
-	"test4":["abc","def","ghi"]
-}
