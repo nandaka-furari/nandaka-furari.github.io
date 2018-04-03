@@ -34,19 +34,19 @@
 	</head>
 	<body class="container">
 		<header id="header" class="row">
-			<div class="col-xs-12 col-md-8"><a href="index.xhtml" framexs:addpath="on">index</a></div>
+			<div class="col-xs-12 col-md-8"><a href="/documents/index.xhtml">index</a></div>
 			<div class="col-md-4" id="modified">更新：</div>
 		</header>
 		<div class="row">
 			<aside class="col-md-3">
 				<h3>ドキュメント</h3>
 				<ul>
-					<li><a href="contents/aboutme.xhtml" framexs:addpath="on">自己紹介</a></li>
-					<li><a href="contents/poem.xhtml" framexs:addpath="on">ポエム</a></li>
-					<li><a href="contents/twitter.xhtml" framexs:addpath="on">ツイッターを使う上での方針</a></li>  
-					<li><a href="contents/ネトサヨ四天王.xhtml" framexs:addpath="on">ネトサヨ四天王</a></li>
-					<li><a href="contents/political.xhtml" framexs:addpath="on">政治的性向</a></li>
-					<li><a href="contents/愛国労組.xhtml" framexs:addpath="on">愛国労組があったら</a></li>
+					<li><a href="/documents/contents/aboutme.xhtml">自己紹介</a></li>
+					<li><a href="/documents/contents/poem.xhtml">ポエム</a></li>
+					<li><a href="/documents/contents/twitter.xhtml">ツイッターを使う上での方針</a></li>  
+					<li><a href="/documents/contents/ネトサヨ四天王.xhtml">ネトサヨ四天王</a></li>
+					<li><a href="/documents/contents/political.xhtml">政治的性向</a></li>
+					<li><a href="/documents/contents/愛国労組.xhtml">愛国労組があったら</a></li>
 				</ul>
 			</aside>
 			<main class="col-md-6">
@@ -56,8 +56,8 @@
 				<div framexs:id-d="main"></div>
 			</main>
 			<aside class="col-md-3">
-				<div framexs:element-d="aside"></div>
-				<div framexs:copy="aside"></div>
+				<div framexs:id-d="aside"></div>
+				<div framexs:fetch-d="aside"></div>
 			</aside>
 		</div>
 		<footer class="row">
@@ -67,7 +67,7 @@
 				<address><a href="https://plus.google.com/109881978328498570703">Google+</a></address>
 				<address><a href="mailto:nandaka.furari@gmail.com">E-mail</a></address>
 			</div>
-			<div framexs:copy="footer"></div>
+			<div framexs:fetch-d="footer"></div>
 		</footer>
 	</body>
 </html>
