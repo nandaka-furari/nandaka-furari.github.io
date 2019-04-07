@@ -1,20 +1,13 @@
 files/
 framexs/
-framexs2/
-framexs3/
-javascript/
+jEditFollower
+jEditPlugins
 
-lib/
 files/node_modules/
 .dest/
 .ignore/
 files.iml
-/.nb-gradle/
 .idea/
 .properties
-*~
 *.log
-electron/node_modules/
 .project
-
-*~
