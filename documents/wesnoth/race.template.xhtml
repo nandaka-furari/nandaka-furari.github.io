@@ -11,10 +11,10 @@
 		<meta framexs:fix="" property="og:site_name" content="ナンダカフラリのサイト" />
 		<meta property="og:description" content=" Wesnothの自作ユニットデータ。" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"/>
-		<script defer="defer" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 		<script defer="" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-		<link rel="stylesheet" href="../wmlunits-1.1.1.css"/>
-		<script src="/main.js"></script>
+		<style type="text/css">
+		#attacks td {padding:0.25em;}div#portrait svg{height:200px;width:200px}}
+		</style>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-54947811-5"></script>
 		<script>
@@ -28,48 +28,37 @@
 		<meta framexs:load="script"/>              
 
 	</head>
-	<body>
-		<header class="hero is-dark">
-			<div class="hero-head">
-				<div class="container navbar">
-					<div class="navbar-brand">
-						<h2 class="navbar-item">Battle for Wesnoth Unit</h2>
-						<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="nav">
-							<span aria-hidden="true"></span>
-							<span aria-hidden="true"></span>
-							<span aria-hidden="true"></span>
-						</a>
-					</div>
-					<div id="nav" class="navbar-menu">
-						<ul class="navbar-start">
-							<li class="navbar-item"><a class="navbar-item" href="/index.html">サイトのトップページ</a></li>
-							<li class="navbar-item"><a class="navbar-item" href="/documents/index.xhtml">文書置き場のトップページ</a></li>
-						</ul>
-					</div>
-				</div>
+	<body class="container">
+		<header class="header navbar">
+			<div class="navbar-brand"><h2>Battle for Wesnoth Unit</h2></div>
+			<div class="navbar-menu">
+				<ul class="navbar-start">
+					<li class="navbar-item"><a href="/index.html">サイトのトップページ</a></li>
+					<li class="navbar-item"><a href="/documents/index.xhtml">文書置き場のトップページ</a></li>
+				</ul>
 			</div>
 		</header>
 		<div class="section tile is-ancestor">
 			<aside class="tile is-parent is-vertical is-2">
-				<div id="side-menu" class="tile is-child box">
-					<h2>種族</h2>
-					<dl class="menu">
-						<dt class="menu-label">アンデッド</dt>
-						<dd>
-							<ul class="menu-list">
-								<li><a href="dementor.xhtml">Dementor</a></li>
-								<li><a href="death pilot.xhtml">Death Pilot</a></li>
-								<li><a href="ancient dementor.xhtml">Ancient Dementor</a></li>
-							</ul>
-						</dd>
-					</dl>
+				<div class="tile is-child box">
+						<dl>
+								<dt>アンデッド</dt>
+								<dd>
+									<ul>
+										<li><a href="dementor.xhtml">Dementor</a></li>
+										<li><a href="death pilot.xhtml">Death Pilot</a></li>
+										<li><a href="ancient dementor.xhtml">Ancient Dementor</a></li>
+									</ul>
+								</dd>
+							</dl>
 				</div>
+				
 			</aside>
-			<main class="content tile is-vertical">
-				<div id="unit-summary" class="tile">
-					<div class="tile is-parent is-vertical is-9">
+			<main class="tile is-vertical">
+				<div class="tile">
+					<div class="tile is-parent is-vertical is-10">
 						<div class="tile is-child box">
-							<h1 class="title"><span framexs:title=""></span></h1>
+							<h1><div framexs:title=""></div></h1>
 							<section>種族：<div framexs:id-d="race">種族</div></section>
 							<section>
 								<div framexs:id-sd="description"></div>
@@ -81,11 +70,11 @@
 						</div>
 					</div>
 					<div class="tile is-parent is-vertical">
-						<div id="portrait" class="tile is-child box"><span framexs:id-sd="portrait"></span></div>
+						<div id="portrait" class="tile is-child box"><span framexs:fetch-d="portrait"></span></div>
 					</div>
 				</div>
 				<div class="tile">
-					<div class="tile is-parent is-vertical is-7">
+					<div class="tile is-parent is-vertical is-8">
 						<section class="tile is-child box">
 							<h2>Information</h2>
 							<div framexs:id-sd="infomation"></div>
@@ -100,17 +89,18 @@
 							</table>
 						</section>
 						<section class="tile is-child box">
-							<h2>Registences</h2>
+							<h2>Registence</h2>
 							<table>
 								<tbody><tr framexs:fetch-d="registence"><td></td><td></td><td></td></tr></tbody>
 							</table>
 						</section>
 					</div>
-					<div class="tile is-parent is-vertical">
+					<div class="tile is-parent is-vertical is-4">
 						<div class="tile is-child box">
 							<h2>Terrain</h2>
 							<table>
-								<thead><th>Terrain</th><th>Movement<br/>Cost</th><th>Defence</th></thead>
+								<colgroup><col/><col style="width:5em"/><col/></colgroup>
+								<thead><th>Terrain</th><th>movement cost</th><th>defence</th></thead>
 								<tbody><tr framexs:fetch-d="terrain"><td></td><td></td><td></td></tr></tbody>
 							</table>
 						</div>

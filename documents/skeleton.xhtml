@@ -28,36 +28,34 @@
 		<meta framexs:load="script"/>
 	</head>
 	<body>
-		<header class="hero is-dark">
-			<div class="hero-head">
-				<div class="navbar">
-					<div class="navbar-brand">
-						<a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
-							<span aria-hidden="true"></span>
-							<span aria-hidden="true"></span>
-							<span aria-hidden="true"></span>
-						</a>
-					</div>
-					<nav class="navbar-menu" id="navMenu">
-						<ul class="navbar-start">
-							<li class="navbar-item"><a class="navbar-item" href="/index.html">サイトのトップページ</a></li>
-							<li class="navbar-item"><a class="navbar-item" href="/documents/index.xhtml">文書置き場のトップページ</a></li>
-							<li class="navbar-item has-dropdown is-hoverable">
-								<a class="navbar-link">ドキュメント</a>
-								<ul class="navbar-dropdown navbar-item has-background-dark">
-									<li class="navbar-item"><a class="navbar-item" href="/documents/contents/aboutme.xhtml">自己紹介</a></li>
-									<li class="navbar-item"><a class="navbar-item" href="/documents/contents/poem.xhtml">ポエム</a></li>
-									<li class="navbar-item"><a class="navbar-item" href="/documents/contents/political.xhtml">政治的性向</a></li>
-									<li class="navbar-item"><a class="navbar-item" href="/documents/contents/おーぷんノベル作品.xhtml">おーぷんノベル作品</a></li>
-									<li class="navbar-item"><a class="navbar-item" href="/documents/contents/闇の術への対抗と防衛.xhtml">闇の術への対抗と防衛</a></li>
-									<li class="navbar-item"><a class="navbar-item" href="/documents/contents/ノヤブリスク.xhtml">ノヤブリスク計画</a></li>
-									<li class="navbar-item"><a class="navbar-item" href="/documents/contents/wesnoth.xhtml">Wesnothのネタ</a></li>
-								</ul>
-							</li>
-						</ul>
-					</nav>
-				</div>
+		<div class="navbar">
+			<div class="navbar-brand">
+				<a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+				</a>
 			</div>
+			<nav class="navbar-menu" id="navMenu">
+				<ul class="navbar-start">
+					<li class="navbar-item"><a class="navbar-item" href="/index.html">サイトのトップページ</a></li>
+					<li class="navbar-item"><a class="navbar-item" href="/documents/index.xhtml">文書置き場のトップページ</a></li>
+					<li class="navbar-item has-dropdown is-hoverable">
+						<a class="navbar-link">ドキュメント</a>
+						<div class="navbar-dropdown">
+							<a class="navbar-item" href="/documents/contents/aboutme.xhtml">自己紹介</a>
+							<a class="navbar-item" href="/documents/contents/poem.xhtml">ポエム</a>
+							<a class="navbar-item" href="/documents/contents/political.xhtml">政治的性向</a>
+							<a class="navbar-item" href="/documents/contents/おーぷんノベル作品.xhtml">おーぷんノベル作品</a>
+							<a class="navbar-item" href="/documents/contents/闇の術への対抗と防衛.xhtml">闇の術への対抗と防衛</a>
+							<a class="navbar-item" href="/documents/contents/ノヤブリスク.xhtml">ノヤブリスク計画</a>
+							<a class="navbar-item" href="/documents/contents/wesnoth.xhtml">Wesnothのネタ</a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<header class="hero is-dark">
 			<div class="hero-body">
 				<div class="container">
 					<h1 class="title"><span framexs:title=""/> on ナンダカフラリのサイト</h1>
@@ -80,13 +78,13 @@
 			</main>
 			<aside class="tile is-parent is-vertical content">
 				<div class="tile is-child box is-info">
-					<h4>test</h4>
+					<h4>固有</h4>
 					<div class="content">
 						<div framexs:id-d="aside"></div>
 					</div>
 				</div>
 				<div class="tile is-child box is-info">
-					<h4>test2</h4>
+					<h4>共通</h4>
 					<div framexs:fetch-d="aside"></div>
 				</div>
 			</aside>
