@@ -12,10 +12,8 @@
 		<meta framexs:fix="" property="og:site_name" content="ナンダカフラリのサイト" />
 		<meta property="og:description" content=" ナンダカフラリのファイルの雑多な置き場。" />
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js"></script>		
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"/>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"/>
+		<script defer="" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-54947811-5"></script>
 		<script>
@@ -25,48 +23,90 @@
 		
 		  gtag('config', 'UA-54947811-5');
 		</script>
-		<style>body {padding:1% 5%}</style>
+		<link rel="stylesheet" href="/main.css"/>
+		<script src="/main.js"></script>
 		<meta framexs:load="script"/>
 	</head>
-	<body class="container">
-		<header id="header" class="row">
-			<div><a href="/index.html">TOPへ</a></div>
-			<div><a href="/documents/index.xhtml">文書置き場のトップページ</a></div>
-		</header>
-		<div class="row">
-			<aside class="col-md-3">
-				<h3>ドキュメント</h3>
-				<ul>
-					<li><a href="/documents/contents/aboutme.xhtml">自己紹介</a></li>
-					<li><a href="/documents/contents/poem.xhtml">ポエム</a></li>
-					<li><a href="/documents/contents/ネトサヨ四天王.xhtml">ネトサヨ四天王</a></li>
-					<li><a href="/documents/contents/political.xhtml">政治的性向</a></li>
-					<li><a href="/documents/contents/おーぷんノベル作品.xhtml">おーぷんノベル作品</a></li>
-					<li><a href="/documents/contents/闇の術への対抗と防衛.xhtml">闇の術への対抗と防衛</a></li>
-					<li><a href="/documents/contents/wesnoth.xhtml">Wesnothのネタ</a></li>
-				</ul>
-			</aside>
-			<main class="col-md-6">
-				<div framexs:element-d="main">
-					<svg:svg width="10" height="1200" style="background-color:aqua"></svg:svg>
+	<body>
+		<header class="hero is-dark">
+			<div class="hero-head">
+				<div class="navbar">
+					<div class="navbar-brand">
+						<a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+							<span aria-hidden="true"></span>
+							<span aria-hidden="true"></span>
+							<span aria-hidden="true"></span>
+						</a>
+					</div>
+					<nav class="navbar-menu" id="navMenu">
+						<ul class="navbar-start">
+							<li class="navbar-item"><a class="navbar-item" href="/index.html">サイトのトップページ</a></li>
+							<li class="navbar-item"><a class="navbar-item" href="/documents/index.xhtml">文書置き場のトップページ</a></li>
+							<li class="navbar-item has-dropdown is-hoverable">
+								<a class="navbar-link">ドキュメント</a>
+								<ul class="navbar-dropdown navbar-item has-background-dark">
+									<li class="navbar-item"><a class="navbar-item" href="/documents/contents/aboutme.xhtml">自己紹介</a></li>
+									<li class="navbar-item"><a class="navbar-item" href="/documents/contents/poem.xhtml">ポエム</a></li>
+									<li class="navbar-item"><a class="navbar-item" href="/documents/contents/political.xhtml">政治的性向</a></li>
+									<li class="navbar-item"><a class="navbar-item" href="/documents/contents/おーぷんノベル作品.xhtml">おーぷんノベル作品</a></li>
+									<li class="navbar-item"><a class="navbar-item" href="/documents/contents/闇の術への対抗と防衛.xhtml">闇の術への対抗と防衛</a></li>
+									<li class="navbar-item"><a class="navbar-item" href="/documents/contents/ノヤブリスク.xhtml">ノヤブリスク計画</a></li>
+									<li class="navbar-item"><a class="navbar-item" href="/documents/contents/wesnoth.xhtml">Wesnothのネタ</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
 				</div>
-				<div framexs:id-d="main"></div>
+			</div>
+			<div class="hero-body">
+				<div class="container">
+					<h1 class="title"><span framexs:title=""/> on ナンダカフラリのサイト</h1>
+				</div>
+			</div>
+		</header>
+		<div class="section has-background-primary tile is-ancestor">
+			<main class="content tile is-parent is-vertical is-8">
+				<section class="tile is-child box">
+					<p id="abstract" class="notification">
+						<button class="delete"></button>
+						<span framexs:id-d="abstract"></span>
+					</p>
+					<section>
+						<div framexs:id-d="main">
+							<svg:svg width="10" height="1200" style="background-color:aqua"></svg:svg>
+						</div>
+					</section>
+				</section>
 			</main>
-			<aside class="col-md-3">
-				<div framexs:id-d="aside"></div>
-				<div framexs:fetch-d="aside"></div>
+			<aside class="tile is-parent is-vertical content">
+				<div class="tile is-child box is-info">
+					<h4>test</h4>
+					<div class="content">
+						<div framexs:id-d="aside"></div>
+					</div>
+				</div>
+				<div class="tile is-child box is-info">
+					<h4>test2</h4>
+					<div framexs:fetch-d="aside"></div>
+				</div>
 			</aside>
 		</div>
-		<footer class="row">
-			<div class="col-sm-6">
-				<address><a href="https://twitter.com/nandaka_furari">twitter</a></address>
-				<address><a href="https://pawoo.net/@nandaka_furari">pawoo</a></address>
-				<address><a href="https://github.com/nandaka-furari">GitHub</a></address>
-				<address><a href="http://qiita.com/nandaka_furari">Qiita</a></address>
-				<address><a href="mailto:nandaka.furari@gmail.com">E-mail</a></address>
+		<footer class="footer has-background-grey-lighter tile is-ancestor">
+			<div class="tile is-parent">
+				<div class="tile is-child box">
+					<ul>
+						<li><address><a href="https://twitter.com/nandaka_furari">twitter</a></address></li>
+						<li><address><a href="https://pawoo.net/@nandaka_furari">pawoo</a></address></li>
+						<li><address><a href="https://github.com/nandaka-furari">GitHub</a></address></li>
+						<li><address><a href="http://qiita.com/nandaka_furari">Qiita</a></address></li>
+						<li><address><a href="mailto:nandaka.furari@gmail.com">E-mail</a></address></li>
+					</ul>
+				</div>
 			</div>
-			<div class="col-sm-6">
-				<p>このサイトのコードは<a href="https://github.com/nandaka-furari/nandaka-furari.github.io">GitHubリポジトリ</a>に置いています。</p>
+			<div class="tile is-parent">
+				<div class="content tile is-child box">
+					<p>このサイトのコードは<a href="https://github.com/nandaka-furari/nandaka-furari.github.io">GitHubリポジトリ</a>に置いています。</p>
+				</div>
 			</div>
 		</footer>
 	</body>
