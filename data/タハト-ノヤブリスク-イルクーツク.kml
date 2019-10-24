@@ -27,9 +27,8 @@
 		<Placemark>
 			<name>タハト-ノヤブリスク-イルクーツク</name>
 			<visibility>0</visibility>
-			<description><![CDATA[砂と木の交換
-<a href="https://nandaka-furari.github.io/documents/contents/ノヤブリスク.xhtml">ノヤブリスク計画</a>]]></description>
-			<styleUrl>#メイン路線</styleUrl>
+			<description>砂と木の交換</description>
+			<styleUrl>#メイン路線</styleUrl>                                        
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
