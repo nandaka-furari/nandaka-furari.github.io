@@ -2,6 +2,7 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
 	<Document>
 		<name>タハト-ノヤブリスク-イルクーツク</name>
+
 		<Style id="メイン路線normal">
 			<LineStyle>
 				<color>ff0000ff</color>
@@ -24,17 +25,122 @@
 				<styleUrl>#メイン路線highlight</styleUrl>
 			</Pair>
 		</StyleMap>
-		<Placemark>
-			<name>タハト-ノヤブリスク-イルクーツク</name>
-			<visibility>0</visibility>
-			<description>砂と木の交換</description>
-			<styleUrl>#メイン路線</styleUrl>                                        
-			<LineString>
-				<tessellate>1</tessellate>
-				<coordinates>
+		<Style id="人と砂の移動normal">
+			<LineStyle>
+				<color>ffffff55</color>
+			</LineStyle>
+		</Style>
+		<Style id="人と砂の移動highlight">
+			<LineStyle>
+				<color>ffffff55</color>
+			</LineStyle>
+		</Style>
+		<StyleMap id="人と砂の移動"> 
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#人と砂の移動normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#人と砂の移動highlight</styleUrl>
+			</Pair>
+		</StyleMap>        
+		<Style id="人と小麦の移動normal">
+			<LineStyle>
+				<color>ffff00ff</color>
+			</LineStyle>
+		</Style>
+		<Style id="人と小麦の移動highlight">
+			<LineStyle>
+				<color>ffff00ff</color>
+			</LineStyle>
+		</Style>
+		<StyleMap id="人と小麦の移動">
+			<Pair>
+				<key>normal</key>     
+				<styleUrl>#人と小麦の移動normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#人と小麦の移動highlight</styleUrl>
+			</Pair>
+		</StyleMap>      
+		<Style id="海路normal"> 
+			<LineStyle>
+				<color>ffffffff</color>
+			</LineStyle>
+		</Style>
+		<Style id="海路highlight">
+			<LineStyle>
+				<color>ffffffff</color>
+			</LineStyle>
+		</Style>
+		<StyleMap id="海路">
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#海路normal</styleUrl>
+			</Pair>
+			<Pair>           
+				<key>highlight</key>
+				<styleUrl>#海路normal</styleUrl>
+			</Pair>
+		</StyleMap>
+		<Folder>
+			<name>路線</name>
+			<Placemark>
+				<name>タハト-ノヤブリスク-イルクーツク</name>
+				<description><![CDATA[砂と木の交換
+<a href="https://nandaka-furari.github.io/documents/contents/ノヤブリスク.xhtml">ノヤブリスク計画</a>]]></description>
+				<styleUrl>#メイン路線</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
 					5.579943558910003,23.28278154672091,0 26.07934080504661,44.44730773786845,0 61.63286184100645,46.87520858295907,0 76.57839766802347,63.58024625068146,0 129.5921532271209,62.04677067867221,0 
 				</coordinates>
-			</LineString>
-		</Placemark>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>上海-トボリスク</name>
+				<styleUrl>#人と砂の移動</styleUrl>                                    
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+					68.62803512867144,58.124602669661,0 84.28418601059613,47.88311882191069,0 106.2322283716701,38.49011466691612,0 121.793323750288,31.42634678970693,0 
+				</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>コルカタ-トボリスク</name>
+				<styleUrl>#人と砂の移動</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+					68.28455105358572,58.18493675725165,0 61.19449501580854,47.08336133762495,0 61.48473428546485,31.02620221023075,0 88.30811935432824,22.59201429551669,0 
+				</coordinates>
+				</LineString>               
+			</Placemark>
+			<Placemark>
+				<name>パリ-ノヤブリスク</name>
+				<description>人と小麦の移動</description>
+				<styleUrl>#人と小麦の移動</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+					2.359887965718381,48.86166003171866,0 37.71905802666955,55.62947734460343,0 60.57819287036787,56.84097447715538,0 75.78004528482286,63.52561781647428,0 
+				</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>北極圏</name>
+				<description>海で砂と木の交換</description>
+				<styleUrl>#海路</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+					75.33003728287335,63.03715157657694,0 18.91678843569735,69.67005261738979,0 -9.088155178449005,53.26567601261354,0 -17.43124620189849,14.71849268334515,0 
+				</coordinates>
+				</LineString>
+			</Placemark>
+		</Folder>
 	</Document>
 </kml>
