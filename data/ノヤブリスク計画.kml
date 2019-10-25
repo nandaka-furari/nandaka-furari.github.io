@@ -134,7 +134,7 @@
 		</Placemark>
 		<!-- LineString -->
 		<Placemark>
-			<name>タハト-ノヤブリスク-イルクーツク</name>
+			<name>タハト-ノヤブリスク</name>
 			<description>砂と木の交換</description>
 			<styleUrl>#メイン路線</styleUrl>
 			<LineString>
