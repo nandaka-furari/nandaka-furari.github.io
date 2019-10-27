@@ -2,7 +2,9 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
 	<Document>
 		<name>ノヤブリスク計画</name>
-		<!-- StypeMap -->
+		<description>木と砂の路</description>
+		<!-- Point -->
+		<!-- メイン -->
 		<Style id="メインポイントnormal">
 			<IconStyle>
 				<color>ff0000ff</color>
@@ -11,6 +13,9 @@
 					<href>http://maps.google.com/mapfiles/kml/shapes/square.png</href>
 				</Icon>
 			</IconStyle>
+			<LabelStyle>
+				<scale>3</scale>
+			</LabelStyle>
 		</Style>
 		<Style id="メインポイントhighlight">
 			<IconStyle>
@@ -20,6 +25,9 @@
 					<href>http://maps.google.com/mapfiles/kml/shapes/square.png</href>
 				</Icon>
 			</IconStyle>
+			<LabelStyle>
+				<scale>3</scale>
+			</LabelStyle>
 		</Style>
 		<StyleMap id="メインポイント">
 			<Pair>
@@ -30,7 +38,90 @@
 				<key>highlight</key>
 				<styleUrl>#メインポイントhighlight</styleUrl>
 			</Pair>
+		</StyleMap>	
+		<Placemark>
+			<name>ノヤブリスク</name>
+			<description>中心</description>
+			<styleUrl>#メインポイント</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>75.447760,63.184196,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>タハト</name>
+			<description>中心</description>
+			<styleUrl>#メインポイント</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>5.536841,23.289671,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>アラル</name>
+			<styleUrl>#メインポイント</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>61.6639055,46.803197,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>トボリスク</name>
+			<styleUrl>#メインポイント</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>68.26352279999999,58.200024,0</coordinates>
+			</Point>
+		</Placemark>
+		<!-- 通常ポイント -->
+		<Style id="通常ポイントnormal">
+		</Style>
+		<Style id="通常ポイントhighlight">
+		</Style>
+		<StyleMap id="通常ポイント">
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#通常ポイントnormal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#通常ポイントhighlight</styleUrl>
+			</Pair>
 		</StyleMap>
+		<Placemark>
+			<name>モスクワ</name>
+			<styleUrl>#通常ポイント</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>37.6172999,55.75582600000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>ヤクーツク</name>
+			<styleUrl>#通常ポイント</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>129.6754745,62.0354523,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>ザーボル</name>
+			<styleUrl>#通常ポイント</styleUrl>
+			<Point>
+				<coordinates>61.49881195626857,31.03503351735901,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>ノヴォシビルスク</name>
+			<styleUrl>#通常ポイント</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>82.99819287568579,55.13500589631612,0</coordinates>
+			</Point>
+		</Placemark>
+		<!-- /Point -->
+		<!-- LineString -->
+		<!-- メイン -->
 		<Style id="メイン路線normal">
 			<LineStyle>
 				<color>ff0000ff</color>
@@ -53,6 +144,51 @@
 				<styleUrl>#メイン路線highlight</styleUrl>
 			</Pair>
 		</StyleMap>
+		<Placemark>
+			<name>タハト発</name>
+			<description>砂と木の交換</description>
+			<styleUrl>#メイン路線</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					5.579943558910003,23.28278154672091,0
+					26.07934080504661,44.44730773786845,0
+					61.63286184100645,46.87520858295907,0
+					68.62803512867144,58.124602669661,0
+					75.68599968293759,63.00693704832148,0
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>北極圏航路</name>
+			<description>海で砂と木の交換</description>
+			<styleUrl>#メイン路線</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-17.43124620189849,14.71849268334515,0
+					-9.088155178449005,53.26567601261354,0
+					23.27397700224084,69.98444400723996,0
+					69.01134882772469,68.81988289521016,0
+					75.33003728287335,63.03715157657694,0
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>未来シベリア道</name>
+			<description>シベリア鉄道を置き換える</description>
+			<styleUrl>#メイン路線</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					123.479060,41.806609,0
+					128.6835644007803,49.99448733541448,0
+					124.3199423556177,59.52149101160414,0
+					76.86679562361428,62.62219042974527,0
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<!-- その他 -->
 		<Style id="人と砂の移動normal">
 			<LineStyle>
 				<color>ffffff55</color>
@@ -113,99 +249,28 @@
 				<styleUrl>#鉄道normal</styleUrl>
 			</Pair>
 		</StyleMap>
-		<!-- Point -->
-		<Placemark>
-			<name>ノヤブリスク</name>
-			<description>中心</description>
-			<styleUrl>#メインポイント</styleUrl>
-			<Point>
-				<altitudeMode>relativeToGround</altitudeMode>
-				<coordinates>75.447760,63.184196,0</coordinates>
-			</Point>
-		</Placemark>
-		<Placemark>
-			<name>タハト</name>
-			<description>中心</description>
-			<styleUrl>#メインポイント</styleUrl>
-			<Point>
-				<altitudeMode>relativeToGround</altitudeMode>
-				<coordinates>5.536841,23.289671,0</coordinates>
-			</Point>
-		</Placemark>
-		<!-- LineString -->
-		<Placemark>
-			<name>タハト-ノヤブリスク</name>
-			<description>砂と木の交換</description>
-			<styleUrl>#メイン路線</styleUrl>
-			<LineString>
-				<tessellate>1</tessellate>
-				<coordinates>
-					5.579943558910003,23.28278154672091,0
-					26.07934080504661,44.44730773786845,0
-					61.63286184100645,46.87520858295907,0
-					75.68599968293759,63.00693704832148,0
-					129.5921532271209,62.04677067867221,0
-				</coordinates>
-			</LineString>
-		</Placemark>
-		<Placemark>
-			<name>北極圏航路</name>
-			<description>海で砂と木の交換</description>
-			<styleUrl>#メイン路線</styleUrl>
-			<LineString>
-				<tessellate>1</tessellate>
-				<coordinates>
-					75.33003728287335,63.03715157657694,0
-					67.520214,68.3763361,0
-					8.91678843569735,69.67005261738979,0
-					-9.088155178449005,53.26567601261354,0
-					-17.43124620189849,14.71849268334515,0
-				</coordinates>
-			</LineString>
-		</Placemark>
-		<Placemark>
-			<name>未来シベリア道</name>
-			<description>シベリア鉄道を置き換える</description>
-			<styleUrl>#メイン路線</styleUrl>
-			<LineString>
-				<tessellate>1</tessellate>
-				<coordinates>
-					67.85675382030772,58.43179188222302,0
-					76.86679562361428,62.62219042974527,0
-					125.1467840310785,58.98803496805788,0
-					124.0969517990995,57.52794223414998,0
-					124.924909453257,55.64934264847948,0
-					127.8979910807964,54.39893865717495,0
-					128.2896324023747,49.78038057303377,0
-					130.5775506676542,48.69897107765594,0
-					130.961484697065,47.77534048498591,0
-					135.0708786613819,48.70818902218542,0
-				</coordinates>
-			</LineString>
-		</Placemark>
 		<Placemark>
 			<name>上海-トボリスク</name>
 			<styleUrl>#人と砂の移動</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
-					68.62803512867144,58.124602669661,0
-					84.28418601059613,47.88311882191069,0
-					106.2322283716701,38.49011466691612,0
 					121.793323750288,31.42634678970693,0
+					106.2322283716701,38.49011466691612,0
+					84.28418601059613,47.88311882191069,0
+					68.62803512867144,58.124602669661,0
 				</coordinates>
 			</LineString>
 		</Placemark>
 		<Placemark>
-			<name>コルカタ-トボリスク</name>
+			<name>コルカタ-アラル</name>
 			<styleUrl>#人と砂の移動</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
-					68.28455105358572,58.18493675725165,0
-					61.5785592793817,46.79266920679933,0
-					61.48473428546485,31.02620221023075,0
 					88.30811935432824,22.59201429551669,0
+					61.48473428546485,31.02620221023075,0
+					61.5785592793817,46.79266920679933,0
 				</coordinates>
 			</LineString>
 		</Placemark>
@@ -229,15 +294,17 @@
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
-				37.43526144052152,55.76281099622499,0
-				60.6653767139753,56.86308612895024,0
-				82.88673779030879,55.00632540726853,0
-				92.87288772272972,55.99681925931259,0
-				104.2659072936146,52.20532964904454,0
-				135.5612263067866,48.51875568263004,0
-				131.9102520385481,43.15783333184999,0
-			</coordinates>
+					37.43526144052152,55.76281099622499,0
+					60.6653767139753,56.86308612895024,0
+					82.88673779030879,55.00632540726853,0
+					92.87288772272972,55.99681925931259,0
+					104.2659072936146,52.20532964904454,0
+					123.9417369232401,53.96907280144772,0
+					135.5612263067866,48.51875568263004,0
+					131.9102520385481,43.15783333184999,0
+				</coordinates>
 			</LineString>
 		</Placemark>
+		<!-- /LineString -->
 	</Document>
 </kml>
