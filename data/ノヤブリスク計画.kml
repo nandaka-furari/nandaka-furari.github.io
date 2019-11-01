@@ -229,26 +229,6 @@
 				<styleUrl>#人と小麦の移動highlight</styleUrl>
 			</Pair>
 		</StyleMap>
-		<Style id="鉄道normal">
-			<LineStyle>
-				<color>ffffffff</color>
-			</LineStyle>
-		</Style>
-		<Style id="鉄道highlight">
-			<LineStyle>
-				<color>ffffffff</color>
-			</LineStyle>
-		</Style>
-		<StyleMap id="鉄道">
-			<Pair>
-				<key>normal</key>
-				<styleUrl>#鉄道normal</styleUrl>
-			</Pair>
-			<Pair>
-				<key>highlight</key>
-				<styleUrl>#鉄道normal</styleUrl>
-			</Pair>
-		</StyleMap>
 		<Placemark>
 			<name>上海-トボリスク</name>
 			<styleUrl>#人と砂の移動</styleUrl>
@@ -285,23 +265,6 @@
 					37.71905802666955,55.62947734460343,0
 					60.57819287036787,56.84097447715538,0
 					68.2550079765322,58.09870849333254,0
-				</coordinates>
-			</LineString>
-		</Placemark>
-		<Placemark>
-			<name>シベリア鉄道</name>
-			<styleUrl>#鉄道</styleUrl>
-			<LineString>
-				<tessellate>1</tessellate>
-				<coordinates>
-					37.43526144052152,55.76281099622499,0
-					60.6653767139753,56.86308612895024,0
-					82.88673779030879,55.00632540726853,0
-					92.87288772272972,55.99681925931259,0
-					104.2659072936146,52.20532964904454,0
-					123.9417369232401,53.96907280144772,0
-					135.5612263067866,48.51875568263004,0
-					131.9102520385481,43.15783333184999,0
 				</coordinates>
 			</LineString>
 		</Placemark>
