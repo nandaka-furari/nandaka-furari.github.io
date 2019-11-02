@@ -4,7 +4,6 @@
 		<name>ノヤブリスク計画</name>
 		<description>木と砂の路</description>
 		<!-- Point -->
-		<!-- メイン -->
 		<Style id="メインポイントnormal">
 			<IconStyle>
 				<color>ff0000ff</color>
@@ -38,90 +37,43 @@
 				<key>highlight</key>
 				<styleUrl>#メインポイントhighlight</styleUrl>
 			</Pair>
-		</StyleMap>	
-		<Placemark>
-			<name>ノヤブリスク</name>
-			<description>中心</description>
-			<styleUrl>#メインポイント</styleUrl>
-			<Point>
-				<altitudeMode>relativeToGround</altitudeMode>
-				<coordinates>75.447760,63.184196,0</coordinates>
-			</Point>
-		</Placemark>
-		<Placemark>
-			<name>タハト</name>
-			<description>中心</description>
-			<styleUrl>#メインポイント</styleUrl>
-			<Point>
-				<altitudeMode>relativeToGround</altitudeMode>
-				<coordinates>5.536841,23.289671,0</coordinates>
-			</Point>
-		</Placemark>
-		<Placemark>
-			<name>アラル</name>
-			<styleUrl>#メインポイント</styleUrl>
-			<Point>
-				<altitudeMode>relativeToGround</altitudeMode>
-				<coordinates>61.6639055,46.803197,0</coordinates>
-			</Point>
-		</Placemark>
-		<Placemark>
-			<name>トボリスク</name>
-			<styleUrl>#メインポイント</styleUrl>
-			<Point>
-				<altitudeMode>relativeToGround</altitudeMode>
-				<coordinates>68.26352279999999,58.200024,0</coordinates>
-			</Point>
-		</Placemark>
-		<!-- 通常ポイント -->
-		<Style id="通常ポイントnormal">
+		</StyleMap>
+		<Style id="サブポイントnormal">
+			<IconStyle>
+				<color>ff00ffff</color>
+				<scale>2</scale>
+				<Icon>
+					<href>http://maps.google.com/mapfiles/kml/shapes/donut.png</href>
+				</Icon>
+			</IconStyle>
+			<LabelStyle>
+				<scale>2</scale>
+			</LabelStyle>
 		</Style>
-		<Style id="通常ポイントhighlight">
+		<Style id="サブポイントhighlight">
+			<IconStyle>
+				<color>ff00ffff</color>
+				<scale>2</scale>
+				<Icon>
+					<href>http://maps.google.com/mapfiles/kml/shapes/donut.png</href>
+				</Icon>
+			</IconStyle>
+			<LabelStyle>
+				<scale>2</scale>
+			</LabelStyle>
 		</Style>
-		<StyleMap id="通常ポイント">
+		<StyleMap id="サブポイント">
 			<Pair>
 				<key>normal</key>
-				<styleUrl>#通常ポイントnormal</styleUrl>
+				<styleUrl>#サブポイントnormal</styleUrl>
 			</Pair>
 			<Pair>
 				<key>highlight</key>
-				<styleUrl>#通常ポイントhighlight</styleUrl>
+				<styleUrl>#サブポイントhighlight</styleUrl>
 			</Pair>
 		</StyleMap>
-		<Placemark>
-			<name>モスクワ</name>
-			<styleUrl>#通常ポイント</styleUrl>
-			<Point>
-				<altitudeMode>relativeToGround</altitudeMode>
-				<coordinates>37.6172999,55.75582600000001,0</coordinates>
-			</Point>
-		</Placemark>
-		<Placemark>
-			<name>ヤクーツク</name>
-			<styleUrl>#通常ポイント</styleUrl>
-			<Point>
-				<altitudeMode>relativeToGround</altitudeMode>
-				<coordinates>129.6754745,62.0354523,0</coordinates>
-			</Point>
-		</Placemark>
-		<Placemark>
-			<name>ザーボル</name>
-			<styleUrl>#通常ポイント</styleUrl>
-			<Point>
-				<coordinates>61.49881195626857,31.03503351735901,0</coordinates>
-			</Point>
-		</Placemark>
-		<Placemark>
-			<name>ノヴォシビルスク</name>
-			<styleUrl>#通常ポイント</styleUrl>
-			<Point>
-				<altitudeMode>relativeToGround</altitudeMode>
-				<coordinates>82.99819287568579,55.13500589631612,0</coordinates>
-			</Point>
-		</Placemark>
 		<!-- /Point -->
 		<!-- LineString -->
-		<!-- メイン -->
 		<Style id="メイン路線normal">
 			<LineStyle>
 				<color>ff0000ff</color>
@@ -144,6 +96,109 @@
 				<styleUrl>#メイン路線highlight</styleUrl>
 			</Pair>
 		</StyleMap>
+		<Style id="人と砂の移動normal">
+			<LineStyle>
+				<color>ffffff55</color>
+			</LineStyle>
+		</Style>
+		<Style id="人と砂の移動highlight">
+			<LineStyle>
+				<color>ffffff55</color>
+			</LineStyle>
+		</Style>
+		<StyleMap id="人と砂の移動">
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#人と砂の移動normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#人と砂の移動highlight</styleUrl>
+			</Pair>
+		</StyleMap>
+		<Style id="人と小麦の移動normal">
+			<LineStyle>
+				<color>ffff00ff</color>
+			</LineStyle>
+		</Style>
+		<Style id="人と小麦の移動highlight">
+			<LineStyle>
+				<color>ffff00ff</color>
+			</LineStyle>
+		</Style>
+		<StyleMap id="人と小麦の移動">
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#人と小麦の移動normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#人と小麦の移動highlight</styleUrl>
+			</Pair>
+		</StyleMap>
+		<!-- /LineString -->
+		<!-- Point -->
+		<Placemark>
+			<name>ノヤブリスク</name>
+			<description>中心</description>
+			<styleUrl>#メインポイント</styleUrl>
+			<Point>
+				<coordinates>75.447760,63.184196,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>タハト</name>
+			<description>中心</description>
+			<styleUrl>#メインポイント</styleUrl>
+			<Point>
+				<coordinates>5.536841,23.289671,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>アラル</name>
+			<styleUrl>#メインポイント</styleUrl>
+			<Point>
+				<coordinates>61.6639055,46.803197,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>トボリスク</name>
+			<styleUrl>#メインポイント</styleUrl>
+			<Point>
+				<coordinates>68.26352279999999,58.200024,0</coordinates>
+			</Point>
+		</Placemark>
+		<!-- サブポイント -->
+		<Placemark>
+			<name>ヤクーツク</name>
+			<styleUrl>#サブポイント</styleUrl>
+			<Point>
+				<coordinates>129.6754745,62.0354523,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>ザーボル</name>
+			<styleUrl>#サブポイント</styleUrl>
+			<Point>
+				<coordinates>61.49881195626857,31.03503351735901,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>ノヴォシビルスク</name>
+			<styleUrl>#サブポイント</styleUrl>
+			<Point>
+				<coordinates>82.99819287568579,55.13500589631612,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>ゴールウェー</name>
+			<styleUrl>#サブポイント</styleUrl>
+			<Point>
+				<coordinates>-9.052609023635652,53.26571065651864,0</coordinates>
+			</Point>
+		</Placemark>
+		<!-- /Point -->
+		<!-- LineString -->
 		<Placemark>
 			<name>タハト発</name>
 			<description>砂と木の交換</description>
@@ -189,46 +244,6 @@
 			</LineString>
 		</Placemark>
 		<!-- その他 -->
-		<Style id="人と砂の移動normal">
-			<LineStyle>
-				<color>ffffff55</color>
-			</LineStyle>
-		</Style>
-		<Style id="人と砂の移動highlight">
-			<LineStyle>
-				<color>ffffff55</color>
-			</LineStyle>
-		</Style>
-		<StyleMap id="人と砂の移動">
-			<Pair>
-				<key>normal</key>
-				<styleUrl>#人と砂の移動normal</styleUrl>
-			</Pair>
-			<Pair>
-				<key>highlight</key>
-				<styleUrl>#人と砂の移動highlight</styleUrl>
-			</Pair>
-		</StyleMap>
-		<Style id="人と小麦の移動normal">
-			<LineStyle>
-				<color>ffff00ff</color>
-			</LineStyle>
-		</Style>
-		<Style id="人と小麦の移動highlight">
-			<LineStyle>
-				<color>ffff00ff</color>
-			</LineStyle>
-		</Style>
-		<StyleMap id="人と小麦の移動">
-			<Pair>
-				<key>normal</key>
-				<styleUrl>#人と小麦の移動normal</styleUrl>
-			</Pair>
-			<Pair>
-				<key>highlight</key>
-				<styleUrl>#人と小麦の移動highlight</styleUrl>
-			</Pair>
-		</StyleMap>
 		<Placemark>
 			<name>上海-トボリスク</name>
 			<styleUrl>#人と砂の移動</styleUrl>
