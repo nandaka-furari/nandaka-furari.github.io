@@ -27,6 +27,13 @@ dt {
 dd {
 	padding: 0 0 0 1em;
 }
+.flat {
+	padding: 0;
+}
+.flat li {
+	display: block;
+	margin: 0;
+}
 @media screen and (max-width: 781px) {
 
 }
