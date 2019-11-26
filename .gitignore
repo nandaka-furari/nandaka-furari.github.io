@@ -1,11 +1,8 @@
-files/
 framexs/
 jEditFollower
 
-files/node_modules/
 .dest/
 .ignore/
-files.iml
 .idea/
 .properties
 *.log

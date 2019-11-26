@@ -6,17 +6,11 @@
 		<description>ナンダカフラリのファイル置き場</description>
 		<items>
 			<rdf:Seq>
-				<rdf:li rdf:resource="https://nandaka-furari.github.io/files/"></rdf:li>
 				<rdf:li rdf:resource="https://nandaka-furari.github.io/framexs/"></rdf:li>
 				<rdf:li rdf:resource="https://nandaka-furari.github.io/documents/"></rdf:li>
 			</rdf:Seq>
 		</items>
 	</channel>
-	<item rdf:about="https://nandaka-furari.github.io/files/">
-		<title>雑多なファイルの置き場</title>
-		<link>https://nandaka-furari.github.io/files/</link>
-		<description>雑多なファイルの置き場</description>
-	</item>
 	<item rdf:about="https://nandaka-furari.github.io/framexs/">
 		<title>framexs</title>
 		<link>https://nandaka-furari.github.io/framexs/</link>
