@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" ns="urn:sample" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+	<start>
+		<element name="sample">
+			<zeroOrMore>
+				<choice>
+					<ref name="any"></ref>
+				</choice>
+			</zeroOrMore>
+		</element>
+	</start>
+	<div>
+		<define name="any">
+			<element>
+				<anyName/>
+				<zeroOrMore>
+					<choice>
+						<ref name="any"></ref>
+						<text/>
+					</choice>
+				</zeroOrMore>
+				<zeroOrMore>
+					<attribute>
+						<anyName/>
+					</attribute>
+				</zeroOrMore>
+			</element>
+		</define>
+	</div>
+</grammar>
