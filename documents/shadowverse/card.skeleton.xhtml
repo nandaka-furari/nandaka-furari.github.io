@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" prefix="og: http://ogp.me/ns#" xmlns:framexs="urn:framexs">
+	<head>
+		<title> - Wesnoth Unit</title>
+		<meta name="keywords" content=""/>
+		<meta name="description" content=""/>
+		<meta framexs:fix="" name="viewport" content="width=device-width,initial-scale=1"/>
+		<meta framexs:fix="" property="og:type" content="article"/>
+		<meta property="og:title" content=" - Wesnoth Unit"/>
+		<meta property="og:url" content=""/>
+		<meta framexs:fix="" property="og:site_name" content="ナンダカフラリのサイト" />
+		<meta property="og:description" content=" Wesnothの自作ユニットデータ。" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"/>
+		<script defer="defer" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+		<script defer="" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+		<link rel="stylesheet" href="../wesnoth/wmlunits-1.1.1.css"/>
+		<script src="/main.js"></script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-54947811-5"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		
+		  gtag('config', 'UA-54947811-5');
+		</script>
+		<meta framexs:load="link"/>
+		<meta framexs:load="script"/>              
+
+	</head>
+	<body>
+		<header class="hero is-dark">
+			<div class="hero-head">
+				<div class="container navbar">
+					<div class="navbar-brand">
+						<h2 class="navbar-item">シャドバ</h2>
+						<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="nav">
+							<span aria-hidden="true"></span>
+							<span aria-hidden="true"></span>
+							<span aria-hidden="true"></span>
+						</a>
+					</div>
+					<div id="nav" class="navbar-menu">
+						<ul class="navbar-start">
+							<li class="navbar-item"><a class="navbar-item" href="index.xhtml">シャドウバース</a></li>
+							<li class="navbar-item"><a class="navbar-item" href="/index.html">サイトのトップページ</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="section tile is-ancestor">
+			<aside class="tile is-parent is-vertical is-2">
+				<div id="side-menu" class="tile is-child box">
+					<h2>種族</h2>
+					<dl class="menu">
+						<dt class="menu-label">ニュートラル</dt>
+						<dd>
+							<ul class="menu-list">
+								<li><a href="card/ゴブリン.xhtml">ゴブリン</a></li>
+								<li><a href="card/運命の泉.xhtml">運命の泉</a></li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+			</aside>
+			<main class="content tile is-vertical">
+				<div id="card-summary" class="tile">
+					<div class="tile is-parent">
+						<div class="tile is-child box">
+							<h1 class="title"><span framexs:title=""></span></h1>
+							<p framexs:id-sd="class"></p>
+							<p framexs:id-sd="type"></p>
+							<p framexs:id-sd="set"></p>
+							<p framexs:id-sd="cost"></p>
+							<p framexs:id-sd="color"></p>
+							<p framexs:id-sd="kind"></p>
+							<p framexs:id-sd="note"></p>
+						</div>
+					</div>
+				</div>
+				<div class="tile">
+					<div class="tile is-parent">
+						<section class="tile is-child box">
+							<div framexs:id-sd="description"></div>
+						</section>
+					</div>
+				</div>
+			</main>
+		</div>
+		<footer class="footer">
+			<section class="box is-info">
+			<h2>参考</h2>
+			<ul>
+			<li><a href="https://shadowverse.jp/">シャドウバース</a></li>
+			<li><a href="https://twitter.com/shadowverse_jp">ツイッター</a></li>   
+			</ul>
+			</section>
+		</footer>
+	</body>
+</html>
