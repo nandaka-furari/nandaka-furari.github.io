@@ -1,0 +1,26 @@
+#normal {
+	border: solid 1px green;
+	margin: 1px;
+}
+#normal:before {
+	content: "通常"
+}
+#advanced {
+	border: solid 1px red;
+	margin: 1px;
+}
+#advanced:before {
+	content: "進化後"
+}
+.attack {
+	display: inline;
+}
+.attack:before {
+	content: "a:";
+}
+.life {
+	display: inline;
+}
+.life:before {
+	content: "l:"
+}

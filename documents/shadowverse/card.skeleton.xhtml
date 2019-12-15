@@ -6,7 +6,7 @@
 		<meta name="description" content=""/>
 		<meta framexs:fix="" name="viewport" content="width=device-width,initial-scale=1"/>
 		<meta framexs:fix="" property="og:type" content="article"/>
-		<meta property="og:title" content=" - Wesnoth Unit"/>
+		<meta property="og:title" content=" - シャドウバース"/>
 		<meta property="og:url" content=""/>
 		<meta framexs:fix="" property="og:site_name" content="ナンダカフラリのサイト" />
 		<meta property="og:description" content=" Wesnothの自作ユニットデータ。" />
@@ -14,6 +14,7 @@
 		<script defer="defer" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 		<script defer="" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 		<link rel="stylesheet" href="../wesnoth/wmlunits-1.1.1.css"/>
+		<link rel="stylesheet" href="sv.css"/>
 		<script src="/main.js"></script>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-54947811-5"></script>
@@ -52,16 +53,13 @@
 		<div class="section tile is-ancestor">
 			<aside class="tile is-parent is-vertical is-2">
 				<div id="side-menu" class="tile is-child box">
-					<h2>種族</h2>
-					<dl class="menu">
-						<dt class="menu-label">ニュートラル</dt>
-						<dd>
-							<ul class="menu-list">
-								<li><a href="card/ゴブリン.xhtml">ゴブリン</a></li>
-								<li><a href="card/運命の泉.xhtml">運命の泉</a></li>
-							</ul>
-						</dd>
-					</dl>
+					<h2>カード</h2>
+					<ul class="menu-list">
+						<li><a href="card/ゴブリン.xhtml">ゴブリン</a></li>
+						<li><a href="card/運命の泉.xhtml">運命の泉</a></li>
+						<li><a href="card/黙っとけ.xhtml">黙っとけ</a></li>
+						<li><a href="card/冒涜の墓場.xhtml">冒涜の墓場</a></li>
+					</ul>
 				</div>
 			</aside>
 			<main class="content tile is-vertical">
@@ -69,12 +67,14 @@
 					<div class="tile is-parent">
 						<div class="tile is-child box">
 							<h1 class="title"><span framexs:title=""></span></h1>
-							<p framexs:id-sd="class"></p>
-							<p framexs:id-sd="type"></p>
-							<p framexs:id-sd="set"></p>
-							<p framexs:id-sd="cost"></p>
-							<p framexs:id-sd="color"></p>
-							<p framexs:id-sd="kind"></p>
+							<table>
+								<tr><td>class</td><td><p framexs:id-d="class"></p></td></tr>
+								<tr><td>type</td><td><p framexs:id-d="type"></p></td></tr>
+								<tr><td>set</td><td><p framexs:id-d="set"></p></td></tr>
+								<tr><td>cost</td><td><p framexs:id-d="cost"></p></td></tr>
+								<tr><td>color</td><td><p framexs:id-d="color"></p></td></tr>
+								<tr><td>kind</td><td><p framexs:id-d="kind"></p></td></tr>
+							</table>
 							<p framexs:id-sd="note"></p>
 						</div>
 					</div>
