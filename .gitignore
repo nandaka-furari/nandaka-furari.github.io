@@ -1,9 +1,6 @@
 framexs/
-jEditFollower
 
 .dest/
 .ignore/
-.idea/
 .properties
-*.log
-.project
+*.log
