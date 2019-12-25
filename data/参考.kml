@@ -27,6 +27,54 @@
 				<styleUrl>#通常ポイントhighlight</styleUrl>
 			</Pair>
 		</StyleMap>
+		<Style id="サブポイントnormal">
+			<IconStyle>
+				<color>ff00ffff</color>
+				<scale>2</scale>
+				<Icon>
+					<href>http://maps.google.com/mapfiles/kml/shapes/donut.png</href>
+				</Icon>
+			</IconStyle>
+			<LabelStyle>
+				<scale>2</scale>
+			</LabelStyle>
+		</Style>
+		<Style id="サブポイントhighlight">
+			<IconStyle>
+				<color>ff00ffff</color>
+				<scale>2</scale>
+				<Icon>
+					<href>http://maps.google.com/mapfiles/kml/shapes/donut.png</href>
+				</Icon>
+			</IconStyle>
+			<LabelStyle>
+				<scale>2</scale>
+			</LabelStyle>
+		</Style>
+		<StyleMap id="サブポイント">
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#サブポイントnormal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#サブポイントhighlight</styleUrl>
+			</Pair>
+		</StyleMap>
+		<Placemark>
+			<name>ヤクーツク</name>
+			<styleUrl>#サブポイント</styleUrl>
+			<Point>
+				<coordinates>129.6754745,62.0354523,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>ノヴォシビルスク</name>
+			<styleUrl>#サブポイント</styleUrl>
+			<Point>
+				<coordinates>82.99819287568579,55.13500589631612,0</coordinates>
+			</Point>
+		</Placemark>
 		<Placemark>
 			<name>モスクワ</name>
 			<styleUrl>#通常ポイント</styleUrl>

@@ -170,13 +170,6 @@
 		</Placemark>
 		<!-- サブポイント -->
 		<Placemark>
-			<name>ヤクーツク</name>
-			<styleUrl>#サブポイント</styleUrl>
-			<Point>
-				<coordinates>129.6754745,62.0354523,0</coordinates>
-			</Point>
-		</Placemark>
-		<Placemark>
 			<name>ザーボル</name>
 			<styleUrl>#サブポイント</styleUrl>
 			<Point>
@@ -184,17 +177,24 @@
 			</Point>
 		</Placemark>
 		<Placemark>
-			<name>ノヴォシビルスク</name>
-			<styleUrl>#サブポイント</styleUrl>
-			<Point>
-				<coordinates>82.99819287568579,55.13500589631612,0</coordinates>
-			</Point>
-		</Placemark>
-		<Placemark>
 			<name>ゴールウェー</name>
 			<styleUrl>#サブポイント</styleUrl>
 			<Point>
 				<coordinates>-9.052609023635652,53.26571065651864,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>ザイサン</name>
+			<styleUrl>#サブポイント</styleUrl>
+			<Point>
+				<coordinates>84.17726065498444,47.79747534132089,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>ヤマルサハラ</name>
+			<styleUrl>#サブポイント</styleUrl>
+			<Point>
+				<coordinates>68.36911033534578,68.43186740497568,0</coordinates>
 			</Point>
 		</Placemark>
 		<!-- /Point -->
