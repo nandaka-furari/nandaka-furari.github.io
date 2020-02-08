@@ -1,6 +1,4 @@
-framexs/
-
 .dest/
 .ignore/
 .properties
-*.log
+*.log
