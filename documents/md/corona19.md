@@ -28,8 +28,8 @@
 [/i/ - Corona-chan draw thread! - Oekaki - 4chan](https://boards.4chan.org/i/thread/605508/coronachan-draw-thread)
 
 # 絵
-[https://hayabusa.open2ch.net/test/read.cgi/news4vip/1582985224/9](https://i.imgur.com/yX0Y4A9.jte05vwwp
-pg)
-[https://hayabusa.open2ch.net/test/read.cgi/news4vip/1582985224/10](https://imgur.com/8gfoNcH.jpg)
-[https://hayabusa.open2ch.net/test/read.cgi/news4vip/1582985224/20](https://imgur.com/AUffLh4.jpg)
-[https://hayabusa.open2ch.net/test/read.cgi/news4vip/1582985224/40](https://imgur.com/bFAXtlG.jpg)
+![https://hayabusa.open2ch.net/test/read.cgi/news4vip/1582985224/9](https://i.imgur.com/yX0Y4A9.jte05vwwp
+pg)  
+![https://hayabusa.open2ch.net/test/read.cgi/news4vip/1582985224/10](https://imgur.com/8gfoNcH.jpg)  
+![https://hayabusa.open2ch.net/test/read.cgi/news4vip/1582985224/20](https://imgur.com/AUffLh4.jpg)  
+![https://hayabusa.open2ch.net/test/read.cgi/news4vip/1582985224/40](https://imgur.com/bFAXtlG.jpg)
