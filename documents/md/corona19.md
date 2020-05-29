@@ -6,12 +6,15 @@
 
 # 性格
 ニートで他人だよりな性格  
-不潔な場所を好み、そのような場所では群れを成し、その場合の姿はコロナウイルスそのもの。  
-しかし、清潔な場所では一人っ子となってしまいロリっ子の姿になる。  
-完全に衛生管理が行き届いた場所では真っ裸になりその場から退散しようとする。
+派手好きの目立ちたがりのテレビっ子で自分がテレビに映ると嬉しい  
+彼女の服は石鹸や消毒用アルコールによって溶ける。  
+そのために、彼女は不潔な場所を好み、服がぼろぼろであるロリっ子の姿になるために清潔な場所を嫌う。  
+また、完全に衛生管理が行き届いた場所では真っ裸になりその場から退散しようとする。
 
 # 特徴
-服が消毒アルコールや石鹸で溶ける素材できているためそれらが嫌い。
+服が消毒アルコールや石鹸で溶ける素材できている。
+不潔な場所を好み、そのような場所では群れを成し、その場合の姿はコロナウイルスそのもの。  
+しかし、清潔な場所では一人っ子となってしまいロリっ子の姿になる。  
 
 - 不潔で感染が起きている  
 ウイルスの形
@@ -29,7 +32,11 @@
 
 # 絵
 
-![https://hayabusa.open2ch.net/test/read.cgi/news4vip/1582985224/9](https://imgur.com/yX0Y4A9.jpg)  
-![https://hayabusa.open2ch.net/test/read.cgi/news4vip/1582985224/10](https://imgur.com/8gfoNcH.jpg)  
-![https://hayabusa.open2ch.net/test/read.cgi/news4vip/1582985224/20](https://imgur.com/AUffLh4.jpg)  
-![https://hayabusa.open2ch.net/test/read.cgi/news4vip/1582985224/40](https://imgur.com/bFAXtlG.jpg)
+1. [https://hayabusa.open2ch.net/test/read.cgi/news4vip/1582985224/9](https://imgur.com/yX0Y4A9.jpg)  
+1. [https://hayabusa.open2ch.net/test/read.cgi/news4vip/1582985224/10](https://imgur.com/8gfoNcH.jpg)  
+1. [https://hayabusa.open2ch.net/test/read.cgi/news4vip/1582985224/18](https://imgur.com/AUffLh4.jpg)
+1. [https://hayabusa.open2ch.net/test/read.cgi/news4vip/1582985224/20](https://img.open2ch.net/p/news4vip-1582985224-20-490x300.png)  
+1. [https://hayabusa.open2ch.net/test/read.cgi/news4vip/1582985224/40](https://imgur.com/bFAXtlG.jpg)
+1. [https://imgur.com/M8eWHw1](https://imgur.com/M8eWHw1)
+1. [https://twitter.com/animespast/status/1237340020404621314?s=20](https://twitter.com/animespast/status/1237340020404621314?s=20)
+1. [https://t.co/PNESB0Wb0r](https://t.co/PNESB0Wb0r)
