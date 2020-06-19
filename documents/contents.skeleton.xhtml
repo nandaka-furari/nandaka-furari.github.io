@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" prefix="og: http://ogp.me/ns#" xmlns:framexs="urn:framexs">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" prefix="og: http://ogp.me/ns#" xmlns:framexs="urn:framexs" xmlns:v-on="vueon" xmlns:v-bind="vuebind">
 	<head>
 		<!-- Google Tag Manager -->
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -20,7 +20,7 @@
 		<meta property="og:description" content=" ナンダカフラリのファイルの雑多な置き場。" />
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js"></script>
 		<script async="async" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css"/>
 		<script defer="" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 		<link rel="stylesheet" href="/main.css"/>
 		<script src="/main.js"></script>
@@ -31,42 +31,60 @@
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPLS3FD"
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<!-- End Google Tag Manager (noscript) -->
-		<header class="navbar">
+		<header class="navbar" id="navi">
 			<div class="navbar-brand">
 				<a class="navbar-item" href="https://nandaka-furari.github.io">
 				  <img src="/image/favicon.png" width="32" height="32"/>
-				</a>
-				<a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+				</a>	
+				<a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" v-on:click="toggle('ha0')">
 					<span aria-hidden="true"></span>
 					<span aria-hidden="true"></span>
 					<span aria-hidden="true"></span>
 				</a>
 			</div>
-			<nav class="navbar-menu" id="navMenu">
+			<nav class="navbar-menu" id="navMenu" v-bind:class="{'is-active':ha0}">
 				<ul class="navbar-start">
-					<li class="navbar-item"><a class="navbar-item" href="/index.html">サイトのトップページ</a></li>
-					<li class="navbar-item has-dropdown is-hoverable">
-						<a class="navbar-link">ドキュメント</a>
-						<div class="navbar-dropdown">
-							<a class="navbar-item" href="/documents/contents/バズ作戦.xhtml">RTしろ。さもなくば闇の召喚術をかける</a>
-							<a class="navbar-item" href="/documents/contents/aboutme.xhtml">自己紹介</a>
-							<a class="navbar-item" href="/documents/contents/poem.xhtml">ポエム</a>
-							<a class="navbar-item" href="/documents/contents/おーぷんノベル作品.xhtml">おーぷんノベル作品</a>
-							<a class="navbar-item" href="/documents/contents/闇の術への対抗と防衛.xhtml">闇の術への対抗と防衛</a>
-							<a class="navbar-item" href="/documents/contents/ノヤブリスク.xhtml">ノヤブリスク計画</a>
-							<a class="navbar-item" href="/documents/contents/マイナストイチ.xhtml">マイナストイチ</a>
-							<a class="navbar-item" href="/documents/contents/wesnothのネタ.xhtml">Wesnothのネタ</a>
-							<a class="navbar-item" href="/documents/contents/アイデア.xhtml">思いつき集</a>
-							<a class="navbar-item" href="/documents/contents/ウヨサヨ.xhtml">ウヨサヨ</a>
-							<a class="navbar-item" href="/documents/contents/shadowverse.xhtml">こうだったらよかったシャドウバース</a>
+					<li class="navbar-item">
+						<a href="/index.html">サイトのトップページ</a>
+					</li>
+					<li class="navbar-item dropdown" v-bind:class="{'is-active':ha1}">
+						<div class="dropdown-trigger">
+							<button class="button" aria-haspopup="true" aria-controls="dropdown-menu" v-on:click="toggle('ha1')">
+								<span>ドキュメント</span>
+								<span class="icon is-small">
+								  <i class="fas fa-angle-down" aria-hidden="true"></i>
+								</span>
+							  </button>
+						</div>
+						<div class="dropdown-menu">
+							<div class="dropdown-content">
+								<a class="dropdown-item" href="/documents/contents/バズ作戦.xhtml">RTしろ。さもなくば闇の召喚術をかける</a>
+								<a class="dropdown-item" href="/documents/contents/aboutme.xhtml">自己紹介</a>
+								<a class="dropdown-item" href="/documents/contents/poem.xhtml">ポエム</a>
+								<a class="dropdown-item" href="/documents/contents/おーぷんノベル作品.xhtml">おーぷんノベル作品</a>
+								<a class="dropdown-item" href="/documents/contents/闇の術への対抗と防衛.xhtml">闇の術への対抗と防衛</a>
+								<a class="dropdown-item" href="/documents/contents/ノヤブリスク.xhtml">ノヤブリスク計画</a>
+								<a class="dropdown-item" href="/documents/contents/マイナストイチ.xhtml">マイナストイチ</a>
+								<a class="dropdown-item" href="/documents/contents/wesnothのネタ.xhtml">Wesnothのネタ</a>
+								<a class="dropdown-item" href="/documents/contents/ウヨサヨ.xhtml">ウヨサヨ</a>
+							</div>
 						</div>
 					</li>
-					<li class="navbar-item has-dropdown is-hoverable">
-						<a class="navbar-link">Wetnoth Unit</a>
-						<div class="navbar-dropdown">
-							<a class="navbar-item" href="/documents/wesnoth/unit/dementor.xhtml">Dementor 齟齬</a>
-							<a class="navbar-item" href="/documents/wesnoth/unit/death pilot.xhtml">Death Pilot 死の水先人</a>
-							<a class="navbar-item" href="/documents/wesnoth/unit/ancient dementor.xhtml">Ancient Dementor 古代の齟齬</a>
+					<li class="navbar-item dropdown" v-bind:class="{'is-active':ha2}">
+						<div class="dropdown-trigger">
+							<button class="button" aria-haspopup="true" aria-controls="dropdown-menu" v-on:click="toggle('ha2')">
+								<span>Wetnoth Unit</span>
+								<span class="icon is-small">
+								  <i class="fas fa-angle-down" aria-hidden="true"></i>
+								</span>
+							</button>
+						</div>
+						<div class="dropdown-menu">
+							<div class="dropdown-content">
+								<a class="navbar-item" href="/documents/wesnoth/unit/dementor.xhtml">Dementor 齟齬</a>
+								<a class="navbar-item" href="/documents/wesnoth/unit/death pilot.xhtml">Death Pilot 死の水先人</a>
+								<a class="navbar-item" href="/documents/wesnoth/unit/ancient dementor.xhtml">Ancient Dementor 古代の齟齬</a>
+							</div>
 						</div>
 					</li>
 				</ul>
@@ -75,8 +93,20 @@
 		<header class="hero is-dark">
 			<div class="hero-body">
 				<div class="container">
-					<h1 class="title"><span framexs:title=""/> on ナンダカフラリのサイト</h1>
+					<h1 class="title">
+						<img src="../files/xml/svg/wakewakaran.svg" style="background-color: white;" width="48" height="" alt="ワケワカラン"/>
+						<span framexs:title=""/> on ナンダカフラリのサイト
+					</h1>
 				</div>
+				<div class="modal">
+					<div class="modal-background"></div>
+					<div class="modal-content">
+						<p class="image is-4by3">
+							<img src="../files/xml/svg/wakewakaran.svg" width="300" height="" alt=""/>
+						</p>
+					</div>
+					<button class="modal-close is-large" aria-label="close"></button>
+				  </div>
 			</div>
 		</header>
 		<div class="is-desktop columns is-gapless">
