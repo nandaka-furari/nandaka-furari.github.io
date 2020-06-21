@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" prefix="og: http://ogp.me/ns#" xmlns:framexs="urn:framexs">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" prefix="og: http://ogp.me/ns#" xmlns:framexs="urn:framexs" xmlns:v-on="vueon" xmlns:v-bind="vuebind">
 	<head>
 		<!-- Google Tag Manager -->
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -17,6 +17,7 @@
 		<meta property="og:url" content=""/>
 		<meta framexs:fix="" property="og:site_name" content="ナンダカフラリのサイト" />
 		<meta property="og:description" content=" Wesnothの自作ユニットデータ。" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"/>
 		<script defer="defer" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 		<script defer="" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
@@ -40,40 +41,50 @@
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QBR86R"
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<!-- End Google Tag Manager (noscript) -->
-		<header class="hero is-dark">
-			<div class="hero-head">
-				<div class="container navbar">
-					<div class="navbar-brand">
-						<h2 class="navbar-item">Battle for Wesnoth Unit</h2>
-						<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="nav">
-							<span aria-hidden="true"></span>
-							<span aria-hidden="true"></span>
-							<span aria-hidden="true"></span>
-						</a>
-					</div>
-					<div id="nav" class="navbar-menu">
-						<ul class="navbar-start">
-							<li class="navbar-item"><a class="navbar-item" href="/index.html">サイトのトップページ</a></li>
-							<li class="navbar-item has-dropdown is-hoverable">
-								<a class="navbar-link">ドキュメント</a>
-								<div class="navbar-dropdown">
-									<a class="navbar-item" href="/documents/contents/バズ作戦.xhtml">RTしろ。さもなくば闇の召喚術をかける</a>
-									<a class="navbar-item" href="/documents/contents/aboutme.xhtml">自己紹介</a>
-									<a class="navbar-item" href="/documents/contents/poem.xhtml">ポエム</a>
-									<a class="navbar-item" href="/documents/contents/おーぷんノベル作品.xhtml">おーぷんノベル作品</a>
-									<a class="navbar-item" href="/documents/contents/闇の術への対抗と防衛.xhtml">闇の術への対抗と防衛</a>
-									<a class="navbar-item" href="/documents/contents/ノヤブリスク.xhtml">ノヤブリスク計画</a>
-									<a class="navbar-item" href="/documents/contents/マイナストイチ.xhtml">マイナストイチ</a>
-									<a class="navbar-item" href="/documents/contents/wesnothのネタ.xhtml">Wesnothのネタ</a>
-									<a class="navbar-item" href="/documents/contents/アイデア.xhtml">思いつき集</a>
-									<a class="navbar-item" href="/documents/contents/ウヨサヨ.xhtml">ウヨサヨ</a>
-									<a class="navbar-item" href="/documents/contents/shadowverse.xhtml">こうだったらよかったシャドウバース</a>
-								</div>
-							</li>
-						</ul>
-					</div>
+		<header class="navbar" id="navi">
+			<nav>
+				<div class="navbar-brand">
+					<a class="navbar-item" href="https://nandaka-furari.github.io">
+					<img src="/image/favicon.png" width="32" height="32"/>
+					</a>
+					<span class="navbar-item">Wesnoth Unit</span>
+					<a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" v-on:click="toggle('ha0')">
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+					</a>
 				</div>
-			</div>
+				<div class="navbar-menu" id="navMenu" v-bind:class="{'is-active':ha0}">
+					<ul class="navbar-start">
+						<li class="navbar-item">
+							<a href="/index.html">サイトのトップページ</a>
+						</li>
+						<li class="navbar-item dropdown" v-bind:class="{'is-active':ha1}">
+							<div class="dropdown-trigger">
+								<button class="button" aria-haspopup="true" aria-controls="dropdown-menu" v-on:click="toggle('ha1')">
+									<span>ドキュメント</span>
+									<span class="icon is-small">
+									<i class="fas fa-angle-down" aria-hidden="true"></i>
+									</span>
+								</button>
+							</div>
+							<div class="dropdown-menu">
+								<div class="dropdown-content">
+									<a class="dropdown-item" href="/documents/contents/バズ作戦.xhtml">RTしろ。さもなくば闇の召喚術をかける</a>
+									<a class="dropdown-item" href="/documents/contents/aboutme.xhtml">自己紹介</a>
+									<a class="dropdown-item" href="/documents/contents/poem.xhtml">ポエム</a>
+									<a class="dropdown-item" href="/documents/contents/おーぷんノベル作品.xhtml">おーぷんノベル作品</a>
+									<a class="dropdown-item" href="/documents/contents/闇の術への対抗と防衛.xhtml">闇の術への対抗と防衛</a>
+									<a class="dropdown-item" href="/documents/contents/ノヤブリスク.xhtml">ノヤブリスク計画</a>
+									<a class="dropdown-item" href="/documents/contents/マイナストイチ.xhtml">マイナストイチ</a>
+									<a class="dropdown-item" href="/documents/contents/wesnothのネタ.xhtml">Wesnothのネタ</a>
+									<a class="dropdown-item" href="/documents/contents/ウヨサヨ.xhtml">ウヨサヨ</a>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
 		</header>
 		<div class="section tile is-ancestor">
 			<aside class="tile is-parent is-vertical is-2">

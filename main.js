@@ -8,13 +8,7 @@ window.addEventListener('load', (event) => {
 		},
 		methods: {
 			toggle: function(ha) {
-				if(ha=='ha0') {
-					this.ha0=!this.ha0;
-				} else if(ha=='ha1') {
-					this.ha1=!this.ha1;
-				} else if(ha=='ha2') {
-					this.ha2=!this.ha2;
-				}
+				this[ha] = !this[ha];
 			}
 		}
 	})

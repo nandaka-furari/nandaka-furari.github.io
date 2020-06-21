@@ -32,62 +32,65 @@
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<!-- End Google Tag Manager (noscript) -->
 		<header class="navbar" id="navi">
-			<div class="navbar-brand">
-				<a class="navbar-item" href="https://nandaka-furari.github.io">
-				  <img src="/image/favicon.png" width="32" height="32"/>
-				</a>	
-				<a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" v-on:click="toggle('ha0')">
-					<span aria-hidden="true"></span>
-					<span aria-hidden="true"></span>
-					<span aria-hidden="true"></span>
-				</a>
-			</div>
-			<nav class="navbar-menu" id="navMenu" v-bind:class="{'is-active':ha0}">
-				<ul class="navbar-start">
-					<li class="navbar-item">
-						<a href="/index.html">サイトのトップページ</a>
-					</li>
-					<li class="navbar-item dropdown" v-bind:class="{'is-active':ha1}">
-						<div class="dropdown-trigger">
-							<button class="button" aria-haspopup="true" aria-controls="dropdown-menu" v-on:click="toggle('ha1')">
-								<span>ドキュメント</span>
-								<span class="icon is-small">
-								  <i class="fas fa-angle-down" aria-hidden="true"></i>
-								</span>
-							  </button>
-						</div>
-						<div class="dropdown-menu">
-							<div class="dropdown-content">
-								<a class="dropdown-item" href="/documents/contents/バズ作戦.xhtml">RTしろ。さもなくば闇の召喚術をかける</a>
-								<a class="dropdown-item" href="/documents/contents/aboutme.xhtml">自己紹介</a>
-								<a class="dropdown-item" href="/documents/contents/poem.xhtml">ポエム</a>
-								<a class="dropdown-item" href="/documents/contents/おーぷんノベル作品.xhtml">おーぷんノベル作品</a>
-								<a class="dropdown-item" href="/documents/contents/闇の術への対抗と防衛.xhtml">闇の術への対抗と防衛</a>
-								<a class="dropdown-item" href="/documents/contents/ノヤブリスク.xhtml">ノヤブリスク計画</a>
-								<a class="dropdown-item" href="/documents/contents/マイナストイチ.xhtml">マイナストイチ</a>
-								<a class="dropdown-item" href="/documents/contents/wesnothのネタ.xhtml">Wesnothのネタ</a>
-								<a class="dropdown-item" href="/documents/contents/ウヨサヨ.xhtml">ウヨサヨ</a>
+			<nav>
+				<div class="navbar-brand">
+					<a class="navbar-item" href="https://nandaka-furari.github.io">
+					<img src="/image/favicon.png" width="32" height="32"/>
+					</a>
+					<span class="navbar-item">ナンダカフラリのページ</span>
+					<a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" v-on:click="toggle('ha0')">
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+					</a>
+				</div>
+				<div class="navbar-menu" id="navMenu" v-bind:class="{'is-active':ha0}">
+					<ul class="navbar-start">
+						<li class="navbar-item">
+							<a href="/index.html">サイトのトップページ</a>
+						</li>
+						<li class="navbar-item dropdown" v-bind:class="{'is-active':ha1}">
+							<div class="dropdown-trigger">
+								<button class="button" aria-haspopup="true" aria-controls="dropdown-menu" v-on:click="toggle('ha1')">
+									<span>ドキュメント</span>
+									<span class="icon is-small">
+									<i class="fas fa-angle-down" aria-hidden="true"></i>
+									</span>
+								</button>
 							</div>
-						</div>
-					</li>
-					<li class="navbar-item dropdown" v-bind:class="{'is-active':ha2}">
-						<div class="dropdown-trigger">
-							<button class="button" aria-haspopup="true" aria-controls="dropdown-menu" v-on:click="toggle('ha2')">
-								<span>Wetnoth Unit</span>
-								<span class="icon is-small">
-								  <i class="fas fa-angle-down" aria-hidden="true"></i>
-								</span>
-							</button>
-						</div>
-						<div class="dropdown-menu">
-							<div class="dropdown-content">
-								<a class="navbar-item" href="/documents/wesnoth/unit/dementor.xhtml">Dementor 齟齬</a>
-								<a class="navbar-item" href="/documents/wesnoth/unit/death pilot.xhtml">Death Pilot 死の水先人</a>
-								<a class="navbar-item" href="/documents/wesnoth/unit/ancient dementor.xhtml">Ancient Dementor 古代の齟齬</a>
+							<div class="dropdown-menu">
+								<div class="dropdown-content">
+									<a class="dropdown-item" href="/documents/contents/バズ作戦.xhtml">RTしろ。さもなくば闇の召喚術をかける</a>
+									<a class="dropdown-item" href="/documents/contents/aboutme.xhtml">自己紹介</a>
+									<a class="dropdown-item" href="/documents/contents/poem.xhtml">ポエム</a>
+									<a class="dropdown-item" href="/documents/contents/おーぷんノベル作品.xhtml">おーぷんノベル作品</a>
+									<a class="dropdown-item" href="/documents/contents/闇の術への対抗と防衛.xhtml">闇の術への対抗と防衛</a>
+									<a class="dropdown-item" href="/documents/contents/ノヤブリスク.xhtml">ノヤブリスク計画</a>
+									<a class="dropdown-item" href="/documents/contents/マイナストイチ.xhtml">マイナストイチ</a>
+									<a class="dropdown-item" href="/documents/contents/wesnothのネタ.xhtml">Wesnothのネタ</a>
+									<a class="dropdown-item" href="/documents/contents/ウヨサヨ.xhtml">ウヨサヨ</a>
+								</div>
 							</div>
-						</div>
-					</li>
-				</ul>
+						</li>
+						<li class="navbar-item dropdown" v-bind:class="{'is-active':ha2}">
+							<div class="dropdown-trigger">
+								<button class="button" aria-haspopup="true" aria-controls="dropdown-menu" v-on:click="toggle('ha2')">
+									<span>Wetnoth Unit</span>
+									<span class="icon is-small">
+									<i class="fas fa-angle-down" aria-hidden="true"></i>
+									</span>
+								</button>
+							</div>
+							<div class="dropdown-menu">
+								<div class="dropdown-content">
+									<a class="navbar-item" href="/documents/wesnoth/unit/dementor.xhtml">Dementor 齟齬</a>
+									<a class="navbar-item" href="/documents/wesnoth/unit/death pilot.xhtml">Death Pilot 死の水先人</a>
+									<a class="navbar-item" href="/documents/wesnoth/unit/ancient dementor.xhtml">Ancient Dementor 古代の齟齬</a>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
 			</nav>
 		</header>
 		<header class="hero is-dark">
