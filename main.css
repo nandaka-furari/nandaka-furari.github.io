@@ -14,7 +14,7 @@ main h3 {
 	border: solid 1px red;
 	background-color: white;
 }
-p {
+section p {
 	border: solid 1px silver;
 	border-width: 0 1px 1px 0;
 
