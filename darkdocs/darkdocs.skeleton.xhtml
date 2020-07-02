@@ -22,7 +22,7 @@
 		<script async="async" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css"/>
 		<script defer="" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-		<link rel="stylesheet" href="/main.css"/>
+		<link rel="stylesheet" href="/darkdocs.css"/>
 		<script src="/main.js"></script>
 		<framexs:script/>
 	</head>
@@ -35,10 +35,8 @@
 			<nav class="navbar" id="navi">
 				<div class="navbar-brand">
 					<a class="navbar-item" href="https://nandaka-furari.github.io">
-					<img src="/image/favicon.png" width="32" height="32"/>
+					<img src="/image/favicon.png" width="32" height="32"/>ナンダカフラリのサイト
 					</a>
-					<span class="navbar-item"><img src="../files/xml/svg/wakewakaran.svg" style="background-color: white;" width="28" height="28" alt="ワケワカラン"/>
-						ナンダカフラリのサイト</span>
 					<a role="button" class="navbar-burger burber" data-target="navMenu" aria-label="menu" aria-expanded="false" v-on:click="toggle('ha0')">
 						<span aria-hidden="true"></span>
 						<span aria-hidden="true"></span>
@@ -90,28 +88,20 @@
 			<div class="hero-body">
 				<div class="container">
 					<h1 class="title">
+						<img src="../files/xml/svg/wakewakaran.svg" style="background-color: white;" width="36" height="36" alt="ワケワカラン"/>
 						<span framexs:title=""/>
 					</h1>
 				</div>
-				<div class="modal">
-					<div class="modal-background"></div>
-					<div class="modal-content">
-						<p class="image is-4by3">
-							<img src="../files/xml/svg/wakewakaran.svg" width="300" height="" alt=""/>
-						</p>
-					</div>
-					<button class="modal-close is-large" aria-label="close"></button>
-				  </div>
 			</div>
 		</header>
-		<div class="is-desktop columns">
+		<div class="is-desktop columns has-background-black-bis">
 			<main class="column is-three-quarter-desktop">
-				<section class="content box">
-					<p id="abstract" class="notification">
+				<section class="box has-background-black">
+					<p id="abstract" class="notification has-text-success-light has-background-dark">
 						<button class="delete"></button>
 						<span framexs:id-d="abstract"></span>
 					</p>
-					<section>
+					<section class="has-text-primary-light">
 						<div framexs:id-d="main">
 							<svg:svg width="10" height="1200" style="background-color:aqua"></svg:svg>
 						</div>
@@ -119,14 +109,14 @@
 				</section>
 			</main>
 			<aside class="column is-one-quarter-desktop">
-				<div class="is-info content box">
+				<div class="box has-background-dark">
 					<h4>固有</h4>
-					<div class="content">
+					<div>
 						<div framexs:id-d="aside"></div>
 						<ul framexs:fetch-d="list"></ul>
 					</div>
 				</div>
-				<div class="is-info content box">
+				<div class="box has-background-dark">
 					<h4>外部リンク</h4>
 					<ul>
 						<li><a href="http://peace-soku.blog.jp/archives/cat_341805.html">ピース速報のポエム</a></li>

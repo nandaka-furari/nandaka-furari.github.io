@@ -4,7 +4,8 @@ window.addEventListener('load', (event) => {
 		data: {
 			ha0: false,
 			ha1: false,
-			ha2: false
+			ha2: false,
+			ha3: false
 		},
 		methods: {
 			toggle: function(ha) {
