@@ -2,7 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://nandaka-furari.github.io/index.html</loc>
-        <changefreq>monthly</changefreq>
         <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://nandaka-furari.github.io/documents/normal/aboutme.xhtml</loc>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://nandaka-furari.github.io/documents/normal/ネトサヨ四天王.xhtml</loc>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://nandaka-furari.github.io/documents/normal/ウヨサヨ.xhtml</loc>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://nandaka-furari.github.io/documents/normal/wesnothのネタ.xhtml</loc>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://nandaka-furari.github.io/documents/normal/poem.xhtml</loc>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://nandaka-furari.github.io/documents/normal/闇の術への対抗と防衛.xhtml</loc>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://nandaka-furari.github.io/documents/normal/バズ.xhtml</loc>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://nandaka-furari.github.io/documents/wesnoth-unit/dementor.xhtml</loc>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://nandaka-furari.github.io/documents/wesnoth-unit/ancient dementor.xhtml</loc>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://nandaka-furari.github.io/documents/wesnoth-unit/death pilot.xhtml</loc>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://nandaka-furari.github.io/documents/dark/闇の召喚術.xhtml</loc>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://nandaka-furari.github.io/documents/dark/マイナストイチ.xhtml</loc>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://nandaka-furari.github.io/documents/dark/ノヤブリスク.xhtml</loc>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://nandaka-furari.github.io/documents/dark/ダークウェブサイト.xhtml</loc>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://nandaka-furari.github.io/documents/dark/闇の組み立て.xhtml</loc>
+        <priority>0.5</priority>
     </url>
 </urlset>
