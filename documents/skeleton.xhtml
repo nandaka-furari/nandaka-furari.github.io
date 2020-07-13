@@ -86,7 +86,7 @@
 			</nav>
 			<nav class="breadcrumb" aria-label="breadcrumbs">
 				<ul>
-				  <li><a>闇の文書</a></li>
+				  <li><a><span framexs:id-d="current"/></a></li>
 				  <li class="is-active"><a aria-current="page"><framexs:title/></a></li>
 				</ul>
 			  </nav>
@@ -101,14 +101,14 @@
 				</div>
 			</div>
 		</header>
-		<div class="is-desktop columns has-background-black-bis">
+		<div class="is-desktop columns">
 			<main class="column is-three-quarter-desktop">
-				<section class="box has-background-black">
-					<p id="abstract" class="notification has-text-success-light has-background-dark">
+				<section class="box">
+					<p id="abstract" class="notification">
 						<button class="delete"></button>
 						<span framexs:id-d="abstract"></span>
 					</p>
-					<section class="has-text-primary-light">
+					<section id="content">
 						<div framexs:id-d="main">
 							<svg:svg width="10" height="1200" style="background-color:aqua"></svg:svg>
 						</div>
@@ -116,14 +116,14 @@
 				</section>
 			</main>
 			<aside class="column is-one-quarter-desktop">
-				<div class="box has-background-dark">
+				<div class="box">
 					<h4>固有</h4>
 					<div>
 						<div framexs:id-d="aside"></div>
 						<ul framexs:fetch-d="list"></ul>
 					</div>
 				</div>
-				<div class="box has-background-dark">
+				<div class="box">
 					<h4>外部リンク</h4>
 					<ul class="link">
 						<li><a href="http://peace-soku.blog.jp/archives/cat_341805.html">ピース速報のポエム</a></li>
@@ -137,16 +137,16 @@
 				</div>
 			</aside>
 		</div>
-		<footer class="footer has-background-grey-lighter">
+		<footer class="footer">
 			<div class="columns is-desktop">
-				<div class="column is-background-white">
+				<div class="column">
 					<ul class="box">
 						<li><address><a class="contact" href="https://twitter.com/nandaka_furari">twitter</a></address></li>
 						<li><address><a class="contact" href="https://pawoo.net/@nandaka_furari">pawoo</a></address></li>
 						<li><address><a class="contact" href="mailto:nandaka.furari@gmail.com">E-mail</a></address></li>
 					</ul>
 				</div>
-				<div class="column is-background-white">
+				<div class="column">
 					<p class="box">このサイトのコードは<a href="https://github.com/nandaka-furari/nandaka-furari.github.io">GitHubリポジトリ</a>に置いています。</p>
 				</div>
 			</div>
