@@ -23,14 +23,20 @@ aside {
 aside a {
 	color: lightskyblue
 }
-
+section:hover {
+	outline: dotted 5px gray;
+}
 section a:hover {
 	color: white;
 	outline: dashed 1px lightgreen;
 }
 section a {
 	font-size: 1.125rem;
-	color: white;
+	color: lightblue;
+	outline: dotted 1px lightcoral;
+}
+section a:visited {
+	color: lightpink;
 	outline: dotted 1px lightcoral;
 }
 section a:before {
@@ -44,6 +50,10 @@ dt {
 dd {
 	padding: 0 0 0 1em;
 }
+blockquote {
+	padding-left: .25rem;
+	border-left: solid 2px gray;
+}
 details {
 	background-color: hsl(0, 0%, 21%);
 }
@@ -51,7 +61,7 @@ details {
 	border: solid 1px red;
 	background-color: white;
 }
-#content {
+#content section {
 	color: hsl(171, 100%, 96%);
 }
 #content p {
@@ -60,7 +70,7 @@ details {
 	border-radius: 5px;
 	margin: 1.5rem .125rem;
 	padding:.25rem;
-	box-shadow: 3px 1px 3px 1px lightblue;
+	box-shadow: 3px 2px 3px 2px lightblue;
 }
 main .box {
 	background-color: black;

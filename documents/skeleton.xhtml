@@ -59,6 +59,7 @@
 								<a class="navbar-item" href="/documents/normal/闇の術への対抗と防衛.xhtml">闇の術への対抗と防衛</a>
 								<a class="navbar-item" href="/documents/normal/wesnothのネタ.xhtml">Wesnothのネタ</a>
 								<a class="navbar-item" href="/documents/normal/ウヨサヨ.xhtml">ウヨサヨ</a>
+								<a class="navbar-item" href="/documents/normal/物流イノベーション.xhtml">物流イノベーション</a>
 							</div>
 						</div>
 						<div class="navbar-item has-dropdown" v-bind:class="{'is-active':ha3}">
@@ -104,17 +105,20 @@
 		</header>
 		<div class="is-desktop columns">
 			<main class="column is-three-quarter-desktop">
-				<section class="box">
+				<div class="box">
 					<p id="abstract" class="notification">
 						<button class="delete"></button>
 						<span framexs:id-d="abstract"></span>
 					</p>
-					<section id="content">
+					<div id="content">
 						<div framexs:id-d="main">
 							<svg:svg width="10" height="1200" style="background-color:aqua"></svg:svg>
 						</div>
-					</section>
-				</section>
+					</div>
+				</div>
+				<framexs:if meta="modified">
+					<div>最終更新日：<framexs:meta name="modified"/></div>
+				</framexs:if>
 			</main>
 			<aside class="column is-one-quarter-desktop">
 				<div class="box">
