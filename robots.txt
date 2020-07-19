@@ -1,5 +1,6 @@
 User-agent: *
 
-Allow:/documents/
+Allow:/documents/nomal/
+Allow:/documents/wesnoth-unit/
 
-Disallow:/framexs/
+Disallow:/documents/dark/

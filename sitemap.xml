@@ -25,11 +25,15 @@
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://nandaka-furari.github.io/documents/normal/闇の術への対抗と防衛.xhtml</loc>
+        <loc>https://nandaka-furari.github.io/documents/normal/対抗と防衛.xhtml</loc>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://nandaka-furari.github.io/documents/normal/バズ.xhtml</loc>
+        <loc>https://nandaka-furari.github.io/documents/normal/バズ作戦.xhtml</loc>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://nandaka-furari.github.io/documents/normal/物流イノベーション.xhtml</loc>
         <priority>0.5</priority>
     </url>
     <url>
