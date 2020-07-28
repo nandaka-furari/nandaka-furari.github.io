@@ -2,5 +2,4 @@ User-agent: *
 
 Allow:/documents/nomal/
 Allow:/documents/wesnoth-unit/
-
-Disallow:/documents/dark/
+Allow:/documents/dark/
