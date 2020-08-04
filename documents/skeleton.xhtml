@@ -21,14 +21,31 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js"></script>
 		<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 		<script async="" src="https://cdn.ampproject.org/v0.js"></script>
-		<link rel="canonical" href="http://example.ampproject.org/article-metadata.html"/>
+		<link rel="canonical" href="https://nandaka-furari.github.io/index.html"/>
 		<style amp-boilerplate="">body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
 		<noscript><style amp-boilerplate="">body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css"/>
 		<script defer="" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 		<script src="https://kit.fontawesome.com/aa6020fc6a.js" crossorigin="anonymous"></script>
 		<link framexs:id-sd="main-css"/>
-		<script src="/main.js"></script>
+		<script>
+		window.addEventListener('load', (event) => {
+			const header = new Vue({
+				el:"#navi",
+				data: {
+					ha0: false,
+					ha1: false,
+					ha2: false,
+					ha3: false
+				},
+				methods: {
+					toggle: function(ha) {
+						this[ha] = !this[ha];
+					}
+				}
+			})
+		});
+		</script>
 		<framexs:script/>
 	</head>
 	<body>
@@ -107,50 +124,58 @@
 				</div>
 			</div>
 		</header>
-		<div class="is-desktop columns">
-			<main class="column is-three-quarter-desktop">
-				<div class="box">
-					<p id="abstract" class="notification">
-						<button class="delete"></button>
-						<span framexs:id-d="abstract"></span>
-					</p>
-					<div id="content">
-						<div framexs:id-d="main">
-							<svg:svg width="10" height="1200" style="background-color:aqua"></svg:svg>
-						</div>
-					</div>
-				</div>
-				<framexs:if meta="modified">
-					<div>最終更新日：<framexs:meta name="modified"/></div>
-				</framexs:if>
-			</main>
-			<aside class="column is-one-quarter-desktop">
-				<div class="box">
-					<h4>固有</h4>
-					<div>
-						<div framexs:id-d="aside"></div>
-						<ul framexs:fetch-d="list"></ul>
-					</div>
-				</div>
-				<div class="box">
-					<h4>外部リンク</h4>
-					<ul class="link">
-						<li><a href="http://peace-soku.blog.jp/archives/cat_341805.html">ピース速報のポエム</a></li>
-						<li><a href="https://open-novel.github.io/">おーぷんでノベルゲー作ろうぜ</a></li>
-						<li><a href="https://togetter.com/id/nandaka_furari">トゥギャッター</a></li>
-						<li><a href="https://twilog.org/nandaka_furari">ツイログ</a></li>
-						<li><a href="https://twisave.com/nandaka_furari">ツイセーブ</a></li>
-						<li><a href="https://github.com/nandaka-furari">GitHub</a></li>
-						<li><a href="http://qiita.com/nandaka_furari">Qiita</a></li>
-					</ul>
+		<framexs:if meta-name="category">
+			<aside>
+				<div style="width:320px; margin:auto;">
+					<!-- admax -->
+					<script src="https://adm.shinobi.jp/s/1a53b87d257936b3ef23ea5efafe4419"></script>
+					<!-- admax -->
 				</div>
 			</aside>
+		</framexs:if>
+		<div class="section">
+			<div class="container is-widscreen">
+				<div class="is-desktop columns">
+					<main class="column is-three-quarter-desktop">
+						<div class="box">
+							<p id="abstract" class="notification">
+								<button class="delete"></button>
+								<span framexs:id-d="abstract"></span>
+							</p>
+							<div id="content">
+								<div framexs:id-d="main">
+									<svg:svg width="10" height="1200" style="background-color:aqua"></svg:svg>
+								</div>
+							</div>
+						</div>
+						<framexs:if meta="modified">
+							<div>最終更新日：<framexs:meta name="modified"/></div>
+						</framexs:if>
+					</main>
+					<aside class="column is-one-quarter-desktop">
+						<div class="box">
+							<h4>固有</h4>
+							<div>
+								<div framexs:id-d="aside"></div>
+								<ul framexs:fetch-d="list"></ul>
+							</div>
+						</div>
+						<div class="box">
+							<h4>外部リンク</h4>
+							<ul class="link">
+								<li><a href="http://peace-soku.blog.jp/archives/cat_341805.html">ピース速報のポエム</a></li>
+								<li><a href="https://open-novel.github.io/">おーぷんでノベルゲー作ろうぜ</a></li>
+								<li><a href="https://togetter.com/id/nandaka_furari">トゥギャッター</a></li>
+								<li><a href="https://twilog.org/nandaka_furari">ツイログ</a></li>
+								<li><a href="https://twisave.com/nandaka_furari">ツイセーブ</a></li>
+								<li><a href="https://github.com/nandaka-furari">GitHub</a></li>
+								<li><a href="http://qiita.com/nandaka_furari">Qiita</a></li>
+							</ul>
+						</div>
+					</aside>
+				</div>
+			</div>
 		</div>
-		<aside>
-			<!-- admax -->
-			<script src="https://adm.shinobi.jp/s/1a53b87d257936b3ef23ea5efafe4419"></script>
-			<!-- admax -->
-		</aside>
 		<footer class="footer">
 			<div class="columns is-desktop">
 				<div class="column">
