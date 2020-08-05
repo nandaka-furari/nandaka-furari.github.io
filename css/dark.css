@@ -60,6 +60,7 @@ details {
 #abstract {
 	border: solid 1px red;
 	background-color: white;
+	color: black;
 }
 #content section {
 	color: hsl(171, 100%, 96%);
@@ -72,7 +73,7 @@ details {
 	padding:.25rem;
 	box-shadow: 3px 2px 3px 2px lightblue;
 }
-main .box {
+.main {
 	background-color: black;
 }
 aside .box {

@@ -136,19 +136,17 @@
 		<div class="section">
 			<div class="container is-widscreen">
 				<div class="is-desktop columns">
-					<main class="column is-three-quarter-desktop">
-						<div class="box">
-							<p id="abstract" class="notification">
-								<button class="delete"></button>
-								<span framexs:id-d="abstract"></span>
-							</p>
-							<div id="content">
-								<div framexs:id-d="main">
-									<svg:svg width="10" height="1200" style="background-color:aqua"></svg:svg>
-								</div>
+					<main class="column is-three-quarter-desktop main">
+						<p id="abstract" class="notification">
+							<button class="delete"></button>
+							<span framexs:id-d="abstract"></span>
+						</p>
+						<div id="content">
+							<div framexs:id-d="main">
+								<svg:svg width="10" height="1200" style="background-color:aqua"></svg:svg>
 							</div>
 						</div>
-						<framexs:if meta="modified">
+						<framexs:if meta-name="modified">
 							<div>最終更新日：<framexs:meta name="modified"/></div>
 						</framexs:if>
 					</main>
