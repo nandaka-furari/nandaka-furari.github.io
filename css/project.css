@@ -1,0 +1,39 @@
+body {
+	background-color: white;
+}
+main h2 {
+	font-size: 1.5rem;
+	border-bottom: solid 1px green;
+}
+main h3 {
+	font-size: 1.4rem;
+	padding-left: 10px;
+	border-left: solid 3px green;
+}
+#abstract {
+	border: solid 1px red;
+	background-color: white;
+}
+section p {
+	border: solid 1px silver;
+	border-width: 0 1px 1px 0;
+
+	margin: .125rem;
+	padding:.25rem;
+}
+dt {
+	font-weight: 900;
+}
+dd {
+	padding: 0 0 0 1em;
+}
+.flat {
+	padding: 0;
+}
+.flat li {
+	display: block;
+	margin: 0;
+}
+@media screen and (max-width: 781px) {
+
+}

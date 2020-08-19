@@ -20,10 +20,6 @@
 		<meta property="og:description" content=" ナンダカフラリのファイルの雑多な置き場。" />
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js"></script>
 		<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-		<script async="" src="https://cdn.ampproject.org/v0.js"></script>
-		<link rel="canonical" href="https://nandaka-furari.github.io/index.html"/>
-		<style amp-boilerplate="">body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
-		<noscript><style amp-boilerplate="">body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css"/>
 		<script defer="" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 		<script src="https://kit.fontawesome.com/aa6020fc6a.js" crossorigin="anonymous"></script>
@@ -36,7 +32,8 @@
 					ha0: false,
 					ha1: false,
 					ha2: false,
-					ha3: false
+					ha3: false,
+					ha4: false
 				},
 				methods: {
 					toggle: function(ha) {
@@ -73,7 +70,6 @@
 								<span>ドキュメント</span>
 							</button>
 							<div class="navbar-dropdown" v-bind:class="{'is-hidden-touch':!ha1}">
-								<a class="navbar-item" href="/documents/normal/バズ作戦.xhtml">RTしろ。さもなくば闇の召喚術をかける</a>
 								<a class="navbar-item" href="/documents/normal/aboutme.xhtml">自己紹介</a>
 								<a class="navbar-item" href="/documents/normal/poem.xhtml">ポエム</a>
 								<a class="navbar-item" href="/documents/normal/おーぷんノベル作品.xhtml">おーぷんノベル作品</a>
@@ -81,6 +77,15 @@
 								<a class="navbar-item" href="/documents/normal/wesnothのネタ.xhtml">Wesnothのネタ</a>
 								<a class="navbar-item" href="/documents/normal/ウヨサヨ.xhtml">ウヨサヨ</a>
 								<a class="navbar-item" href="/documents/normal/物流イノベーション.xhtml">物流イノベーション</a>
+							</div>
+						</div>
+						<div class="navbar-item has-dropdown" v-bind:class="{'is-active':ha2}">
+							<button class="navbar-link" aria-haspopup="true" aria-controls="dropdown-menu" v-on:click="toggle('ha3')">
+								<span>プロジェクト</span>
+							</button>
+							<div class="navbar-dropdown" v-bind:class="{'is-hidden-touch':!ha2}">
+								<a class="navbar-item" href="/documents/project/バズ作戦.xhtml">闇の召喚術</a>
+								<a class="navbar-item" href="/documents/project/艦これとKPOP.xhtml">ノヤブリスク計画</a>
 							</div>
 						</div>
 						<div class="navbar-item has-dropdown" v-bind:class="{'is-active':ha3}">
@@ -94,11 +99,11 @@
 								<a class="navbar-item" href="/documents/dark/ダークウェブ.xhtml">ダークウェブ</a>
 							</div>
 						</div>
-						<div class="navbar-item has-dropdown" v-bind:class="{'is-active':ha2}">
+						<div class="navbar-item has-dropdown" v-bind:class="{'is-active':ha4}">
 							<button class="navbar-link" aria-haspopup="true" aria-controls="dropdown-menu" v-on:click="toggle('ha2')">
 								<span>Wetnoth Unit</span>
 							</button>
-							<div class="navbar-dropdown" v-bind:class="{'is-hidden-touch': !ha2}">
+							<div class="navbar-dropdown" v-bind:class="{'is-hidden-touch': !ha4}">
 								<a class="navbar-item" href="/documents/wesnoth-unit/dementor.xhtml">Dementor 齟齬</a>
 								<a class="navbar-item" href="/documents/wesnoth-unit/death pilot.xhtml">Death Pilot 死の水先人</a>
 								<a class="navbar-item" href="/documents/wesnoth-unit/ancient dementor.xhtml">Ancient Dementor 古代の齟齬</a>
