@@ -24,7 +24,7 @@
 		<script defer="" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 		<script src="https://kit.fontawesome.com/aa6020fc6a.js" crossorigin="anonymous"></script>
 		<link framexs:id-sd="main-css"/>
-		<script>
+		<script>//<![CDATA[
 		window.addEventListener('load', (event) => {
 			const header = new Vue({
 				el:"#navi",
@@ -40,8 +40,26 @@
 						this[ha] = !this[ha];
 					}
 				}
-			})
-		});
+			});
+			const content = new Vue({
+				el: "#content",
+				methods: {
+					youtube: function(val, event) {
+						console.log(event);
+						var iframe = document.createElement("iframe");
+						iframe.setAttribute("width", "560");
+						iframe.setAttribute("height", "315");
+						iframe.setAttribute("src", "https://www.youtube.com/embed/"+val);
+						iframe.setAttribute("frameborder", "0");
+						iframe.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture");
+						iframe.setAttribute("allowfullscreen", "");
+						iframe.setAttribute("style", "max-width:100%;");
+						event.target.parentNode.appendChild(iframe);
+						event.target.parentNode.removeChild(event.target);
+					}
+				}
+			});
+		});//]]>
 		</script>
 		<framexs:script/>
 	</head>

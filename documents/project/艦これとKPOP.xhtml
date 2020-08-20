@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="../../framexs/framexs.xsl"?>
 <?framexs.skeleton ../skeleton.xhtml?>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" xmlns:v-on="vueon">
 <head>
 <title>艦これとKPOP</title>
 <link id="main-css" rel="stylesheet" href="/css/project.css"/>
@@ -18,36 +18,50 @@
 <p>艦これには同人誌がたくさんあるらしい。<br />
 KPOPアイドル。少女時代とかKARAとか。<br/>
 そういえばKPOPの同人誌とかの話は聞かない。<br />
-でも例えばKPOPアイドルのコスプレしたりダンスを踊る艦娘の同人誌とかあっても別にいいはず。<br />
-例えば元4minuteのヒョナ。カンナムスタイルで出てきたことで一躍有名になりKPOPアイドルのなかでも抜きんでた成功を収めた彼女のコスプレをする艦娘、というテーマの同人誌があってもいい。<br />
-例えばこのMVは沖縄で撮られたものだ。<br />
-2011年のBubble Pop!</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bw9CALKOvAI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="max-width:100%;"></iframe>
-<br />
-<img  src="https://livedoor.blogimg.jp/iwasitaberu/imgs/a/9/a95d60c1.jpg" alt="131_2nd" class="pict" width="327" hspace="5" height="450"/><br />
-<p>沖縄で艦これといえば水上特攻の大和。艦これには当然ながら大和が出てくる。<br />
-彼女がBubble Popを踊ってみたをしてキャッキャッ喜ぶ同人誌なり動画なりあったら趣深いものになるだろう。<br />
+でも例えばKPOPアイドルのコスプレしたりダンスを踊る艦娘の同人誌とかあっても別にいいはず。</p>
+<section>
+<p>艦これには当然ながら大和が出てくる。沖縄で艦これといえば水上特攻。<br/>
+<img  src="https://livedoor.blogimg.jp/iwasitaberu/imgs/a/9/a95d60c1.jpg" alt="131_2nd" class="pict" width="327" hspace="5" height="450"/></p>
+<p>そして元4minuteのヒョナ。<br/>
+<div>2011年のBubble Pop!
+<button v-on:click="youtube('bw9CALKOvAI', $event)">youtube</button>
+</div></p>
+<p>カンナムスタイルで出てきたことで一躍有名になりKPOPアイドルのなかでも抜きんでた成功を収めた彼女のコスプレをする艦娘、というテーマの同人誌があってもいい。<br />
+例えばこのMVは沖縄で撮られたものだ。彼女がBubble Popを踊ってみたをしてキャッキャッ喜ぶ同人誌なり動画なりあったら趣深いものになるだろう。<br />
 アメリカに乗り込み成功を収めたKPOPアイドルが沖縄で撮影したMVをコスプレしながら踊ってみる。<br />
-でそのうちヒョナにもそのことが伝わって逆にヒョナが大和のコスプレをしたり。</p>
+でそのうちヒョナにもそのことが伝わって逆にヒョナが大和のコスプレをしたりしたとしたら？</p>
+</section>
+<section>
 少女時代2009年のGenie。<br />
-<iframe width="480" height="270" src="https://www.youtube.com/embed/6SwiSpudKWI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="max-width:100%;"></iframe>
-少女時代。<br />
-なんで少女時代と艦これが関係あるのか？というと、実は少女時代は大日本帝国海軍とちょっとだけ関係があったりする。それは以下の記事を読むと分かる。<br />
-<iframe  src="https://richlink.blogsys.jp/embed/f85920db-b4dc-3a66-870d-1e49f8111035" style="height: 120px; width: 580px; max-width: 100%; vertical-align:top;" scrolling="no" frameborder="0"></iframe><br />
+<div>
+<button v-on:click="youtube('6SwiSpudKWI', $event)">youtube</button>
+</div>
+なんで少女時代と艦これが関係あるのか？というと、実は少女時代は大日本帝国海軍とちょっとだけ関係があったりする。
+それは<a href="https://ameblo.jp/iojoy/entry-10286387322.html">少女時代のゼロ戦とSMエンターテイメント</a>の記事を読むと分かる。<br />
 なんと当初はアメリカ海軍ぽいコスプレをしておきながらゼロ戦を入れていてトラブルになったらしい。で、後は知名度が低い現韓国軍の軍用機に差し替えたのだとか。<br />
 まあ仕方ない面はあるがそのままでも面白かったと思うのだが、アメリカ進出も視野に入れていた時期だったのもあるかもしれないのでそこはまあ仕方ないのだろうか。<br />
-アメリカ人のトラウマをえぐっても仕方ないからね。<br />
-で、ワンダーガールズ。<br />
+アメリカ人のトラウマをえぐっても仕方ないからね。
+</section>
+<section>
 ワンダーガールズの2007年のTell Me。<br />
-<iframe width="459" height="344" src="https://www.youtube.com/embed/BlHv3BbBv6A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="max-width:100%;"></iframe>
+<div>
+<button v-on:click="youtube('BlHv3BbBv6A', $event)">youtube</button>
+</div>
 実はこのグループ人気があったのにも関わらず一時期はアメリカ進出のためアメリカで活動していたが、あまり成功せずその影響か人気が落ちてしまったらしい。<br />
-なんかそういうところが日本の艦娘と相通じるところがあると思う。<br /><br />
-ちなみにKARAとかあるけど色々あったしお察しではあるが、とあるメンバーはむしろ雪風とか…、でTWICEは高雄がツウィのポジで、<br />
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ePpPVE-GGJw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="max-width:100%;"></iframe>
+なんかそういうところが日本の艦娘と相通じるところがあると思う。
+</section>
+<section>
+TWICEは高雄がツウィのポジで、<br/>
 <img  src="https://livedoor.blogimg.jp/iwasitaberu/imgs/e/9/e9867f17.jpg" alt="059_2nd" class="pict" width="327" hspace="5" height="450"/><br />
+<br />
+<div>
+<button v-on:click="youtube('ePpPVE-GGJw', $event)">youtube</button>
+</div>
 と思ったけど台湾の高雄とは関係がないらしい。でもしゃれでいいかも。
+</section>
 <h3>経済効果</h3>
-<p>KPOPアイドルファンは艦これをどう見ているか、あるいは艦これファンはKPOPアイドルをどう見ているか。お互い興味を持って今までなかった接点が出来上がるとさて何が起きるだろう。</p>
+<p>KPOPアイドルファンは艦これをどう見ているか、あるいは艦これファンはKPOPアイドルをどう見ているか。お互い興味を持って今までなかった接点が出来上がるとさて何が起きるだろう。<br/>
+膨大な消費行動が起きる事が予想される。</p>
 </section>
 </main>
 </body>
