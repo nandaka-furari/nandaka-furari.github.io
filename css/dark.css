@@ -57,6 +57,9 @@ blockquote {
 details {
 	background-color: hsl(0, 0%, 21%);
 }
+strong {
+	color: white;
+}
 #abstract {
 	border: solid 1px red;
 	background-color: white;
