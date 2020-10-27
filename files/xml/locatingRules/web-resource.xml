@@ -3,9 +3,6 @@
 	<!-- here you can match the root element's local name
 		<documentElement localName="addressBook" typeId="AB"/>
 	 -->
-	<uri pattern="*.svg" typeId="SVG"/>
-	<typeId id="SVG" uri="https://www.w3.org/Graphics/SVG/1.2/rng/Tiny-1.2/Tiny-1.2.rng"/>
-
 	<uri pattern="*.xsl" typeId="XSLT2"/>
 	<typeId id="XSLT2" uri="http://www.w3.org/2007/schema-for-xslt20.xsd"></typeId>
 	<namespace ns="urn:oasis:names:tc:entity:xmlns:xml:catalog" typeId="CATALOG"/>

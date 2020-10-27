@@ -1,0 +1,11 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:framexs="urn:framexs" xmlns="http://www.w3.org/1999/xhtml">
+	<rdf:Description rdf:about="https://nandaka-furari.github.io/documents/dark/">
+		<framexs:prop name="gtmid" val="GTM-K337ZX4"/>
+		<framexs:prope name="breadcrumb">
+			<a href="test">test</a>
+		</framexs:prope>
+		<framexs:prope name="css">
+			<link rel="stylesheet" href="/css/dark.css"/>
+		</framexs:prope>
+	</rdf:Description>
+</rdf:RDF>
