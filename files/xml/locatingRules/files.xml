@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<locatingRules xmlns="http://thaiopensource.com/ns/locating-rules/1.0">
+	<typeId id="SAMPLE" uri="../rng/sample.rng"/>
+	<namespace ns="urn:sample" typeId="SAMPLE"/>
+	<typeId id="POM" uri="../../rnc/pom5.rnc"/>
+	<namespace ns="urn:pom" typeId="POM"/>
+</locatingRules>

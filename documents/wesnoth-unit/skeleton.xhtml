@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" prefix="og: http://ogp.me/ns#" xmlns:framexs="urn:framexs" xmlns:v-on="vueon" xmlns:v-bind="vuebind">
+	<head>
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-K337ZX4');</script>
+		<!-- End Google Tag Manager -->
+		<title> - Wesnoth Unit</title>
+		<meta name="keywords" content=""/>
+		<meta name="description" content=""/>
+		<meta framexs:fix="" name="viewport" content="width=device-width,initial-scale=1"/>
+		<meta framexs:fix="" property="og:type" content="article"/>
+		<meta property="og:title" content=" - Wesnoth Unit"/>
+		<meta property="og:url" content=""/>
+		<meta framexs:fix="" property="og:site_name" content="ナンダカフラリのサイト" />
+		<meta property="og:description" content=" Wesnothの自作ユニットデータ。" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"/>
+		<script defer="defer" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+		<script defer="" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+		<link rel="stylesheet" href="wmlunits-1.1.1.css"/>
+		<script src="/main.js"></script>
+		<meta framexs:load="link"/>
+		<meta framexs:load="script"/>
+
+	</head>
+	<body>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K337ZX4"
+			height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+		<header class="navbar" id="navi">
+			<nav>
+				<div class="navbar-brand">
+					<a class="navbar-item" href="https://nandaka-furari.github.io">
+					<img src="/image/favicon.png" width="32" height="32"/>
+					</a>
+					<span class="navbar-item">Wesnoth Unit</span>
+					<a role="button" class="navbar-burger burger" data-target="navMenu" aria-label="menu" aria-expanded="false" v-on:click="toggle('ha0')">
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+					</a>
+				</div>
+				<div class="navbar-menu" id="navMenu" v-bind:class="{'is-active':ha0}">
+					<ul class="navbar-start">
+						<li class="navbar-item">
+							<a href="/index.html">サイトのトップページ</a>
+						</li>
+						<li class="navbar-item dropdown" v-bind:class="{'is-active':ha1}">
+							<div class="dropdown-trigger">
+								<button class="button" aria-haspopup="true" aria-controls="dropdown-menu" v-on:click="toggle('ha1')">
+									<span>ドキュメント</span>
+									<span class="icon is-small">
+									<i class="fas fa-angle-down" aria-hidden="true"></i>
+									</span>
+								</button>
+							</div>
+							<div class="dropdown-menu">
+								<div class="dropdown-content">
+									<a class="dropdown-item" href="/documents/normal/バズ作戦.xhtml">RTしろ。さもなくば闇の召喚術をかける</a>
+									<a class="dropdown-item" href="/documents/normal/aboutme.xhtml">自己紹介</a>
+									<a class="dropdown-item" href="/documents/normal/poem.xhtml">ポエム</a>
+									<a class="dropdown-item" href="/documents/normal/おーぷんノベル作品.xhtml">おーぷんノベル作品</a>
+									<a class="dropdown-item" href="/documents/normal/闇の術への対抗と防衛.xhtml">闇の術への対抗と防衛</a>
+									<a class="dropdown-item" href="/documents/normal/wesnothのネタ.xhtml">Wesnothのネタ</a>
+									<a class="dropdown-item" href="/documents/normal/ウヨサヨ.xhtml">ウヨサヨ</a>
+								</div>
+							</div>
+						</li>
+						<li class="navbar-item dropdown" v-bind:class="{'is-active':ha2}">
+							<div class="dropdown-trigger">
+								<button class="button" aria-haspopup="true" aria-controls="dropdown-menu" v-on:click="toggle('ha2')">
+									<span>闇の文書</span>
+									<span class="icon is-small">
+									<i class="fas fa-angle-down" aria-hidden="true"></i>
+									</span>
+								</button>
+							</div>
+							<div class="dropdown-menu">
+								<div class="dropdown-content">
+									<a class="dropdown-item" href="/documents/dark/闇の召喚術.xhtml">闇の召喚術</a>
+									<a class="dropdown-item" href="/documents/dark/ノヤブリスク.xhtml">ノヤブリスク計画</a>
+									<a class="dropdown-item" href="/documents/dark/マイナストイチ.xhtml">マイナストイチ</a>
+									<a class="dropdown-item" href="/documents/dark/ダークウェブ.xhtml">ダークウェブ</a>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<div class="section tile is-ancestor">
+			<aside class="tile is-parent is-vertical is-2">
+				<div id="side-menu" class="tile is-child box">
+					<h2>種族</h2>
+					<dl class="menu">
+						<dt class="menu-label">アンデッド</dt>
+						<dd>
+							<ul class="menu-list">
+								<li><a href="dementor.xhtml">Dementor 齟齬</a></li>
+								<li><a href="death pilot.xhtml">Death Pilot 死の水先人</a></li>
+								<li><a href="ancient dementor.xhtml">Ancient Dementor 古代の齟齬</a></li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+			</aside>
+			<main class="content tile is-vertical">
+				<div id="unit-summary" class="tile">
+					<div class="tile is-parent is-vertical is-9">
+						<div class="tile is-child box">
+							<h1 class="title"><span framexs:title=""></span></h1>
+							<section>種族：<div framexs:id-d="race">種族</div></section>
+							<section>
+								<div framexs:id-sd="description"></div>
+							</section>
+							<section>
+								<h2>Special Notes</h2>
+								<div framexs:id-sd="specialnotes"></div>
+							</section>
+						</div>
+					</div>
+					<div class="tile is-parent is-vertical">
+						<div id="portrait" class="tile is-child box"><span framexs:id-sd="portrait"></span></div>
+					</div>
+				</div>
+				<div class="tile">
+					<div class="tile is-parent is-vertical is-7">
+						<section class="tile is-child box">
+							<h2>Information</h2>
+							<div framexs:id-sd="infomation"></div>
+						</section>
+						<section class="tile is-child box">
+							<h2>Attacks</h2>
+							<table id="attacks">
+								<thead><tr><th>name</th><th>feature</th><th>additional</th></tr></thead>
+								<tbody>
+									<tr framexs:id-d="attacks"><td></td><td></td><td></td></tr>
+								</tbody>
+							</table>
+						</section>
+						<section class="tile is-child box">
+							<h2>Registences</h2>
+							<table>
+								<tbody><tr framexs:fetch-d="registence"><td></td><td></td><td></td></tr></tbody>
+							</table>
+						</section>
+					</div>
+					<div class="tile is-parent is-vertical">
+						<div class="tile is-child box">
+							<h2>Terrain</h2>
+							<table>
+								<thead><th>Terrain</th><th>Movement<br/>Cost</th><th>Defence</th></thead>
+								<tbody><tr framexs:fetch-d="terrain"><td></td><td></td><td></td></tr></tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+		<footer class="footer">
+			<section class="box is-info">
+			<h2>参考</h2>
+			<ul>
+			<li><a href="http://units.wesnoth.org/1.12/mainline/en_US/mainline.html">Battle for Wesnoth | Unites</a></li>
+			<li><a href="https://github.com/wesnoth/wesnoth">GitHub - wesnoth/wesnoth</a></li>   
+			<li><a href="http://wikiwiki.jp/wesnoth/?%A5%E6%A5%CB%A5%C3%A5%C8%A5%C7%A1%BC%A5%BF">ユニットデータ - The Battle for Wesnoth Wiki*</a></li>
+			</ul>
+			</section>
+		</footer>
+	</body>
+</html>

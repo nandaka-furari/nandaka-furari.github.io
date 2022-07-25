@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.19.11/URI.min.js" integrity="sha512-HBrZaiSIpZkFPGkutbgouEKsfM+HCrfyioscGYbNPPWb7kvMQcfKzMo35yXb+X+eaOOzpu6UkppcJXfKKO/UqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.37/vue.global.min.js" integrity="sha512-rCO3ZZnxh9j/Y725Iq2Cqr2lc9fi83zVeN3PFTUosktylZsCFjD13PDbKrzKjKO/idjM4KlMQC52AsoGFTAe6A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<title>北朝鮮の発熱者を推測するアプリ</title>
+	
+</head>
+<body>
+<p>正確と思われる新規発熱者の最古日:<span id="正確と思われる新規発熱者の最古日"></span></p>
+<div id="app">
+<label>平均世代時間<input type="number" v-model="平均世代時間"></label>
+<label>報告間隔<input type="number" v-model="報告間隔"></label>
+<label>実行再生産数ピーク日づけ<input type="date" v-model="実行再生産数ピーク日づけ"></label>
+<label>感染始まり日づけ<input type="date" v-model="感染始まり日づけ"></label>
+<label>ピーク実行再生産数<input type="number" v-model="ピーク実行再生産数"></label>
+<label>実行再生産数下げ止まりの日づけ<input type="date" v-model="実行再生産数下げ止まりの日づけ"></label>
+<label>基準実行再生産数<input type="number" v-model="基準実行再生産数"></label>
+指数{{指数}}
+<details>
+<summary>データテーブル</summary>
+<table id="data">
+<tr><th>日付</th><th>新規発熱者数</th><th>平均七日間発熱者数</th><th>七日間合計</th><th>実行再生産数</th></tr>
+<tr v-for="row in data"><td>{{row.日付}}</td><td>{{row.新規発熱者数}}</td><td>{{row.平均七日間発熱者数}}</td><td>{{row.七日間合計}}</td><td>{{row.実行再生産数}}</td></tr>
+</table>
+</details>
+<button @click="計算と描画">計算と描画</button>
+</div>
+<p>発熱者総計:<span id="発熱者総計"></span></p>
+<div style="width:600px">
+<canvas id="mychart"></canvas>
+</div>
+<p><a href="https://www.tohoho-web.com/ex/chartjs.html">とほほさんに感謝</a></p>
+<script src="index.js"></script>
+</body>
+</html>

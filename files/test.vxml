@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<vxml version="1.0">
+    <form>
+           <block>Hello World!</block>
+    </form>
+</vxml>

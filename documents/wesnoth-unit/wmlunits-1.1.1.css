@@ -1,0 +1,14 @@
+﻿body {
+	background:#e9dbc2;
+	border:1px solid #b48648;
+}
+#attacks td {
+	padding:0.25em;
+}
+#portrait svg{
+	height:200px;
+	width:200px
+}
+#side-menu {
+	background:linear-gradient(to bottom, rgba(180,134,72,0.15), rgba(180,134,72,0.4))
+}

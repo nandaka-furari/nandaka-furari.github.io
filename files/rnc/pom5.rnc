@@ -1,0 +1,1723 @@
+default namespace = "urn:pom"
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+namespace rng = "http://relaxng.org/ns/structure/1.0"
+
+
+start = project
+pom.project = element project {
+	element modelVersion {
+		xsd:string
+	}?
+	& element name {
+		xsd:string
+	}?
+    & element description {
+    	text
+	}?
+    & element url {
+          xsd:string
+      }?
+	& element propeties
+	   
+    }?
+    & element parent {
+    	 pom.project.content
+    	 & element relativePath {
+    	 	 xsd:string
+         }?
+	}?
+    & pom.project.content
+    & element packaging {xsd:string}?
+	& element tasks {
+		element scripts
+	}
+	& (element licenses { pom.license * } | pom.license)?
+	& (element developers {pom.developer *} | pom.developer)?
+	& element devDependencies
+	& element inceptionYear {
+          xsd:string
+      }?
+    & element organization {
+          Organization
+      }?
+    & 
+      element contributors {
+          element contributor { Contributor }*
+      }?
+    & 
+      element mailingLists {
+          element mailingList { MailingList }*
+      }?
+    & element prerequisites {
+          Prerequisites
+      }?
+    & 
+      element modules {
+          element module { xsd:string }*
+      }?
+    & element scm {
+          Scm
+      }?
+    & element issueManagement {
+          IssueManagement
+      }?
+    & element ciManagement {
+          CiManagement
+      }?
+    & element distributionManagement {
+          DistributionManagement
+      }?
+    & 
+      element properties {
+          element property {
+          	  element name {text}?
+          	  , element value {text}?
+          }*
+      }?
+    & element dependencyManagement {
+          DependencyManagement
+      }?
+    & element dependencies {
+          element dependency { Dependency }*
+      }?
+      & element repositories {
+          element repository { Repository }*
+      }?
+    & element pluginRepositories {
+          element pluginRepository { Repository }*
+      }?
+    & element build {
+          Build
+      }?
+    &  element reports {
+          element * { text }*
+      }?
+    & element reporting {
+          Reporting
+      }?
+    & element profiles {
+          element profile { Profile }*
+      }?
+}
+pom.license = element license {text
+
+}
+pom.deverloper = element developer { Developer }
+
+pom.project.content =
+	element groupId {text}?
+    & element artifactId {text}?
+    & element version {text}?
+
+MailingList =
+    element name {
+        xsd:string
+    }?
+    & element subscribe {
+          xsd:string
+      }?
+    & element unsubscribe {
+          xsd:string
+      }?
+    & element post {
+          xsd:string
+      }?
+    & element archive {
+          xsd:string
+      }?
+    & 
+      element otherArchives {
+          element otherArchive { xsd:string }*
+      }?
+
+Parent =
+    pom.project.content
+    & element relativePath {
+          xsd:string
+      }?
+Organization =
+    element name {
+        xsd:string
+    }?
+    & element url {
+          xsd:string
+      }?
+
+DistributionManagement =
+    element repository {
+        DeploymentRepository
+    }?
+    & element snapshotRepository {
+          DeploymentRepository
+      }?
+    & element site {
+          Site
+      }?
+    & element downloadUrl {
+          xsd:string
+      }?
+    & element relocation {
+          Relocation
+      }?
+    & element status {
+          xsd:string
+      }?
+
+## 
+##       4.0.0+
+##       Describes where an artifact has moved to. If any of the values are omitted, it is
+##         assumed to be the same as it was before.
+##     
+Relocation =
+    pom.project.content
+    & element message {
+          xsd:string
+      }?
+    
+Site =
+    element id {
+        xsd:string
+        >> a:documentation [
+               "\x{a}" ~
+               "          4.0.0+\x{a}" ~
+               "          \x{a}" ~
+               "            \x{a}" ~
+               "            A unique identifier for a deployment location. This is used to match the\x{a}" ~
+               "            site to configuration in the <code>settings.xml</code> file, for example.\x{a}" ~
+               "            \x{a}" ~
+               "          \x{a}" ~
+               "        "
+           ]
+    }?
+    & element name {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          4.0.0+\x{a}" ~
+                 "          Human readable name of the deployment location.\x{a}" ~
+                 "        "
+             ]
+      }?
+    & element url {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          4.0.0+\x{a}" ~
+                 "          \x{a}" ~
+                 "            \x{a}" ~
+                 "            The url of the location where website is deployed, in the form <code>protocol://hostname/path</code>.\x{a}" ~
+                 "            <br /><b>Default value is</b>: parent value [+ path adjustment] + artifactId\x{a}" ~
+                 "            \x{a}" ~
+                 "          \x{a}" ~
+                 "        "
+             ]
+      }?
+  
+DeploymentRepository =
+    (element uniqueVersion {
+         xsd:boolean
+     }?
+     & element releases {
+           RepositoryPolicy
+       }?
+     & element snapshots {
+           RepositoryPolicy
+       }?
+     & element id {
+           xsd:string
+       }?
+     & element name {
+           xsd:string
+       }?
+     & (element url {
+            xsd:string
+        }?)
+       >> a:documentation [ "\x{a}" ~ "            default value is : default" ]
+     & element layout {
+           xsd:string
+           >> a:documentation [
+                  "\x{a}" ~
+                  "          4.0.0+\x{a}" ~
+                  "          \x{a}" ~
+                  "            \x{a}" ~
+                  "            The type of layout this repository uses for locating and storing artifacts -\x{a}" ~
+                  "            can be <code>legacy</code> or <code>default</code>.\x{a}" ~
+                  "            \x{a}" ~
+                  "          \x{a}" ~
+                  "        "
+              ]
+       }?)
+   
+RepositoryPolicy =
+    element enabled {
+        xsd:string
+        >> a:documentation [
+               "\x{a}" ~
+               "          4.0.0+\x{a}" ~
+               "          \x{a}" ~
+               "            \x{a}" ~
+               "            Whether to use this repository for downloading this type of artifact. Note: While the type\x{a}" ~
+               "            of this field is <code>String</code> for technical reasons, the semantic type is actually\x{a}" ~
+               "            <code>Boolean</code>. Default value is <code>true</code>.\x{a}" ~
+               "            \x{a}" ~
+               "          \x{a}" ~
+               "        "
+           ]
+    }?
+    & element updatePolicy {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          4.0.0+\x{a}" ~
+                 "          \x{a}" ~
+                 "            \x{a}" ~
+                 "            The frequency for downloading updates - can be\x{a}" ~
+                 "            <code>always,</code>\x{a}" ~
+                 "            <code>daily</code>\x{a}" ~
+                 "            (default),\x{a}" ~
+                 "            <code>interval:XXX</code>\x{a}" ~
+                 "            (in minutes) or\x{a}" ~
+                 "            <code>never</code>\x{a}" ~
+                 "            (only if it doesn't exist locally).\x{a}" ~
+                 "            \x{a}" ~
+                 "          \x{a}" ~
+                 "        "
+             ]
+      }?
+    & element checksumPolicy {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          4.0.0+\x{a}" ~
+                 "          \x{a}" ~
+                 "            \x{a}" ~
+                 "            What to do when verification of an artifact checksum fails. Valid values are\x{a}" ~
+                 "            <code>ignore</code>\x{a}" ~
+                 "            ,\x{a}" ~
+                 "            <code>fail</code>\x{a}" ~
+                 "            or\x{a}" ~
+                 "            <code>warn</code>\x{a}" ~
+                 "            (the default).\x{a}" ~
+                 "            \x{a}" ~
+                 "          \x{a}" ~
+                 "        "
+             ]
+      }?
+
+## 
+##       4.0.0+
+##       Describes the prerequisites a project can have.
+##     
+Prerequisites =
+    
+    ## 
+    ##             default value is : 2.0
+    (element maven {
+         xsd:string
+         >> a:documentation [
+                "\x{a}" ~
+                "          4.0.0+\x{a}" ~
+                "          \x{a}" ~
+                "            For a plugin project, the minimum version of Maven required to use\x{a}" ~
+                "            the resulting plugin.<br />\x{a}" ~
+                "            For specifying the minimum version of Maven required to build a\x{a}" ~
+                "            project, this element is <b>deprecated</b>. Use the Maven Enforcer\x{a}" ~
+                """            Plugin's <a href="https://maven.apache.org/enforcer/enforcer-rules/requireMavenVersion.html"><code>requireMavenVersion</code></a>\x{a}""" ~
+                "            rule instead.\x{a}" ~
+                "            \x{a}" ~
+                "          \x{a}" ~
+                "        "
+            ]
+     }?)
+
+## 
+##       3.0.0+
+##       Description of a person who has contributed to the project, but who does not have
+##         commit privileges. Usually, these contributions come in the form of patches submitted.
+##     
+Contributor =
+    element name {
+        xsd:string
+        >> a:documentation [
+               "\x{a}" ~
+               "          3.0.0+\x{a}" ~
+               "          The full name of the contributor.\x{a}" ~
+               "        "
+           ]
+    }?
+    & element email {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          3.0.0+\x{a}" ~
+                 "          The email address of the contributor.\x{a}" ~
+                 "        "
+             ]
+      }?
+    & element url {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          3.0.0+\x{a}" ~
+                 "          The URL for the homepage of the contributor.\x{a}" ~
+                 "        "
+             ]
+      }?
+    & element organization {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          3.0.0+\x{a}" ~
+                 "          The organization to which the contributor belongs.\x{a}" ~
+                 "        "
+             ]
+      }?
+    & element organizationUrl {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          3.0.0+\x{a}" ~
+                 "          The URL of the organization.\x{a}" ~
+                 "        "
+             ]
+      }?
+    & 
+      ## 
+      ##           3.0.0+
+      ##           
+      ##             
+      ##             The roles the contributor plays in the project. Each role is described by a
+      ##             <code>role</code> element, the body of which is a role name. This can also be used to
+      ##             describe the contribution.
+      ##             
+      ##           
+      ##         
+      element roles {
+          element role { xsd:string }*
+      }?
+    & element timezone {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          3.0.0+\x{a}" ~
+                 "          \x{a}" ~
+                 "            \x{a}" ~
+                 "              The timezone the contributor is in. Typically, this is a number in the range\x{a}" ~
+                 '              <a href="http://en.wikipedia.org/wiki/UTC%E2%88%9212:00">-12</a> to <a href="http://en.wikipedia.org/wiki/UTC%2B14:00">+14</a>\x{a}' ~
+                 '              or a valid time zone id like "America/Montreal" (UTC-05:00) or "Europe/Paris" (UTC+01:00).\x{a}' ~
+                 "            \x{a}" ~
+                 "          \x{a}" ~
+                 "        "
+             ]
+      }?
+    & 
+      ## 
+      ##           3.0.0+
+      ##           Properties about the contributor, such as an instant messenger handle.
+      ##         
+      element properties {
+          element * { text }*
+      }?
+
+## 
+##       4.0.0+
+##       
+##         
+##         The <code>&lt;scm&gt;</code> element contains informations required to the SCM
+##         (Source Control Management) of the project.
+##         
+##       
+##     
+Scm =
+    element connection {
+        xsd:string
+        >> a:documentation [
+               "\x{a}" ~
+               "          4.0.0+\x{a}" ~
+               "          \x{a}" ~
+               "            \x{a}" ~
+               "            The source control management system URL\x{a}" ~
+               "            that describes the repository and how to connect to the\x{a}" ~
+               "            repository. For more information, see the\x{a}" ~
+               '            <a href="http://maven.apache.org/scm/scm-url-format.html">URL format</a>\x{a}' ~
+               '            and <a href="http://maven.apache.org/scm/scms-overview.html">list of supported SCMs</a>.\x{a}' ~
+               "            This connection is read-only.\x{a}" ~
+               "            <br /><b>Default value is</b>: parent value [+ path adjustment] + artifactId\x{a}" ~
+               "            \x{a}" ~
+               "          \x{a}" ~
+               "        "
+           ]
+    }?
+    & (element developerConnection {
+           xsd:string
+           >> a:documentation [
+                  "\x{a}" ~
+                  "          4.0.0+\x{a}" ~
+                  "          \x{a}" ~
+                  "            \x{a}" ~
+                  "            Just like <code>connection</code>, but for developers, i.e. this scm connection\x{a}" ~
+                  "            will not be read only.\x{a}" ~
+                  "            <br /><b>Default value is</b>: parent value [+ path adjustment] + artifactId\x{a}" ~
+                  "            \x{a}" ~
+                  "          \x{a}" ~
+                  "        "
+              ]
+       }?)
+      >> a:documentation [ "\x{a}" ~ "            default value is : HEAD" ]
+    & element tag {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          4.0.0+\x{a}" ~
+                 "          The tag of current code. By default, it's set to HEAD during development.\x{a}" ~
+                 "        "
+             ]
+      }?
+    & element url {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          4.0.0+\x{a}" ~
+                 "          \x{a}" ~
+                 "            \x{a}" ~
+                 "            The URL to the project's browsable SCM repository, such as ViewVC or Fisheye.\x{a}" ~
+                 "            <br /><b>Default value is</b>: parent value [+ path adjustment] + artifactId\x{a}" ~
+                 "            \x{a}" ~
+                 "          \x{a}" ~
+                 "        "
+             ]
+      }?
+
+## 
+##       4.0.0+
+##       A repository contains the information needed for establishing connections with
+##         remote repository.
+##     
+Repository =
+    element releases {
+        RepositoryPolicy
+        >> a:documentation [
+               "\x{a}" ~
+               "          4.0.0+\x{a}" ~
+               "          How to handle downloading of releases from this repository.\x{a}" ~
+               "        "
+           ]
+    }?
+    & element snapshots {
+          RepositoryPolicy
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          4.0.0+\x{a}" ~
+                 "          How to handle downloading of snapshots from this repository.\x{a}" ~
+                 "        "
+             ]
+      }?
+    & element id {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          4.0.0+\x{a}" ~
+                 "          \x{a}" ~
+                 "            \x{a}" ~
+                 "            A unique identifier for a repository. This is used to match the repository\x{a}" ~
+                 "            to configuration in the <code>settings.xml</code> file, for example. Furthermore, the identifier is\x{a}" ~
+                 "            used during POM inheritance and profile injection to detect repositories that should be merged.\x{a}" ~
+                 "            \x{a}" ~
+                 "          \x{a}" ~
+                 "        "
+             ]
+      }?
+    & element name {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          4.0.0+\x{a}" ~
+                 "          Human readable name of the repository.\x{a}" ~
+                 "        "
+             ]
+      }?
+    & (element url {
+           xsd:string
+           >> a:documentation [
+                  "\x{a}" ~
+                  "          4.0.0+\x{a}" ~
+                  "          \x{a}" ~
+                  "            \x{a}" ~
+                  "            The url of the repository, in the form <code>protocol://hostname/path</code>.\x{a}" ~
+                  "            \x{a}" ~
+                  "          \x{a}" ~
+                  "        "
+              ]
+       }?)
+      >> a:documentation [ "\x{a}" ~ "            default value is : default" ]
+    & element layout {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          4.0.0+\x{a}" ~
+                 "          \x{a}" ~
+                 "            \x{a}" ~
+                 "            The type of layout this repository uses for locating and storing artifacts -\x{a}" ~
+                 "            can be <code>legacy</code> or <code>default</code>.\x{a}" ~
+                 "            \x{a}" ~
+                 "          \x{a}" ~
+                 "        "
+             ]
+      }?
+
+## 
+##       4.0.0+
+##       Information about the issue tracking (or bug tracking) system used to manage this
+##         project.
+##     
+IssueManagement =
+    element system {
+        xsd:string
+        >> a:documentation [
+               "\x{a}" ~
+               "          4.0.0+\x{a}" ~
+               "          The name of the issue management system, e.g. Bugzilla\x{a}" ~
+               "        "
+           ]
+    }?
+    & element url {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          4.0.0+\x{a}" ~
+                 "          URL for the issue management system used by the project.\x{a}" ~
+                 "        "
+             ]
+      }?
+
+## 
+##       4.0.0+
+##       
+##         
+##         The <code>&lt;CiManagement&gt;</code> element contains informations required to the
+##         continuous integration system of the project.
+##         
+##       
+##     
+CiManagement =
+    element system {
+        xsd:string
+        >> a:documentation [
+               "\x{a}" ~
+               "          4.0.0+\x{a}" ~
+               "          \x{a}" ~
+               "            \x{a}" ~
+               "            The name of the continuous integration system, e.g. <code>continuum</code>.\x{a}" ~
+               "            \x{a}" ~
+               "          \x{a}" ~
+               "        "
+           ]
+    }?
+    & element url {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          4.0.0+\x{a}" ~
+                 "          URL for the continuous integration system used by the project if it has a web\x{a}" ~
+                 "            interface.\x{a}" ~
+                 "        "
+             ]
+      }?
+    & 
+      ## 
+      ##           4.0.0+
+      ##           Configuration for notifying developers/users when a build is unsuccessful,
+      ##             including user information and notification mode.
+      ##         
+      element notifiers {
+          element notifier { Notifier }*
+      }?
+
+## 
+##       4.0.0+
+##       Configures one method for notifying users/developers when a build breaks.
+##     
+Notifier =
+    
+    ## 
+    ##             default value is : mail
+    ((element type {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          4.0.0+\x{a}" ~
+                 "          The mechanism used to deliver notifications.\x{a}" ~
+                 "        "
+             ]
+      }?)
+     >> a:documentation [ "\x{a}" ~ "            default value is : true" ]
+     & (element sendOnError {
+            xsd:boolean
+            >> a:documentation [
+                   "\x{a}" ~
+                   "          4.0.0+\x{a}" ~
+                   "          Whether to send notifications on error.\x{a}" ~
+                   "        "
+               ]
+        }?)
+       >> a:documentation [ "\x{a}" ~ "            default value is : true" ]
+     & (element sendOnFailure {
+            xsd:boolean
+            >> a:documentation [
+                   "\x{a}" ~
+                   "          4.0.0+\x{a}" ~
+                   "          Whether to send notifications on failure.\x{a}" ~
+                   "        "
+               ]
+        }?)
+       >> a:documentation [ "\x{a}" ~ "            default value is : true" ]
+     & (element sendOnSuccess {
+            xsd:boolean
+            >> a:documentation [
+                   "\x{a}" ~
+                   "          4.0.0+\x{a}" ~
+                   "          Whether to send notifications on success.\x{a}" ~
+                   "        "
+               ]
+        }?)
+       >> a:documentation [ "\x{a}" ~ "            default value is : true" ]
+     & element sendOnWarning {
+           xsd:boolean
+           >> a:documentation [
+                  "\x{a}" ~
+                  "          4.0.0+\x{a}" ~
+                  "          Whether to send notifications on warning.\x{a}" ~
+                  "        "
+              ]
+       }?
+     & element address {
+           xsd:string
+           >> a:documentation [
+                  "\x{a}" ~
+                  "          4.0.0+\x{a}" ~
+                  "          \x{a}" ~
+                  "            \x{a}" ~
+                  "            <b>Deprecated</b>. Where to send the notification to - eg email address.\x{a}" ~
+                  "            \x{a}" ~
+                  "          \x{a}" ~
+                  "        "
+              ]
+       }?
+     & 
+       ## 
+       ##           0.0.0+
+       ##           Extended configuration specific to this notifier goes here.
+       ##         
+       element configuration {
+           element * { text }*
+       }?)
+
+## 
+##       4.0.0+
+##       Modifications to the build process which is activated based on environmental
+##         parameters or command line arguments.
+##     
+Profile =
+    
+    ## 
+    ##             default value is : default
+    (element id {
+         xsd:string
+         >> a:documentation [
+                "\x{a}" ~
+                "          4.0.0+\x{a}" ~
+                "          The identifier of this build profile. This is used for command line\x{a}" ~
+                "            activation, and identifies profiles to be merged.\x{a}" ~
+                "          \x{a}" ~
+                "        "
+            ]
+     }?
+     & element activation {
+           Activation
+           >> a:documentation [
+                  "\x{a}" ~
+                  "          4.0.0+\x{a}" ~
+                  "          The conditional logic which will automatically trigger the inclusion of this\x{a}" ~
+                  "            profile.\x{a}" ~
+                  "        "
+              ]
+       }?
+     & element build {
+           BuildBase
+           >> a:documentation [
+                  "\x{a}" ~
+                  "          4.0.0+\x{a}" ~
+                  "          Information required to build the project.\x{a}" ~
+                  "        "
+              ]
+       }?
+     & 
+       ## 
+       ##           4.0.0+
+       ##           The modules (sometimes called subprojects) to build as a part of this
+       ##             project. Each module listed is a relative path to the directory containing the module.
+       ##             To be consistent with the way default urls are calculated from parent, it is recommended
+       ##             to have module names match artifact ids.
+       ##         
+       element modules {
+           element module { xsd:string }*
+       }?
+     & element distributionManagement {
+           DistributionManagement
+           >> a:documentation [
+                  "\x{a}" ~
+                  "          4.0.0+\x{a}" ~
+                  "          Distribution information for a project that enables deployment of the site\x{a}" ~
+                  "            and artifacts to remote web servers and repositories respectively.\x{a}" ~
+                  "        "
+              ]
+       }?
+     & 
+       ## 
+       ##           4.0.0+
+       ##           
+       ##             
+       ##             Properties that can be used throughout the POM as a substitution, and
+       ##             are used as filters in resources if enabled.
+       ##             The format is <code>&lt;name&gt;value&lt;/name&gt;</code>.
+       ##             
+       ##           
+       ##         
+       element properties {
+           element * { text }*
+       }?
+     & element dependencyManagement {
+           DependencyManagement
+           >> a:documentation [
+                  "\x{a}" ~
+                  "          4.0.0+\x{a}" ~
+                  "          Default dependency information for projects that inherit from this one. The\x{a}" ~
+                  "            dependencies in this section are not immediately resolved. Instead, when a POM derived\x{a}" ~
+                  "            from this one declares a dependency described by a matching groupId and artifactId, the\x{a}" ~
+                  "            version and other values from this section are used for that dependency if they were not\x{a}" ~
+                  "            already specified.\x{a}" ~
+                  "        "
+              ]
+       }?
+     & 
+       ## 
+       ##           3.0.0+
+       ##           
+       ##             
+       ##             This element describes all of the dependencies associated with a
+       ##             project.
+       ##             These dependencies are used to construct a classpath for your
+       ##             project during the build process. They are automatically downloaded from the
+       ##             repositories defined in this project.
+       ##             See <a href="http://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html">the
+       ##             dependency mechanism</a> for more information.
+       ##             
+       ##           
+       ##         
+       element dependencies {
+           element dependency { Dependency }*
+       }?
+     & 
+       ## 
+       ##           4.0.0+
+       ##           The lists of the remote repositories for discovering dependencies and
+       ##             extensions.
+       ##         
+       element repositories {
+           element repository { Repository }*
+       }?
+     & 
+       ## 
+       ##           4.0.0+
+       ##           The lists of the remote repositories for discovering plugins for builds and
+       ##             reports.
+       ##         
+       element pluginRepositories {
+           element pluginRepository { Repository }*
+       }?
+     & 
+       ## 
+       ##           4.0.0+
+       ##           
+       ##             
+       ##             <b>Deprecated</b>. Now ignored by Maven.
+       ##             
+       ##           
+       ##         
+       element reports {
+           element * { text }*
+       }?
+     & element reporting {
+           Reporting
+           >> a:documentation [
+                  "\x{a}" ~
+                  "          4.0.0+\x{a}" ~
+                  "          \x{a}" ~
+                  "            \x{a}" ~
+                  "            This element includes the specification of report plugins to use\x{a}" ~
+                  "            to generate the reports on the Maven-generated site.\x{a}" ~
+                  "            These reports will be run when a user executes <code>mvn site</code>.\x{a}" ~
+                  "            All of the reports will be included in the navigation bar for browsing.\x{a}" ~
+                  "            \x{a}" ~
+                  "          \x{a}" ~
+                  "        "
+              ]
+       }?)
+
+## 
+##       3.0.0+
+##       Generic informations for a build.
+##     
+BuildBase =
+    element defaultGoal {
+        xsd:string
+        >> a:documentation [
+               "\x{a}" ~
+               "          3.0.0+\x{a}" ~
+               "          The default goal (or phase in Maven 2) to execute when none is specified for\x{a}" ~
+               "            the project. Note that in case of a multi-module build, only the default goal of the top-level\x{a}" ~
+               "            project is relevant, i.e. the default goals of child modules are ignored. Since Maven 3,\x{a}" ~
+               "            multiple goals/phases can be separated by whitespace.\x{a}" ~
+               "        "
+           ]
+    }?
+    & 
+      ## 
+      ##           3.0.0+
+      ##           
+      ##             This element describes all of the classpath resources such as properties
+      ##             files associated with a project. These resources are often included in the final
+      ##             package.
+      ##             The default value is <code>src/main/resources</code>.
+      ##           
+      ##         
+      element resources {
+          element resource { Resource }*
+      }?
+    & 
+      ## 
+      ##           4.0.0+
+      ##           
+      ##             This element describes all of the classpath resources such as properties
+      ##             files associated with a project's unit tests.
+      ##             The default value is <code>src/test/resources</code>.
+      ##           
+      ##         
+      element testResources {
+          element testResource { Resource }*
+      }?
+    & element directory {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          4.0.0+\x{a}" ~
+                 "          \x{a}" ~
+                 "            The directory where all files generated by the build are placed.\x{a}" ~
+                 "            The default value is <code>target</code>.\x{a}" ~
+                 "          \x{a}" ~
+                 "        "
+             ]
+      }?
+    & element finalName {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          4.0.0+\x{a}" ~
+                 "          \x{a}" ~
+                 "            \x{a}" ~
+                 "            The filename (excluding the extension, and with no path information) that\x{a}" ~
+                 "            the produced artifact will be called.\x{a}" ~
+                 "            The default value is <code>${artifactId}-${version}</code>.\x{a}" ~
+                 "            \x{a}" ~
+                 "          \x{a}" ~
+                 "        "
+             ]
+      }?
+    & 
+      ## 
+      ##           4.0.0+
+      ##           The list of filter properties files that are used when filtering is enabled.
+      ##         
+      element filters {
+          element filter { xsd:string }*
+      }?
+    & element pluginManagement {
+          PluginManagement
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          4.0.0+\x{a}" ~
+                 "          Default plugin information to be made available for reference by projects\x{a}" ~
+                 "            derived from this one. This plugin configuration will not be resolved or bound to the\x{a}" ~
+                 "            lifecycle unless referenced. Any local configuration for a given plugin will override\x{a}" ~
+                 "            the plugin's entire definition here.\x{a}" ~
+                 "        "
+             ]
+      }?
+    & 
+      ## 
+      ##           4.0.0+
+      ##           The list of plugins to use.
+      ##         
+      element plugins {
+          element plugin { Plugin }*
+      }?
+
+## 
+##       4.0.0+
+##       
+##         
+##         The <code>&lt;plugin&gt;</code> element contains informations required for a plugin.
+##         
+##       
+##     
+Plugin =
+    
+    ## 
+    ##             default value is : org.apache.maven.plugins
+    (element groupId {
+         xsd:string
+         >> a:documentation [
+                "\x{a}" ~
+                "          4.0.0+\x{a}" ~
+                "          The group ID of the plugin in the repository.\x{a}" ~
+                "        "
+            ]
+     }?
+     & element artifactId {
+           xsd:string
+           >> a:documentation [
+                  "\x{a}" ~
+                  "          4.0.0+\x{a}" ~
+                  "          The artifact ID of the plugin in the repository.\x{a}" ~
+                  "        "
+              ]
+       }?
+     & element version {
+           xsd:string
+           >> a:documentation [
+                  "\x{a}" ~
+                  "          4.0.0+\x{a}" ~
+                  "          The version (or valid range of versions) of the plugin to be used.\x{a}" ~
+                  "        "
+              ]
+       }?
+     & element extensions {
+           xsd:string
+           >> a:documentation [
+                  "\x{a}" ~
+                  "          4.0.0+\x{a}" ~
+                  "          \x{a}" ~
+                  "            \x{a}" ~
+                  "            Whether to load Maven extensions (such as packaging and type handlers) from\x{a}" ~
+                  "            this plugin. For performance reasons, this should only be enabled when necessary. Note: While the type\x{a}" ~
+                  "            of this field is <code>String</code> for technical reasons, the semantic type is actually\x{a}" ~
+                  "            <code>Boolean</code>. Default value is <code>false</code>.\x{a}" ~
+                  "            \x{a}" ~
+                  "          \x{a}" ~
+                  "        "
+              ]
+       }?
+     & 
+       ## 
+       ##           4.0.0+
+       ##           Multiple specifications of a set of goals to execute during the build
+       ##             lifecycle, each having (possibly) a different configuration.
+       ##         
+       element executions {
+           element execution { PluginExecution }*
+       }?
+     & 
+       ## 
+       ##           4.0.0+
+       ##           Additional dependencies that this project needs to introduce to the plugin's
+       ##             classloader.
+       ##         
+       element dependencies {
+           element dependency { Dependency }*
+       }?
+     & 
+       ## 
+       ##           4.0.0+
+       ##           
+       ##             
+       ##             <b>Deprecated</b>. Unused by Maven.
+       ##             
+       ##           
+       ##         
+       element goals {
+           element * { text }*
+       }?
+     & element inherited {
+           xsd:string
+           >> a:documentation [
+                  "\x{a}" ~
+                  "          4.0.0+\x{a}" ~
+                  "          \x{a}" ~
+                  "            \x{a}" ~
+                  "            Whether any configuration should be propagated to child POMs. Note: While the type\x{a}" ~
+                  "            of this field is <code>String</code> for technical reasons, the semantic type is actually\x{a}" ~
+                  "            <code>Boolean</code>. Default value is <code>true</code>.\x{a}" ~
+                  "            \x{a}" ~
+                  "          \x{a}" ~
+                  "        "
+              ]
+       }?
+     & 
+       ## 
+       ##           0.0.0+
+       ##           
+       ##             
+       ##             <p>The configuration as DOM object.</p>
+       ##             <p>By default, every element content is trimmed, but starting with Maven 3.1.0, you can add
+       ##             <code>xml:space="preserve"</code> to elements you want to preserve whitespace.</p>
+       ##             <p>You can control how child POMs inherit configuration from parent POMs by adding <code>combine.children</code>
+       ##             or <code>combine.self</code> attributes to the children of the configuration element:</p>
+       ##             <ul>
+       ##             <li><code>combine.children</code>: available values are <code>merge</code> (default) and <code>append</code>,</li>
+       ##             <li><code>combine.self</code>: available values are <code>merge</code> (default) and <code>override</code>.</li>
+       ##             </ul>
+       ##             <p>See <a href="http://maven.apache.org/pom.html#Plugins">POM Reference documentation</a> and
+       ##             <a href="http://plexus.codehaus.org/plexus-utils/apidocs/org/codehaus/plexus/util/xml/Xpp3DomUtils.html">Xpp3DomUtils</a>
+       ##             for more information.</p>
+       ##             
+       ##           
+       ##         
+       element configuration {
+           element * { text }*
+       }?)
+
+## 
+##       3.0.0+
+##       
+##         
+##         The <code>&lt;dependency&gt;</code> element contains information about a dependency
+##         of the project.
+##         
+##       
+##     
+Dependency =
+	pom.project.content
+    & element type {
+          xsd:string
+      }?
+    & element classifier {
+          xsd:string
+      }?
+    & element scope {
+          xsd:string
+      }?
+    & element systemPath {
+          xsd:string
+      }?
+    & 
+      element exclusions {
+          element exclusion { Exclusion }*
+      }?
+    & element optional {
+          xsd:string
+      }?
+
+Exclusion =
+    element artifactId {
+        xsd:string
+    }?
+    & element groupId {
+          xsd:string
+      }?
+
+PluginExecution =
+    
+    ## 
+    ##             default value is : default
+    (element id {
+         xsd:string
+         >> a:documentation [
+                "\x{a}" ~
+                "          4.0.0+\x{a}" ~
+                "          The identifier of this execution for labelling the goals during the build,\x{a}" ~
+                "            and for matching executions to merge during inheritance and profile injection.\x{a}" ~
+                "        "
+            ]
+     }?
+     & element phase {
+           xsd:string
+       }?
+     & 
+       ## 
+       ##           4.0.0+
+       ##           The goals to execute with the given configuration.
+       ##         
+       element goals {
+           element goal { xsd:string }*
+       }?
+     & element inherited {
+           xsd:string
+       }?
+     & 
+       element configuration {
+           element * { text }*
+       }?)
+Resource =
+    element targetPath {
+        xsd:string
+        >> a:documentation [
+               "\x{a}" ~
+               "          3.0.0+\x{a}" ~
+               "          \x{a}" ~
+               "            \x{a}" ~
+               "            Describe the resource target path. The path is relative to the target/classes\x{a}" ~
+               "            directory (i.e. <code>${project.build.outputDirectory}</code>).\x{a}" ~
+               "            For example, if you want that resource to appear in a specific package\x{a}" ~
+               "            (<code>org.apache.maven.messages</code>), you must specify this\x{a}" ~
+               "            element with this value: <code>org/apache/maven/messages</code>.\x{a}" ~
+               "            This is not required if you simply put the resources in that directory\x{a}" ~
+               "            structure at the source, however.\x{a}" ~
+               "            \x{a}" ~
+               "          \x{a}" ~
+               "        "
+           ]
+    }?
+    & element filtering {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          3.0.0+\x{a}" ~
+                 "          \x{a}" ~
+                 "            \x{a}" ~
+                 "            Whether resources are filtered to replace tokens with parameterised values or not.\x{a}" ~
+                 "            The values are taken from the <code>properties</code> element and from the\x{a}" ~
+                 "            properties in the files listed in the <code>filters</code> element. Note: While the type\x{a}" ~
+                 "            of this field is <code>String</code> for technical reasons, the semantic type is actually\x{a}" ~
+                 "            <code>Boolean</code>. Default value is <code>false</code>.\x{a}" ~
+                 "            \x{a}" ~
+                 "          \x{a}" ~
+                 "        "
+             ]
+      }?
+    & element directory {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          3.0.0+\x{a}" ~
+                 "          Describe the directory where the resources are stored. The path is relative\x{a}" ~
+                 "            to the POM.\x{a}" ~
+                 "        "
+             ]
+      }?
+    & 
+      ## 
+      ##           3.0.0+
+      ##           
+      ##             
+      ##             A list of patterns to include, e.g. <code>**&#47;*.xml</code>.
+      ##             
+      ##           
+      ##         
+      element includes {
+          element include { xsd:string }*
+      }?
+    & 
+      ## 
+      ##           3.0.0+
+      ##           
+      ##             
+      ##             A list of patterns to exclude, e.g. <code>**&#47;*.xml</code>
+      ##             
+      ##           
+      ##         
+      element excludes {
+          element exclude { xsd:string }*
+      }?
+
+## 
+##       4.0.0+
+##       Section for management of default plugin information for use in a group of POMs.
+##       
+##     
+PluginManagement =
+    
+    ## 
+    ##           4.0.0+
+    ##           The list of plugins to use.
+    ##         
+    element plugins {
+        element plugin { Plugin }*
+    }?
+
+## 
+##       4.0.0+
+##       Section for management of reports and their configuration.
+##     
+Reporting =
+    element excludeDefaults {
+        xsd:string
+        >> a:documentation [
+               "\x{a}" ~
+               "          4.0.0+\x{a}" ~
+               "          \x{a}" ~
+               "            \x{a}" ~
+               "            If true, then the default reports are not included in the site generation.\x{a}" ~
+               '            This includes the reports in the "Project Info" menu. Note: While the type\x{a}' ~
+               "            of this field is <code>String</code> for technical reasons, the semantic type is actually\x{a}" ~
+               "            <code>Boolean</code>. Default value is <code>false</code>.\x{a}" ~
+               "            \x{a}" ~
+               "          \x{a}" ~
+               "        "
+           ]
+    }?
+    & element outputDirectory {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          4.0.0+\x{a}" ~
+                 "          \x{a}" ~
+                 "            \x{a}" ~
+                 "            Where to store all of the generated reports. The default is\x{a}" ~
+                 "            <code>${project.build.directory}/site</code>.\x{a}" ~
+                 "            \x{a}" ~
+                 "          \x{a}" ~
+                 "        "
+             ]
+      }?
+    & 
+      ## 
+      ##           4.0.0+
+      ##           The reporting plugins to use and their configuration.
+      ##         
+      element plugins {
+          element plugin { ReportPlugin }*
+      }?
+
+## 
+##       4.0.0+
+##       
+##         
+##         The <code>&lt;plugin&gt;</code> element contains informations required for a report plugin.
+##         
+##       
+##     
+ReportPlugin =
+    
+    ## 
+    ##             default value is : org.apache.maven.plugins
+    (
+    pom.project.content
+     & 
+       ## 
+       ##           4.0.0+
+       ##           
+       ##             
+       ##             Multiple specifications of a set of reports, each having (possibly) different
+       ##             configuration. This is the reporting parallel to an <code>execution</code> in the build.
+       ##             
+       ##           
+       ##         
+       element reportSets {
+           element reportSet { ReportSet }*
+       }?
+     & element inherited {
+           xsd:string
+           >> a:documentation [
+                  "\x{a}" ~
+                  "          4.0.0+\x{a}" ~
+                  "          \x{a}" ~
+                  "            \x{a}" ~
+                  "            Whether any configuration should be propagated to child POMs. Note: While the type\x{a}" ~
+                  "            of this field is <code>String</code> for technical reasons, the semantic type is actually\x{a}" ~
+                  "            <code>Boolean</code>. Default value is <code>true</code>.\x{a}" ~
+                  "            \x{a}" ~
+                  "          \x{a}" ~
+                  "        "
+              ]
+       }?
+     & 
+       ## 
+       ##           0.0.0+
+       ##           
+       ##             
+       ##             <p>The configuration as DOM object.</p>
+       ##             <p>By default, every element content is trimmed, but starting with Maven 3.1.0, you can add
+       ##             <code>xml:space="preserve"</code> to elements you want to preserve whitespace.</p>
+       ##             <p>You can control how child POMs inherit configuration from parent POMs by adding <code>combine.children</code>
+       ##             or <code>combine.self</code> attributes to the children of the configuration element:</p>
+       ##             <ul>
+       ##             <li><code>combine.children</code>: available values are <code>merge</code> (default) and <code>append</code>,</li>
+       ##             <li><code>combine.self</code>: available values are <code>merge</code> (default) and <code>override</code>.</li>
+       ##             </ul>
+       ##             <p>See <a href="http://maven.apache.org/pom.html#Plugins">POM Reference documentation</a> and
+       ##             <a href="http://plexus.codehaus.org/plexus-utils/apidocs/org/codehaus/plexus/util/xml/Xpp3DomUtils.html">Xpp3DomUtils</a>
+       ##             for more information.</p>
+       ##             
+       ##           
+       ##         
+       element configuration {
+           element * { text }*
+       }?
+
+## 
+##       4.0.0+
+##       Represents a set of reports and configuration to be used to generate them.
+##     
+ReportSet =
+    
+    ## 
+    ##             default value is : default
+    (element id {
+         xsd:string
+         >> a:documentation [
+                "\x{a}" ~
+                "          0.0.0+\x{a}" ~
+                "          The unique id for this report set, to be used during POM inheritance and profile injection\x{a}" ~
+                "            for merging of report sets.\x{a}" ~
+                "          \x{a}" ~
+                "        "
+            ]
+     }?
+     & 
+       ## 
+       ##           4.0.0+
+       ##           The list of reports from this plugin which should be generated from this set.
+       ##         
+       element reports {
+           element report { xsd:string }*
+       }?
+     & element inherited {
+           xsd:string
+           >> a:documentation [
+                  "\x{a}" ~
+                  "          4.0.0+\x{a}" ~
+                  "          \x{a}" ~
+                  "            \x{a}" ~
+                  "            Whether any configuration should be propagated to child POMs. Note: While the type\x{a}" ~
+                  "            of this field is <code>String</code> for technical reasons, the semantic type is actually\x{a}" ~
+                  "            <code>Boolean</code>. Default value is <code>true</code>.\x{a}" ~
+                  "            \x{a}" ~
+                  "          \x{a}" ~
+                  "        "
+              ]
+       }?
+     & 
+       ## 
+       ##           0.0.0+
+       ##           
+       ##             
+       ##             <p>The configuration as DOM object.</p>
+       ##             <p>By default, every element content is trimmed, but starting with Maven 3.1.0, you can add
+       ##             <code>xml:space="preserve"</code> to elements you want to preserve whitespace.</p>
+       ##             <p>You can control how child POMs inherit configuration from parent POMs by adding <code>combine.children</code>
+       ##             or <code>combine.self</code> attributes to the children of the configuration element:</p>
+       ##             <ul>
+       ##             <li><code>combine.children</code>: available values are <code>merge</code> (default) and <code>append</code>,</li>
+       ##             <li><code>combine.self</code>: available values are <code>merge</code> (default) and <code>override</code>.</li>
+       ##             </ul>
+       ##             <p>See <a href="http://maven.apache.org/pom.html#Plugins">POM Reference documentation</a> and
+       ##             <a href="http://plexus.codehaus.org/plexus-utils/apidocs/org/codehaus/plexus/util/xml/Xpp3DomUtils.html">Xpp3DomUtils</a>
+       ##             for more information.</p>
+       ##             
+       ##           
+       ##         
+       element configuration {
+           element * { text }*
+       }?)
+
+## 
+##       4.0.0+
+##       The conditions within the build runtime environment which will trigger the
+##         automatic inclusion of the build profile. Multiple conditions can be defined, which must
+##         be all satisfied to activate the profile.
+##       
+##     
+Activation =
+    
+    ## 
+    ##             default value is : false
+    (element activeByDefault {
+         xsd:boolean
+         >> a:documentation [
+                "\x{a}" ~
+                "          4.0.0+\x{a}" ~
+                "          If set to true, this profile will be active unless another profile in this\x{a}" ~
+                "            pom is activated using the command line -P option or by one of that profile's\x{a}" ~
+                "            activators.\x{a}" ~
+                "        "
+            ]
+     }?
+     & element jdk {
+           xsd:string
+           >> a:documentation [
+                  "\x{a}" ~
+                  "          4.0.0+\x{a}" ~
+                  "          \x{a}" ~
+                  "            \x{a}" ~
+                  "            Specifies that this profile will be activated when a matching JDK is detected.\x{a}" ~
+                  "            For example, <code>1.4</code> only activates on JDKs versioned 1.4,\x{a}" ~
+                  "            while <code>!1.4</code> matches any JDK that is not version 1.4. Ranges are supported too:\x{a}" ~
+                  "            <code>[1.5,)</code> activates when the JDK is 1.5 minimum.\x{a}" ~
+                  "            \x{a}" ~
+                  "          \x{a}" ~
+                  "        "
+              ]
+       }?
+     & element os {
+           ActivationOS
+           >> a:documentation [
+                  "\x{a}" ~
+                  "          4.0.0+\x{a}" ~
+                  "          Specifies that this profile will be activated when matching operating system\x{a}" ~
+                  "            attributes are detected.\x{a}" ~
+                  "        "
+              ]
+       }?
+     & element property {
+           ActivationProperty
+           >> a:documentation [
+                  "\x{a}" ~
+                  "          4.0.0+\x{a}" ~
+                  "          Specifies that this profile will be activated when this system property is\x{a}" ~
+                  "            specified.\x{a}" ~
+                  "        "
+              ]
+       }?
+     & element file {
+           ActivationFile
+           >> a:documentation [
+                  "\x{a}" ~
+                  "          4.0.0+\x{a}" ~
+                  "          Specifies that this profile will be activated based on existence of a file.\x{a}" ~
+                  "        "
+              ]
+       }?)
+
+## 
+##       4.0.0+
+##       This is the property specification used to activate a profile. If the value field
+##         is empty, then the existence of the named property will activate the profile, otherwise it
+##         does a case-sensitive match against the property value as well.
+##     
+ActivationProperty =
+    element name {
+        xsd:string
+        >> a:documentation [
+               "\x{a}" ~
+               "          4.0.0+\x{a}" ~
+               "          The name of the property to be used to activate a profile.\x{a}" ~
+               "        "
+           ]
+    }?
+    & element value {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          4.0.0+\x{a}" ~
+                 "          The value of the property required to activate a profile.\x{a}" ~
+                 "        "
+             ]
+      }?
+
+## 
+##       4.0.0+
+##       This is an activator which will detect an operating system's attributes in order
+##         to activate its profile.
+##     
+ActivationOS =
+    element name {
+        xsd:string
+        >> a:documentation [
+               "\x{a}" ~
+               "          4.0.0+\x{a}" ~
+               "          \x{a}" ~
+               "            \x{a}" ~
+               "            The name of the operating system to be used to activate the profile. This must be an exact match\x{a}" ~
+               "            of the <code>${os.name}</code> Java property, such as <code>Windows XP</code>.\x{a}" ~
+               "            \x{a}" ~
+               "          \x{a}" ~
+               "        "
+           ]
+    }?
+    & element family {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          4.0.0+\x{a}" ~
+                 "          \x{a}" ~
+                 "            \x{a}" ~
+                 "            The general family of the OS to be used to activate the profile, such as\x{a}" ~
+                 "            <code>windows</code> or <code>unix</code>.\x{a}" ~
+                 "            \x{a}" ~
+                 "          \x{a}" ~
+                 "        "
+             ]
+      }?
+    & element arch {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          4.0.0+\x{a}" ~
+                 "          The architecture of the operating system to be used to activate the\x{a}" ~
+                 "          profile.\x{a}" ~
+                 "        "
+             ]
+      }?
+    & element version {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          4.0.0+\x{a}" ~
+                 "          The version of the operating system to be used to activate the\x{a}" ~
+                 "          profile.\x{a}" ~
+                 "        "
+             ]
+      }?
+
+## 
+##       4.0.0+
+##       This is the file specification used to activate the profile. The <code>missing</code> value
+##         is the location of a file that needs to exist, and if it doesn't, the profile will be
+##         activated. On the other hand, <code>exists</code> will test for the existence of the file and if it is
+##         there, the profile will be activated.<br/>
+##         Variable interpolation for these file specifications is limited to <code>${basedir}</code>,
+##         System properties and request properties.
+##     
+ActivationFile =
+    element missing {
+        xsd:string
+        >> a:documentation [
+               "\x{a}" ~
+               "          4.0.0+\x{a}" ~
+               "          The name of the file that must be missing to activate the\x{a}" ~
+               "          profile.\x{a}" ~
+               "        "
+           ]
+    }?
+    & element exists {
+          xsd:string
+          >> a:documentation [
+                 "\x{a}" ~
+                 "          4.0.0+\x{a}" ~
+                 "          The name of the file that must exist to activate the profile.\x{a}" ~
+                 "        "
+             ]
+      }?
+
+## 
+##       4.0.0+
+##       Section for management of default dependency information for use in a group of
+##         POMs.
+##     
+DependencyManagement =
+    
+    ## 
+    ##           4.0.0+
+    ##           The dependencies specified here are not used until they are referenced in a
+    ##             POM within the group. This allows the specification of a "standard" version for a
+    ##             particular dependency.
+    ##         
+    element dependencies {
+        element dependency { Dependency }*
+    }?
+
+  
+Build =
+    element sourceDirectory {
+        xsd:string
+    }?
+    & element scriptSourceDirectory {
+          xsd:string
+      }?
+    & element testSourceDirectory {
+          xsd:string
+      }?
+    & element outputDirectory {
+          xsd:string
+      }?
+    & element testOutputDirectory {
+          xsd:string
+      }?
+    & 
+      element extensions {
+          element extension { Extension }*
+      }?
+    & element defaultGoal {
+          xsd:string
+      }?
+    & 
+      element resources {
+          element resource { Resource }*
+      }?
+    & 
+      element testResources {
+          element testResource { Resource }*
+      }?
+    & element directory {
+          xsd:string
+      }?
+    & element finalName {
+          xsd:string
+      }?
+    & 
+      element filters {
+          element filter { xsd:string }*
+      }?
+    & element pluginManagement {
+          PluginManagement
+      }?
+    & 
+      element plugins {
+          element plugin { Plugin }*
+      }?
+
+Extension =
+    element groupId {
+        xsd:string
+    }?
+    & element artifactId {
+          xsd:string
+      }?
+    & element version {
+          xsd:string
+      }?
+License =
+    element name {
+        xsd:string
+    }?
+    & element url {
+          xsd:string
+      }?
+    & element distribution {
+          xsd:string
+      }?
+    & element comments {
+          xsd:string
+      }?
+      
+
+Developer =
+    element id {
+        xsd:string
+    }?
+    & element name {
+          xsd:string
+      }?
+    & element email {
+          xsd:string
+      }?
+    & element url {
+          xsd:string
+      }?
+    & element organization {
+          xsd:string
+      }?
+    & element organizationUrl {
+          xsd:string
+      }?
+    & 
+      element roles {
+          element role { xsd:string }*
+      }?
+    & element timezone {
+          xsd:string
+      }?
+    & 
+      element properties {
+          element * { text }*
+      }?

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/" xml:lang="ja">
+	<channel rdf:about="https://nandaka-furari.github.io/">
+		<title>ナンダカフラリのファイル置き場</title>
+		<link>https://nandaka-furari.github.io/</link>
+		<description>ナンダカフラリのファイル置き場</description>
+		<items>
+			<rdf:Seq>
+				<rdf:li rdf:resource="https://nandaka-furari.github.io/framexs/"></rdf:li>
+				<rdf:li rdf:resource="https://nandaka-furari.github.io/documents/"></rdf:li>
+			</rdf:Seq>
+		</items>
+	</channel>
+	<item rdf:about="https://nandaka-furari.github.io/framexs/">
+		<title>framexs</title>
+		<link>https://nandaka-furari.github.io/framexs/</link>
+		<description>XSLTによるフレームワーク</description>
+	</item>
+	<item rdf:about="https://nandaka-furari.github.io/documents/">
+		<title>文書置き場</title>
+		<link>https://nandaka-furari.github.io/documents/</link>
+		<description>文書の置き場</description>
+	</item>
+</rdf:RDF>

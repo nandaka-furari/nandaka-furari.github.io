@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="300">
+<defs>
+<g font-family="Mona,IPAMonaPGothic,'IPA モナー Pゴシック','MS PGothic AA','MS PGothic','ＭＳ Ｐゴシック',sans-serif" font-size="10" id="aa">
+<text x="20" y="10">　　　　　　　_,,;' '" '' ゛''" ゛' ';;,,</text>
+<text x="20" y="20">　　　　　　（rヽ,;''"""''゛゛゛'';, ﾉｒ）</text>
+<text x="20" y="30">　　　　　　,;'゛ i ＿　　、＿ iヽ゛';,</text>
+<text x="20" y="40">　　　　　 ,;'" ''| ヽ・〉　〈・ノ |ﾞ゛ `';,</text>
+<text x="20" y="50">　　　　　 ,;''　"|　　 ▼　　 |ﾞ゛　`';,</text>
+<text x="20" y="60">　　　　　 ,;''　　ヽ＿人＿ /　　,;'_</text>
+<text x="20" y="70">　　　　 ／ｼ、　 ヽ⌒⌒ /　　 ﾘ　＼</text>
+<text x="20" y="80">　　　　|　　　"ｒ,,　｀"'''ﾞ´　　,,ﾐ゛　　 |</text>
+<text x="20" y="90">　　　　|　　 　　 ﾘ、　　　　,ﾘ　　　　|</text>
+<text x="20" y="100">　　　　|　　　i 　　゛ｒ、ﾉ,,ｒ"　i　　　_|</text>
+<text x="20" y="110">　　　　|　　　｀ー――----┴ ⌒´ ）</text>
+<text x="20" y="120">　　　　（ヽ　 ＿＿＿＿＿＿ ,, ＿´）</text>
+<text x="20" y="130">　　　 　（_⌒ ＿＿＿＿＿＿ ,, ィ</text>
+<text x="20" y="140">　　　　　　丁　　　　　　　　　　 |</text>
+<text x="20" y="150">　　　　　　 |　　　　　　　　　　　| </text></g>
+<g font-family="HG行書体" font-size="20" id="text">
+<text>お前それサバンナでも同じ事言えんの？</text>
+</g>
+</defs>
+<use x="0" y="20" xlink:href="#aa"></use>
+<use x="140" y="50" xlink:href="#text"></use>
+</svg>

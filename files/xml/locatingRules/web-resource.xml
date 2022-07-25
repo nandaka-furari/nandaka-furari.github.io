@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<locatingRules xmlns="http://thaiopensource.com/ns/locating-rules/1.0">
+	<!-- here you can match the root element's local name
+		<documentElement localName="addressBook" typeId="AB"/>
+	 -->
+	<uri pattern="*.xsl" typeId="XSLT2"/>
+	<typeId id="XSLT2" uri="http://www.w3.org/2007/schema-for-xslt20.xsd"></typeId>
+	<namespace ns="urn:oasis:names:tc:entity:xmlns:xml:catalog" typeId="CATALOG"/>
+	<typeId id="CATALOG" uri="http://xmlcatalogs.org/schema/1.1/catalog.xsd"></typeId>
+	<namespace ns="http://www.opengis.net/kml/2.2" typeId="kml"/>
+	<typeId id="kml" uri="http://schemas.opengis.net/kml/2.2.0/ogckml22.xsd"></typeId>
+</locatingRules>
